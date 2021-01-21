@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html { 
+    background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
+    background-size: cover;
+    background-color: black;
+  }
+
+.header{
+    background:rgba(93, 97, 93, 0.25);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+body{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.game{
+    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+
+.choice{
+   
+    width: 11vw;
+    cursor:pointer;
+    border-radius: 30%;
+    margin-left: 3%;
+    
+}
+.choice:hover{
+background-color: rgba(49, 48, 48,0.5);
+
+}
+#status{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 6vh;
+    margin-left: 2%;
+}
