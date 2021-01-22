@@ -25,13 +25,8 @@ body{
     font-family: 'Yusei Magic', sans-serif;
 }
 
-.gameSec{
-    height:100vh;
-    display:flex;
-    flex-direction: column;
-}
-
 .game{
+    
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -40,26 +35,14 @@ body{
 }
 
 .choice{
+   
     width: 11vw;
     cursor:pointer;
     border-radius: 30%;
     margin-left: 3%;
     animation: appearfromLeft ease 1s;
-    transition: 0.3s;
     
 }
-
-.choice:hover{
-    background-color: rgba(49, 48, 48,0.4);
-    transform: scale(1.2);
-    
-    }
-
-.choice:active{
-    background-color: rgba(49, 48, 48,1);;
-}
-
-    
 #rock{
     animation: appearfromTop ease 2s;
 }
@@ -88,7 +71,12 @@ body{
         transform: translateY(0%);
     }
 }
+.choice:hover{
+background-color: rgba(49, 48, 48,0.5);
+transform: scale(1.2);
 
+
+}
 #status{
     color:white;
     font-size: 6vh;
@@ -96,17 +84,19 @@ body{
     align-self: center;
 }
 
-.Room{
-    display: flex;
-    flex-direction:column;
-    align-items: center;
+.gameSec{
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+#Room{
     color:white;
     height:100vh;
     font-size: 100%;
 }
 
 .Create{
-    margin-top: 25vh;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -130,7 +120,6 @@ button:hover{
     animation-delay: 150ms;
     border: none;
     outline: none;
-    
     
 }
 
