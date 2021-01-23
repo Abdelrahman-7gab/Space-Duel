@@ -7,7 +7,7 @@ const randomstring=require('randomstring');
 const path = require("path");
 //io.on('connection', () => { /* … */ });
 
-app.use(express.static(path.join(__dirname,"/")));
+app.use(express.static(path.join(__dirname,"public")));
 
 if(process.env.PORT){
 	server.listen(process.env.PORT,function() {console.log('Server started')});
