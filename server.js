@@ -9,6 +9,11 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname,"public")));
 
+io.on('connection', (socket) => {
+	console.log('Client connected');
+	socket.on('disconnect', () => console.log('Client disconnected'));
+  });
+
 if(process.env.PORT){
 	server.listen(process.env.PORT,function() {console.log('Server started')});
 }

@@ -26,6 +26,11 @@ body{
     color:white;
 }
 
+.scoreboard{
+    font-size: 3vw;
+    margin-left: 37vw;
+}
+
 
 .gameSec{
     height:100vh;
