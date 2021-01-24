@@ -11,7 +11,25 @@ app.use(express.static(path.join(__dirname,"public")));
 
 io.on('connection', (socket) => {
 	console.log('Client connected');
-	socket.on('disconnect', () => console.log('Client disconnected'));
+	socket.emit("player2Joined");
+	socket.on('disconnect',() => console.log('Client disconnected'));
+
+	socket.on("player2Joined",() =>{
+		socket.emit("test");
+	})
+
+	socket.on("NewGame",() =>{
+		const rand = randomstring.generate({length:4});
+		socket.join(rand)
+		socket.emit("RoomID", rand);
+	})
+
+	socket.on("Join",(data) =>{
+		socket.join(data)
+		socket.emit("player2Joined");
+	})
+
+	
   });
 
 if(process.env.PORT){
