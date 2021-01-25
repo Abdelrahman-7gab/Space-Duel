@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 		{
 		console.log("JOINED");	
 		socket.join(data);
-		socket.to(data).emit("player2Joined");
+		socket.nsp.to(data).emit("player2Joined");
 		numberInrooms[rooms.indexOf(data)] = 2;
 		}
 	})

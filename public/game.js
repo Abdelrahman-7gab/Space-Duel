@@ -29,12 +29,6 @@ socket.on("RoomID",(data) =>{
     player = 1; // the player who recieves the room code is always the first player
 })
 
-function toGameSection(){
-    Insert_div.style.display = "none";
-    Room_sec.style.display = "none";
-    game_sec.style.display = "block";
-}
-
 joinGame_btn.addEventListener('click',function() {
     if(textBox.value == ""){
         insertline.textContent = "Please insert code first"
@@ -43,8 +37,6 @@ joinGame_btn.addEventListener('click',function() {
     else {
         socket.emit("Join", textBox.value);
     }
-
-  
 })
 
 socket.on("wrongCode",() =>{
@@ -58,8 +50,14 @@ socket.on("FullRoom",() =>{
     insertline.textContent = "This room is full";
 })
 
+function toGameSection(){
+    Insert_div.style.display = "none";
+    Room_sec.style.display = "none";
+    game_sec.style.display = "block";
+}
+
 socket.on("player2Joined",() =>{
-    socket.emit("the game is ready");
+    toGameSection();
 })
 
 
