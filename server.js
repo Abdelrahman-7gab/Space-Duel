@@ -5,11 +5,24 @@ const io = require('socket.io')(server);
 const INDEX = '/index.html';
 const randomstring=require('randomstring');
 const path = require("path");
+const PORT = process.env.PORT || 3000;
 //io.on('connection', () => { /* … */ });
 var rooms = []
 var numberInrooms = []
 
+app.use(express.urlencoded({ extended: true }));
+const { render } = require('ejs');
+
+
 app.use(express.static(path.join(__dirname,'public')));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'public'));
+
+
+app.get('/',function(req,res){
+	res.render('index');
+  }); 
 
 io.on('connection', function(socket){
 	console.log('Client connected');
