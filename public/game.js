@@ -37,7 +37,7 @@ newGame_btn.addEventListener('click',function() {
     socket.emit("NewGame");
 })
 
-socket.on("RoomID",(data) =>{
+socket.on("RoomID",function(data){
     //RoomStatus_span.setAttribute('style', 'white-space: pre;');
     RoomStatus_span.textContent =('"waiting for a second player" \r\n Room Code:' + data );
    // RoomStatus_span.style.display = "block";
@@ -57,13 +57,13 @@ joinGame_btn.addEventListener('click',function() {
     }
 })
 
-socket.on("wrongCode",() =>{
+socket.on("wrongCode",function(){
     if(player == 2)
     insertline.textContent = "the code is not correct"
 })
 
 
-socket.on("FullRoom",() =>{
+socket.on("FullRoom",function(){
     if(player == 2)
     insertline.textContent = "This room is full";
 })
@@ -74,7 +74,7 @@ function toGameSection(){
     game_sec.style.display = "block";
 }
 
-socket.on("player2Joined",() =>{
+socket.on("player2Joined",function(){
     if(player == 2){
         Paper_Pic.src = "Photos/PaperAlien.png";
        // Rock_Pic.src = "Photos/RockAlien.png";

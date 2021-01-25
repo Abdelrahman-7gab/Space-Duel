@@ -9,20 +9,20 @@ const path = require("path");
 var rooms = []
 var numberInrooms = []
 
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,'public')));
 
-io.on('connection', (socket) => {
+io.on('connection', function(socket){
 	console.log('Client connected');
 	socket.on('disconnect',() => console.log('Client disconnected'));
 
-	socket.on("NewGame",() =>{
+	socket.on("NewGame",function(){
 		const rand = randomstring.generate({length:4}).toLowerCase();
 		socket.join(rand);
 		rooms.push(rand);
 		socket.emit("RoomID", rand);
 	})
 
-	socket.on("Join",(data) =>{
+	socket.on("Join",function(data){
 		//if(!io.sockets.adapter.get(data))
 		if(!rooms.includes(data))
 		{
