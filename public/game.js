@@ -9,11 +9,29 @@ var Room_sec = document.getElementById("RoomSec");
 var game_sec = document.getElementById("gameSec");
 var textBox = document.getElementById("box");
 var insertline = document.getElementById("insert");
+var Paper_Pic = document.getElementById("paper");
+var Rock_Pic = document.getElementById("rock");
+var Scissors_Pic = document.getElementById("scissors");
+var sound = document.getElementById("sound");
+var audio = new Audio('mayday.mp3');
 
 var player1score = 0;
 var player2score = 0;
 var player = 2;
 
+
+audio.loop = true;
+sound.addEventListener('click',function() {
+    if(audio.paused){
+    audio.play();
+    sound.src ="Photos/soundOn.png"
+    }
+    else{
+        audio.pause();
+        sound.src ="Photos/soundOff.png"
+    }
+    
+})
 
 newGame_btn.addEventListener('click',function() {
     socket.emit("NewGame");
@@ -57,6 +75,13 @@ function toGameSection(){
 }
 
 socket.on("player2Joined",() =>{
+    if(player == 2){
+        Paper_Pic.src = "Photos/PaperAlien.png";
+       // Rock_Pic.src = "Photos/RockAlien.png";
+        Scissors_Pic.src = "Photos/ScissorsAlien.png";
+       
+    }
+
     toGameSection();
 })
 

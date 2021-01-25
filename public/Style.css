@@ -20,6 +20,11 @@ html {
     flex-direction: column;
 }
 
+#sound{
+    height:15vh;
+    position: absolute;
+    right:3vw;
+}
 
 body{
     font-family: 'Yusei Magic', sans-serif;
@@ -48,17 +53,17 @@ body{
         transform: translateX(50vw) translateY(-2vh) rotate(-5deg);
     }
 
-    32.5%{
+    37.5%{
         transform: translateX(79vw) translateY(2vh) rotate(5deg);
         
     }
 
     50%{
-        transform: translateX(108vw) translateY(-2vh) rotate(-5deg);
+        transform: translateX(108vw) translateY(10vh) rotate(15deg);
     }
 
     100%{
-        transform: translateX(108vw) translateY(-1vw) rotate(-5deg);
+        transform: translateX(108vw) translateY(-2vh) rotate(-5deg);
     }
 
     
@@ -108,11 +113,11 @@ body{
     }
 
     70%{
-        transform: translateX(-83vw) translateY(6vh) rotate(720deg);
+        transform: translateX(-81.5vw) translateY(6vh) rotate(720deg);
     }
 
     100%{
-        transform: translateX(-83vw) translateY(-160vh) rotate(690deg);
+        transform: translateX(-81.5vw) translateY(-160vh) rotate(690deg);
     }
 }
 
@@ -125,6 +130,7 @@ body{
 #gameSec{
     height:100vh;
     display:none;
+    
 }
 
 .game{
@@ -153,7 +159,6 @@ body{
  .choice:active{
     background-color: rgba(49, 48, 48,0.8); 
  }   
-
 
 #rock{
     animation: appearfromTop ease 2s;
