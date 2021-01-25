@@ -24,6 +24,96 @@ html {
 body{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
+    overflow-x: hidden; 
+}
+
+#rocket{
+    width: 8vw;
+    position: absolute;
+    top:72vh;
+    left:-8vw;
+    animation: rocket linear 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+@keyframes rocket{
+
+    12.5%{
+        transform: translateX(21vw) translateY(2vh) rotate(5deg);
+    }
+
+    25%{
+        transform: translateX(50vw) translateY(-2vh) rotate(-5deg);
+    }
+
+    32.5%{
+        transform: translateX(79vw) translateY(2vh) rotate(5deg);
+        
+    }
+
+    50%{
+        transform: translateX(108vw) translateY(-2vh) rotate(-5deg);
+    }
+
+    100%{
+        transform: translateX(108vw) translateY(-1vw) rotate(-5deg);
+    }
+
+    
+}
+
+#alienship{
+    height:23vh;
+    position:absolute;
+    left:15vw;
+    top:-23vh;
+    animation: ship ease-out 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+   
+}
+
+@keyframes ship{
+    60%{
+        transform: translateY(0vh);
+    }
+    70%{
+        transform: translateY(63vh);
+    }
+    100%{
+        transform: translateY(-50vh);
+    }
+
+}
+
+#kidnap{
+    width: 4vw;
+    position:absolute;
+    right:-4vw;
+    top :50vh;
+    animation: kidnap linear 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+@keyframes kidnap{
+    35%{
+        transform: translateX(4vw);
+    }
+
+    52.5%{
+        transform: translateX(-43vw) translateY(-6vh) rotate(360deg);
+    }
+
+    70%{
+        transform: translateX(-83vw) translateY(6vh) rotate(720deg);
+    }
+
+    100%{
+        transform: translateX(-83vw) translateY(-160vh) rotate(680deg);
+    }
 }
 
 .scoreboard{
@@ -34,8 +124,7 @@ body{
 
 .gameSec{
     height:100vh;
-    display:flex;
-    flex-direction: column;
+    display:none;
 }
 
 .game{
@@ -96,12 +185,12 @@ body{
 }
 #status{
     color:white;
-    font-size: 6vh;
-    margin-top: 5%;
-    align-self: center;
+    font-size: 3vw;
+    margin-top: 2%;
+    margin-left: 39vw;
 }
 
-#Room{
+#RoomSec{
     display: flex;
     flex-direction: column;
     color:white;
@@ -120,7 +209,7 @@ body{
 button{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
-    font-size: 3vw;
+    font-size: 7vh;
     background:rgb(102, 101, 99);
     border-radius: 20%;
     margin: 0.5vw;
@@ -151,4 +240,29 @@ button:active{
     75%{
 	transform: scale(0.7,1.2);
     }
+}
+
+#RoomStatus{
+    white-space: pre;
+    font-size: 3vw;
+}
+
+#box{
+    height:6vh;
+    width:5vw;
+    background-color: rgba(255, 255, 255,0.3);
+    font-family: 'Yusei Magic', sans-serif;
+    color:white;
+    font-size: 1.2em;
+}
+
+
+#insert{
+    font-size: 5vh;
+    background-color: rgba(182, 182, 182,0.2);
+}
+
+
+#InsertDIV{
+    margin-left: 36vw;
 }

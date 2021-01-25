@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
 	})
 
 	socket.on("NewGame",() =>{
-		const rand = randomstring.generate({length:4});
+		const rand = randomstring.generate({length:4}).toLowerCase();
 		socket.join(rand)
 		socket.emit("RoomID", rand);
 	})
