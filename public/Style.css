@@ -112,7 +112,7 @@ body{
     }
 
     100%{
-        transform: translateX(-83vw) translateY(-160vh) rotate(680deg);
+        transform: translateX(-83vw) translateY(-160vh) rotate(690deg);
     }
 }
 
@@ -122,7 +122,7 @@ body{
 }
 
 
-.gameSec{
+#gameSec{
     height:100vh;
     display:none;
 }
