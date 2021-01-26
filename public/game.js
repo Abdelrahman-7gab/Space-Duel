@@ -45,6 +45,10 @@ socket.on("RoomID",function(data){
     joinGame_btn.style.display = "none";
     Insert_div.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
+    Paper_Pic.src = "Photos/Paper.png";
+    Rock_Pic.src = "Photos/Rock.png";
+    Scissors_Pic.src = "Photos/Scissors.png";  
+
 })
 
 joinGame_btn.addEventListener('click',function() {
@@ -75,13 +79,6 @@ function toGameSection(){
 }
 
 socket.on("player2Joined",function(){
-    if(player == 2){
-        Paper_Pic.src = "Photos/PaperAlien.png";
-       // Rock_Pic.src = "Photos/RockAlien.png";
-        Scissors_Pic.src = "Photos/ScissorsAlien.png";
-       
-    }
-
     toGameSection();
 })
 

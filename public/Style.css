@@ -109,15 +109,18 @@ body{
     }
 
     52.5%{
-        transform: translateX(-43vw) translateY(-6vh) rotate(360deg);
+        transform: translateX(-43vw) translateY(-6vh) rotate(270deg);
     }
 
     70%{
-        transform: translateX(-81.5vw) translateY(6vh) rotate(720deg);
+        transform: translateX(-81.5vw) translateY(6vh) rotate(540deg);
+    }
+    75%{
+        transform: translateX(-81.5vw) translateY(-25.66vh) rotate(360deg);
     }
 
     100%{
-        transform: translateX(-81.5vw) translateY(-160vh) rotate(690deg);
+        transform: translateX(-81.5vw) translateY(-160vh) rotate(360deg);
     }
 }
 
