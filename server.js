@@ -9,16 +9,7 @@ const PORT = process.env.PORT || 3000;
 var rooms = []
 var numberInrooms = []
 
-//app.use(express.urlencoded({ extended: true }));
-//const { render } = require('ejs');
-
-
 app.use(express.static(path.join(__dirname,'public')));
-
-//app.set('view engine', 'ejs');
-//app.set('views', path.join(__dirname, 'public'));
-
-
 app.get('/',function(req,res){
 	res.sendFile( 'index.html', { root: "public" });
   }); 
@@ -48,12 +39,25 @@ io.on('connection', function(socket){
 		{
 		console.log("JOINED");	
 		socket.join(data);
-		socket.nsp.to(data).emit("player2Joined");
+		socket.nsp.to(data).emit("player2Joined",data);
 		numberInrooms[rooms.indexOf(data)] = 2;
 		}
 	})
 
-	
+	socket.on("PlayerChoice1",function(message){
+		socket.nsp.to(message.room).emit("firstChoice" ,message.choice)
+	})
+
+	socket.on("PlayerChoice2",function(message){
+		socket.nsp.to(message.room).emit("secondChoice" ,message.choice)
+	})
+
+	socket.on("winner",function(holder){
+		console.log("winner transmitted")
+		socket.nsp.to(holder.room).emit("result", holder.player);
+		})
+
+
   });
 
 if(process.env.PORT){
