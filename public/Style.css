@@ -10,14 +10,33 @@ html {
     background-size: cover;
     background-color: black;
     scroll-behavior: smooth;
-    
+    width:100vw;  
+    overflow-x: hidden;   
   }
 
-.header{
-    background:rgba(93, 97, 93, 0.25);
+header{
+    background: linear-gradient(to right,rgba(93, 97, 93, 0.3) , rgba(93, 97, 93, 0) );
+    height: 10vh;
+}
+
+.headerContainer{
     display: flex;
     align-items: center;
-    flex-direction: column;
+}
+
+#logo{
+    flex:3;
+}
+
+.navs{
+    flex:1;
+    display:flex;
+}
+
+header a{  
+    text-decoration: none;
+    color:white;
+    flex:1;
 }
 
 #sound{
@@ -29,7 +48,6 @@ html {
 body{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
-    overflow-x: hidden; 
 }
 
 #rocket{
@@ -70,9 +88,9 @@ body{
 }
 
 #alienship{
-    height:23vh;
+    width:8vw;
     position:absolute;
-    left:15vw;
+    left:-8vw;
     top:-23vh;
     animation: ship ease-out 20s;
     animation-iteration-count: infinite;
@@ -81,14 +99,17 @@ body{
 }
 
 @keyframes ship{
+    0%{
+        transform: translateX(23vw) translateY(0vh);
+    }
     60%{
-        transform: translateY(0vh);
+        transform: translateX(23vw) translateY(0vh);
     }
     70%{
-        transform: translateY(63vh);
+        transform: translateX(23vw) translateY(63vh);
     }
     100%{
-        transform: translateY(-50vh);
+        transform: translateX(23vw) translateY(-50vh);
     }
 
 }
@@ -105,39 +126,47 @@ body{
 
 @keyframes kidnap{
     35%{
-        transform: translateX(4vw);
+        transform: translateX(0vw);
     }
 
     52.5%{
-        transform: translateX(-43vw) translateY(-6vh) rotate(270deg);
+        transform: translateX(-41vw) translateY(-6vh) rotate(270deg);
     }
 
     70%{
-        transform: translateX(-81.5vw) translateY(6vh) rotate(540deg);
+        transform: translateX(-81.7vw) translateY(6vh) rotate(540deg);
     }
     75%{
-        transform: translateX(-81.5vw) translateY(-25.66vh) rotate(360deg);
+        transform: translateX(-81.7vw) translateY(-25.66vh) rotate(360deg);
     }
 
     100%{
-        transform: translateX(-81.5vw) translateY(-160vh) rotate(360deg);
+        transform: translateX(-81.7vw) translateY(-160vh) rotate(360deg);
     }
 }
 
 .scoreboard{
     font-size: 3vw;
-    margin-left: 37vw;
+    background: linear-gradient(rgba(93, 97, 93, 0.40) , rgba(93, 97, 93, 0) );
+    margin-left: 43vw;
+}
+
+.icon{
+    width:5vw;
+}
+
+#alienHead{
+    width:4vw;
 }
 
 
 #gameSec{
-    height:100vh;
-    display:none;
-    
+    height:90vh;
+    display: none;
 }
 
 .game{
-    
+    margin-top: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +179,7 @@ body{
     cursor:pointer;
     border-radius: 30%;
     margin-left: 3%;
-    animation: appearfromLeft ease 1s;
+    animation: appearfromLeft ease 0.5s;
     transition: 0.3s;
 }
 
@@ -164,11 +193,11 @@ body{
  }   
 
 #rock{
-    animation: appearfromTop ease 2s;
+    animation: appearfromTop ease 1s;
 }
 
 #scissors{
-    animation: appearfromTop ease 3s;
+    animation: appearfromTop ease 1.5s;
 }
 
 @keyframes appearfromLeft{
@@ -202,7 +231,7 @@ body{
     display: flex;
     flex-direction: column;
     color:white;
-    height:100vh;
+    height:90vh;
     font-size: 100%;
 }
 
@@ -273,4 +302,65 @@ button:active{
 
 #InsertDIV{
     margin-left: 36vw;
+}
+
+.winAnimation{
+    position: absolute;
+    height:55vh;
+    bottom:-55vh;
+    left:45%;
+    animation: winAnimationDown linear 3s;
+    display:none;
+}
+
+.winAnimationUp{
+    position: absolute;
+    height:55vh;
+    top:-55vh;
+    left:44%;
+    animation: winAnimationTop linear 3s;
+    display:none;
+    
+}
+
+#Info{
+    height: 100vh;
+}
+
+@keyframes winAnimationDown{
+0%{
+    transform: translateY(0vh); 
+}
+
+33%{
+    transform: translateY(-50vh);
+}
+
+66%{
+    transform: translateY(-50vh);
+}
+
+100%{
+    transform: translateY(0vh);
+}
+}
+
+@keyframes winAnimationTop{
+
+    0%{
+        transform: translateY(0) rotate(180deg);
+    }
+
+    33%{
+        transform: translateY(50vh) rotate(180deg);
+    }
+
+    66%{
+        transform: translateY(50vh) rotate(180deg);
+    }
+    
+    100%{
+        transform: translateY(0vh) rotate(180deg);
+    }
+    
 }

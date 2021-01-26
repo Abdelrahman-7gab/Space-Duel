@@ -10,27 +10,45 @@
 </head>
 
 <body>
-    <header class = "header">
-        <div class="logo-Container">
-
-        <img src="Photos/Logo.png" alt="Logo" style = "width:60vh; cursor:pointer;margin-top:2vh">
-        <span><a href="#Room">About</a></span>
-        </div>
+    <header>
+       <div class="headerContainer">
+        <span id ="logo" style = "font-size:6vh; cursor:pointer;">Space Duel</span>
+        <div class = "navs">
+        <a href="#RoomSec">About</a>
+        <a href="#RoomSec">About</a>
+        <a href="#RoomSec">About</a>
+      </div>
+    </div>
+       
+      
+       
     </header>
 
     
     <img src="Photos/soundOff.png" id ="sound" alt="">
+    <img class ="winAnimation anim" id = "paperDown" src="Photos/PaperAlien.png">
+    <img class ="winAnimation anim" id = "rockDown" src="Photos/RockAlienCatch.png">
+    <img class ="winAnimation anim" id = "scissorsDown" src="Photos/ScissorsAlien.png">
+
+    <img class ="winAnimationUp anim" id = "scissorsUp" src="Photos/Scissors.png">
+    <img class ="winAnimationUp anim" id = "paperUp" src="Photos/Paper.png">
+    <img class ="winAnimationUp anim" id = "rockUp" src="Photos/Rock.png">
+    
+
     <main>
       <img src="Photos/rocket.png" id ="rocket" alt="">
       <img src="Photos/alienship.png" id ="alienship" alt="">
       <img src="Photos/kidnap.png" id ="kidnap" alt="">
 
       <section id="gameSec">
-        <div class="scoreboard">
-          <span class="player" id ="Astronut">Astronut</span>
+
+        <div id = "GameContainer">
+
+        <span class="scoreboard">
+          <span><img id ="astroHead" class="icon" src="Photos/AstroHead.png" alt=""></span>
           <span id="score1">0</span>:<span id="score2">0</span>
-          <span class="player" id = "Alien">Alien</span>
-        </div>
+          <span><img id ="alienHead" class = "icon" src="Photos/AlienHead.png" alt=""></span>
+        </span>
 
         <div class="game">
           <img class ="choice" id = "paper" src="Photos/PaperAlien.png" alt="Paper">
@@ -38,6 +56,7 @@
           <img class ="choice" id = "scissors" src="Photos/ScissorsAlien.png" alt="Scissors">
         </div>
         <span id="status"> Make Your Move</span>
+      </div>
       </section>  
 
       <section id = "RoomSec">
@@ -52,6 +71,15 @@
         </div>
 
          </section>
+
+         <section id = "Info"> 
+           <div id="container">
+
+
+
+           </div>
+        
+        </section>
     </main>
 
     <script src="socket.io/socket.io.js"></script>

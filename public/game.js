@@ -16,6 +16,13 @@ var score1_span = document.getElementById("score1");
 var score2_span = document.getElementById("score2");
 var sound = document.getElementById("sound");
 var audio = new Audio('mayday.mp3');
+var paperDown_anim = document.getElementById("paperDown");
+var paperUp_anim = document.getElementById("paperUp");
+var rockDown_anim = document.getElementById("rockDown");
+var rockUp_anim = document.getElementById("rockUp");
+var scissorsDown_anim = document.getElementById("scissorsDown");
+var scissorsUp_anim = document.getElementById("scissorsUp");
+var gameContainer_div = document.getElementById("GameContainer");
 
 var AstronautScore = 0;
 var AlienScore = 0;
@@ -49,9 +56,14 @@ socket.on("RoomID",function(data){
     Insert_div.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
     Paper_Pic.src = "Photos/Paper.png";
+    paperDown_anim.src ="Photos/Paper.png";
+    paperUp_anim.src = "Photos/PaperAlien.png";
     Rock_Pic.src = "Photos/Rock.png";
-    Scissors_Pic.src = "Photos/Scissors.png";  
-
+    rockDown_anim.src = "Photos/Rock.png";
+    rockUp_anim.src = "Photos/RockAlienCatch.png";
+    Scissors_Pic.src = "Photos/Scissors.png";
+    scissorsDown_anim.src = "Photos/Scissors.png";
+    scissorsUp_anim.src = "Photos/ScissorsAlien.png";
 })
 
 joinGame_btn.addEventListener('click',function() {
@@ -93,7 +105,7 @@ socket.on("player2Joined",function(ID){
     toGameSection();
 })
 
-var firstChoice = "n"; //for no choice.. changes to r / p / s
+var firstChoice = "n"; //n for no choice.. changes to r / p / s
 var secondChoice = "n"
 
 Rock_Pic.addEventListener('click',function() {
@@ -114,7 +126,7 @@ Scissors_Pic.addEventListener('click',function() {
 
 socket.on("firstChoice",function(data){
     firstChoice = data;
-    if(secondChoice !== "n" && player == 1){
+    if(secondChoice !== "n"){
         getWinner(firstChoice,secondChoice);
     }
 })
@@ -122,7 +134,7 @@ socket.on("firstChoice",function(data){
 
 socket.on("secondChoice",function(data){
     secondChoice = data;
-    if(firstChoice !== "n" && player == 2){
+    if(firstChoice !== "n"){
         getWinner(firstChoice,secondChoice);
     }
 })
@@ -133,30 +145,72 @@ function getWinner(first,second){
     winner = "first";
     else if(first+second == "sr" || first+second == "ps" || first+second =="rp")
     winner="second";
-
     else
     winner = "draw";
 
-    var winnerHolder= {
-        player : winner,
-        room : roomID
-    }
-    socket.emit("winner", winnerHolder);
+    updateValues(winner);
 }
-socket.on("result",function(data){
+
+function updateValues(data)
+{
+    let firstTemp = firstChoice;
+    let secondTemp = secondChoice;
+
+    if(player == 2){
+        firstTemp = secondChoice;
+        secondTemp = firstChoice;
+    }
+
     firstChoice = "n";
     secondChoice = "n";
+
     if(data == "first"){
+
         AstronautScore +=1;
-    score1_span.textContent = AstronautScore;
-    }
+        score1_span.textContent = AstronautScore;
+        }
+    
+        else if(data == "second"){
+            AlienScore +=1;
+            score2_span.textContent = AlienScore;  
+        }
 
-    else if(data == "second"){
-        AlienScore +=1;
-    score2_span.textContent = AlienScore;
+    gameContainer_div.style.display = "none";
 
+    if(firstTemp == "r"){
+        rockDown_anim.style.display = "block";
+         }
+
+  else if(firstTemp =="p"){
+            paperDown_anim.style.display = "block";
+        }
+
+    else{
+            scissorsDown_anim.style.display = "block";
+        }
+
+    if(secondTemp == "r"){
+            rockUp_anim.style.display = "block";
+         }
+
+    else if(secondTemp =="p"){
+              paperUp_anim.style.display = "block";
+         }
+
+    else{
+               scissorsUp_anim.style.display = "block";
+        }
+
+    setTimeout(hideAnimation, 3200);
+ 
+}
+function hideAnimation(){
+    animlist = document.getElementsByClassName("anim");
+    for(let i = 0 ; i<animlist.length;i++){
+        animlist[i].style.display = "none";
     }
-})
+    gameContainer_div.style.display = "block";   
+}
 
 
 

@@ -15,14 +15,13 @@ app.get('/',function(req,res){
   }); 
 
 io.on('connection', function(socket){
-	console.log('Client connected');
 	socket.on('disconnect',() => console.log('Client disconnected'));
 
 	socket.on("NewGame",function(){
 		const rand = randomstring.generate({length:4}).toLowerCase();
 		socket.join(rand);
 		rooms.push(rand);
-		socket.emit("RoomID", rand);
+		socket.nsp.to(rand).emit("RoomID", rand);
 	})
 
 	socket.on("Join",function(data){
@@ -51,11 +50,6 @@ io.on('connection', function(socket){
 	socket.on("PlayerChoice2",function(message){
 		socket.nsp.to(message.room).emit("secondChoice" ,message.choice)
 	})
-
-	socket.on("winner",function(holder){
-		console.log("winner transmitted")
-		socket.nsp.to(holder.room).emit("result", holder.player);
-		})
 
 
   });
