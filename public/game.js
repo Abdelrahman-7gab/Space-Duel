@@ -12,8 +12,6 @@ var insertline = document.getElementById("insert");
 var Paper_Pic = document.getElementById("paper");
 var Rock_Pic = document.getElementById("rock");
 var Scissors_Pic = document.getElementById("scissors");
-var score1_span = document.getElementById("score1");
-var score2_span = document.getElementById("score2");
 var sound = document.getElementById("sound");
 var audio = new Audio('mayday.mp3');
 var paperDown_anim = document.getElementById("paperDown");
@@ -23,6 +21,7 @@ var rockUp_anim = document.getElementById("rockUp");
 var scissorsDown_anim = document.getElementById("scissorsDown");
 var scissorsUp_anim = document.getElementById("scissorsUp");
 var gameContainer_div = document.getElementById("GameContainer");
+var status_div = document.getElementById("status");
 
 var AstronautScore = 0;
 var AlienScore = 0;
@@ -129,6 +128,9 @@ socket.on("firstChoice",function(data){
     if(secondChoice !== "n"){
         getWinner(firstChoice,secondChoice);
     }
+    else{
+        StatusMessage();
+    }
 })
 
 
@@ -137,7 +139,30 @@ socket.on("secondChoice",function(data){
     if(firstChoice !== "n"){
         getWinner(firstChoice,secondChoice);
     }
+    else{
+        StatusMessage();
+    }
 })
+
+function getStatus(letter){
+    if(letter == "r")
+    return "You Selected ROCK, \r\nWaiting for opponent";
+    else if(letter == "p")
+    return "You Selected PAPER, \r\nWaiting for opponent";
+    else if(letter == "s")
+    return "You Selected Scissors, \r\nWaiting for opponent";
+    else
+    return "Your Opponent has selected.";
+}
+
+function StatusMessage(){
+    if(player == 1)
+    status_div.textContent = getStatus(firstChoice);
+
+    else{
+        status_div.textContent = getStatus(secondChoice);
+    }
+}
 
 function getWinner(first,second){
     let winner;
@@ -177,6 +202,8 @@ function updateValues(data)
 
     gameContainer_div.style.display = "none";
 
+    status_div.textContent = "Make Your Move";
+
     if(firstTemp == "r"){
         rockDown_anim.style.display = "block";
          }
@@ -209,7 +236,7 @@ function hideAnimation(){
     for(let i = 0 ; i<animlist.length;i++){
         animlist[i].style.display = "none";
     }
-    gameContainer_div.style.display = "block";   
+    gameContainer_div.style.display = "flex";   
 }
 
 
