@@ -12,12 +12,15 @@ var insertline = document.getElementById("insert");
 var Paper_Pic = document.getElementById("paper");
 var Rock_Pic = document.getElementById("rock");
 var Scissors_Pic = document.getElementById("scissors");
+var score1_span = document.getElementById("score1");
+var score2_span = document.getElementById("score2");
 var sound = document.getElementById("sound");
 var audio = new Audio('mayday.mp3');
 
-var player1score = 0;
-var player2score = 0;
+var AstronautScore = 0;
+var AlienScore = 0;
 var player = 2;
+
 
 
 audio.loop = true;
@@ -37,7 +40,7 @@ newGame_btn.addEventListener('click',function() {
     socket.emit("NewGame");
 })
 
-socket.on("RoomID",(data) =>{
+socket.on("RoomID",function(data){
     //RoomStatus_span.setAttribute('style', 'white-space: pre;');
     RoomStatus_span.textContent =('"waiting for a second player" \r\n Room Code:' + data );
    // RoomStatus_span.style.display = "block";
@@ -45,6 +48,10 @@ socket.on("RoomID",(data) =>{
     joinGame_btn.style.display = "none";
     Insert_div.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
+    Paper_Pic.src = "Photos/Paper.png";
+    Rock_Pic.src = "Photos/Rock.png";
+    Scissors_Pic.src = "Photos/Scissors.png";  
+
 })
 
 joinGame_btn.addEventListener('click',function() {
@@ -57,13 +64,13 @@ joinGame_btn.addEventListener('click',function() {
     }
 })
 
-socket.on("wrongCode",() =>{
+socket.on("wrongCode",function(){
     if(player == 2)
     insertline.textContent = "the code is not correct"
 })
 
 
-socket.on("FullRoom",() =>{
+socket.on("FullRoom",function(){
     if(player == 2)
     insertline.textContent = "This room is full";
 })
@@ -74,16 +81,87 @@ function toGameSection(){
     game_sec.style.display = "block";
 }
 
-socket.on("player2Joined",() =>{
-    if(player == 2){
-        Paper_Pic.src = "Photos/PaperAlien.png";
-       // Rock_Pic.src = "Photos/RockAlien.png";
-        Scissors_Pic.src = "Photos/ScissorsAlien.png";
-       
-    }
+var roomID;
+var select;
 
+socket.on("player2Joined",function(ID){
+    roomID = ID;
+        select = {
+        choice : "n",
+        room : ID
+    }
     toGameSection();
 })
+
+var firstChoice = "n"; //for no choice.. changes to r / p / s
+var secondChoice = "n"
+
+Rock_Pic.addEventListener('click',function() {
+    select.choice = "r"
+
+    socket.emit("PlayerChoice" + player, select);
+})
+
+Paper_Pic.addEventListener('click',function() {
+    select.choice = "p"
+    socket.emit("PlayerChoice" + player, select);
+})
+
+Scissors_Pic.addEventListener('click',function() {
+    select.choice = "s"
+    socket.emit("PlayerChoice" + player, select);
+})
+
+socket.on("firstChoice",function(data){
+    firstChoice = data;
+    if(secondChoice !== "n" && player == 1){
+        getWinner(firstChoice,secondChoice);
+    }
+})
+
+
+socket.on("secondChoice",function(data){
+    secondChoice = data;
+    if(firstChoice !== "n" && player == 2){
+        getWinner(firstChoice,secondChoice);
+    }
+})
+
+function getWinner(first,second){
+    let winner;
+    if(first+second == "rs" || first+second == "sp" || first+second =="pr")
+    winner = "first";
+    else if(first+second == "sr" || first+second == "ps" || first+second =="rp")
+    winner="second";
+
+    else
+    winner = "draw";
+
+    var winnerHolder= {
+        player : winner,
+        room : roomID
+    }
+    socket.emit("winner", winnerHolder);
+}
+socket.on("result",function(data){
+    firstChoice = "n";
+    secondChoice = "n";
+    if(data == "first"){
+        AstronautScore +=1;
+    score1_span.textContent = AstronautScore;
+    }
+
+    else if(data == "second"){
+        AlienScore +=1;
+    score2_span.textContent = AlienScore;
+
+    }
+})
+
+
+
+
+
 
 
 
