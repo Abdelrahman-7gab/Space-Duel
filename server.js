@@ -15,10 +15,14 @@ app.get('/',function(req,res){
   }); 
 
 io.on('connection', function(socket){
-	socket.on('disconnect',() => console.log('Client disconnected'));
+	let socketRoom;
+	socket.on('disconnecting',function(){
+		socket.to(socketRoom).emit("opponentLeft");
+		});
 
 	socket.on("NewGame",function(){
 		const rand = randomstring.generate({length:4}).toLowerCase();
+		socketRoom = rand;
 		socket.join(rand);
 		rooms.push(rand);
 		socket.nsp.to(rand).emit("RoomID", rand);
@@ -36,7 +40,7 @@ io.on('connection', function(socket){
 		}
 		else
 		{
-		console.log("JOINED");	
+		socketRoom = data;
 		socket.join(data);
 		socket.nsp.to(data).emit("player2Joined",data);
 		numberInrooms[rooms.indexOf(data)] = 2;

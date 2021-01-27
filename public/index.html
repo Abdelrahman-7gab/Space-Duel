@@ -12,7 +12,7 @@
 <body>
     <header>
        <div class="headerContainer">
-        <span id ="logo" style = "font-size:6vh; cursor:pointer;">Space Duel</span>
+        <span id ="logo"> Space Duel</span>
         <div class = "navs">
         <a href="#RoomSec">About</a>
         <a href="#RoomSec">About</a>
@@ -24,8 +24,9 @@
        
     </header>
 
+    <div id="soundDIV"><img src="Photos/soundOff.png" id ="sound"></div>
     
-    <img src="Photos/soundOff.png" id ="sound" alt="">
+
     <img class ="winAnimation anim" id = "paperDown" src="Photos/PaperAlien.png">
     <img class ="winAnimation anim" id = "rockDown" src="Photos/RockAlienCatch.png">
     <img class ="winAnimation anim" id = "scissorsDown" src="Photos/ScissorsAlien.png">
@@ -67,10 +68,11 @@
 
           <div class ="Create">
             <div>
-              <span class = "selecting">First to get:</span> 
-              <button id = "three">3</button>
-              <button id = "five"> 5</button>
-              <button id = "ten">10</button>
+              <span class = "selecting">First to get</span> 
+              <button class ="limit" id = "three">3</button>
+              <button class = "limit" id = "five"> 5</button>
+              <button class = "limit" id = "ten">10</button>
+              <span class = "selecting">Wins</span> 
             
             </div> 
             <span id ="characterChoice">
@@ -79,25 +81,43 @@
         <span><img id ="astroCHR" class="CHRicon" src="Photos/AstroHead.png" alt=""></span>
         <span><img id ="alienCHR" class = "CHRicon" src="Photos/AlienHead.png" alt=""></span>
       </span>
-
-       
-
         <button class = "roomButton" id ="join">Join a Game</button>
-          </div>
-          <div id = "InsertDIV">
+        <div id = "InsertDIV">
           <span id ="insert">Insert Game Code here:</span>
           <span><input id ="box" type="text" maxlength = "4"></span>
         </div>
+          </div>
 
       </div>
          </section>
 
-         <section id = "Info"> 
-           <div id="container">
+         <section id = "Info">
+           <div id="Infocontainer">
 
+            <div id = "paragraph">  
+              This website is a little personal project that I created under the threats of Aliens.<br>
+              They forced me to create my first website and wanted me to  <br>
+              learn web development and focus on CSS (espicially animations).<br>
+              I ended up learning a little bit of NodeJS, Express,and SOCKET.IO in the process<br>
+              because these <span style = "color:green">green</span> bastards wanted to make the game realtime multiplayer.<br>
+              But the more you learn the better, right? false.<br> 
+              the alien sitting beside me didn't agree with the last sentence.<br>
+              and now I'm obliged to agree with him</div>
+             </div>
 
+           <div class="designerContainer">
+            <div id = "designer">
 
-           </div>
+              <span style = "color: gray;"> Web developing:</span> <span id = "abdelrahman" class = "names">Abdelrahman Hegab</span>  <sub style = "font-size: 2vh;">(and amazing Storytelling and excellent jokes.)</sub> <br>
+
+              <span style = "color: gray;">Character Design:</span> <span id ="shahd" class = "names"> Shahd Hegab </span><sub style = "font-size: 2vh;"> (She works for the Aliens)</sub><br>
+             
+              <span style = "color: gray;">website Logo:</span> <span id = "nadine" class = "names">Nadine Meshref</span>  <sub style = "font-size: 2vh;"> (the Astronaut's relative)</sub>
+             
+            
+            </div>
+          </div>
+
         
         </section>
     </main>

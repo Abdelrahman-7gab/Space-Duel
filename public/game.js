@@ -237,6 +237,10 @@ socket.on("secondChoice",function(data){
     }
 })
 
+socket.on("opponentLeft",function(){
+    status_div.textContent = "Your opponent has left the game";
+})
+
 function getStatus(letter){
     if(letter == "r")
     return "You Selected ROCK, \r\nWaiting for opponent";

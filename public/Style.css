@@ -26,6 +26,8 @@ header{
 
 #logo{
     flex:3;
+    font-size:6vh;
+    cursor:default ;
 }
 
 .navs{
@@ -38,16 +40,19 @@ header a{
     color:white;
     flex:1;
 }
+#soundDIV{
+    height: 15vh;
+}
 
 #sound{
-    height:15vh;
-    position: absolute;
-    right:3vw;
+    height:100%;
+    margin-left: 85vw;
 }
 
 body{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
+    overflow-x: hidden;
 }
 
 #rocket{
@@ -64,24 +69,31 @@ body{
 @keyframes rocket{
 
     12.5%{
-        transform: translateX(21vw) translateY(2vh) rotate(5deg);
+        transform: translateX(21vw) translateY(1vw) rotate(5deg);
     }
 
     25%{
-        transform: translateX(50vw) translateY(-2vh) rotate(-5deg);
+        transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
     }
 
     37.5%{
-        transform: translateX(79vw) translateY(2vh) rotate(5deg);
+        transform: translateX(79vw) translateY(1vw) rotate(5deg);
         
     }
 
     50%{
-        transform: translateX(108vw) translateY(10vh) rotate(15deg);
+        transform: translateX(108vw) translateY(5vw) rotate(15deg);
+        opacity: 1;
+    }
+
+    50.001%{
+        transform: translateX(0vw) translateY(5vw) rotate(15deg);
+        opacity: 0;
     }
 
     100%{
-        transform: translateX(108vw) translateY(-2vh) rotate(-5deg);
+        transform: translateX(0vw) translateY(5vw) rotate(15deg);
+        opacity: 0;
     }
 
     
@@ -117,7 +129,8 @@ body{
 #kidnap{
     width: 4vw;
     position:absolute;
-    right:-4vw;
+    left:-4vw;
+    opacity: 0;
     top :50vh;
     animation: kidnap linear 20s;
     animation-iteration-count: infinite;
@@ -125,28 +138,39 @@ body{
 }
 
 @keyframes kidnap{
+
+    34.99%{
+        transform: translateX(108vw);
+        opacity: 0;
+    }
     35%{
-        transform: translateX(0vw);
+        transform: translateX(108vw);
+        opacity: 1;
     }
 
     52.5%{
-        transform: translateX(-41vw) translateY(-6vh) rotate(270deg);
+        transform: translateX(64.5vw) translateY(-6vh) rotate(270deg);
+        opacity: 1;
     }
 
     70%{
-        transform: translateX(-81.7vw) translateY(6vh) rotate(540deg);
+        transform: translateX(21vw) translateY(6vh) rotate(540deg);
+        opacity: 1;
     }
     75%{
-        transform: translateX(-81.7vw) translateY(-25.66vh) rotate(360deg);
+        transform: translateX(21vw) translateY(-25.66vh) rotate(360deg);
+        opacity: 1;
     }
 
     100%{
-        transform: translateX(-81.7vw) translateY(-160vh) rotate(360deg);
+        transform: translateX(21vw) translateY(-160vh) rotate(360deg);
+        opacity: 1;
     }
 }
 
 .selecting{
     font-size: 4vh;
+    color: white;
 }
 
 
@@ -155,7 +179,7 @@ body{
 }
 
 .CHRicon{
-    width:3vw;
+    width:6vh;
     margin-top: 1vw;
     margin-left: 0.5vw;
     border-radius: 20%;
@@ -166,12 +190,6 @@ body{
 .CHRicon:hover{
     animation: lmao ease 0.6s;
 }
-
-#alienCHR{
-   
-}
-
-
 
 #gameSec{
     height:90vh;
@@ -265,7 +283,7 @@ body{
 }
 
 .Create{
-    margin-top: 30vh;
+    
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -276,7 +294,7 @@ body{
 
 .roomButton{
     font-family: 'Yusei Magic', sans-serif;
-    color:white;
+    color:rgba(255, 255, 255, 0.897);
     font-size: 7vh;
     background:rgb(102, 101, 99);
     border-radius: 20%;
@@ -336,12 +354,9 @@ button:active{
 #insert{
     font-size: 5vh;
     background-color: rgba(182, 182, 182,0.2);
+    color:rgba(170, 99, 19, 0.856);
 }
 
-
-#InsertDIV{
-    margin-left: 36vw;
-}
 
 .winAnimation{
     position: absolute;
@@ -364,6 +379,57 @@ button:active{
 
 #Info{
     height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#designer{
+    font-size: 4vh;
+    align-self: flex-start;
+}
+
+#paragraph{
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
+    color:rgb(243, 231, 217);
+    background: rgba(87, 87, 87, 0.834);
+    font-size: 3vh;
+    
+}
+
+
+#designerContainer{
+    display: flex;
+flex-direction: column;
+}
+
+#Infocontainer{
+display: flex;
+flex-direction: column;
+margin: 10vh;
+}
+
+.names{
+
+
+}
+
+.names:hover{
+    
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+@keyframes nameAnim{
+    0%{
+        color:white;
+    }
+
+    50%{
+        color:red;
+        
+    }
+
 }
 
 @keyframes winAnimationDown{
@@ -402,4 +468,86 @@ button:active{
         transform: translateY(0vh) rotate(180deg);
     }
     
+}
+
+@media only screen and (max-width: 770px){
+
+.headerContainer{
+        flex-direction: column;
+}
+
+#soundDIV{
+    height: 10vh;
+}
+
+#sound{
+    margin-left: 80vw;
+}
+
+.limit{
+    font-size: 3vh;
+    width: 7vw;
+}
+
+#logo{
+    font-size: 5vh;
+}
+.Create{
+    margin-top: 8vh;
+}
+
+.roomButton{
+    font-size: 4vh;
+}
+
+.CHRicon{
+    width:4vh;
+}
+
+.selecting{
+    font-size: 3vh;
+}
+
+#box{
+    width:7vh;
+    height:4vh;
+}
+
+#insert{
+    font-size: 3vh;
+}
+
+#kidnap{
+    top:40vh;
+    width:8vw;
+}
+#alienship{
+    width:16vw;
+    left:-10vw;
+    top: -26vh;
+}
+
+#rocket{
+    width:16vw;
+    left:-10vw;
+    top: 50vh;
+
+}
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 770px){
+
+    #kidnap{
+        width:4vw;
+    }
+    #alienship{
+        width:8vw;
+        left:-8vw;
+    }
+
+    #rocket{
+        width:8vw;
+    }
+
 }
