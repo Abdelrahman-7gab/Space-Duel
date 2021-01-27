@@ -145,6 +145,39 @@ body{
     }
 }
 
+.selecting{
+    font-size: 4vh;
+}
+
+
+#characterChoice{
+    display: flex;
+}
+
+.CHRicon{
+    width:3vw;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+
+.CHRicon:hover{
+    animation: lmao ease 0.6s;
+}
+
+#alienCHR{
+   
+}
+
+
+
+#gameSec{
+    height:90vh;
+    display: none;
+}
+
 .scoreboard{
     font-size: 3vw;
     background: linear-gradient(rgba(93, 97, 93, 0.40) , rgba(93, 97, 93, 0) );
@@ -153,16 +186,6 @@ body{
 
 .icon{
     width:5vw;
-}
-
-#alienHead{
-    width:4vw;
-}
-
-
-#gameSec{
-    height:90vh;
-    display: none;
 }
 
 #GameContainer{
@@ -249,15 +272,22 @@ body{
     justify-content: space-around;
 }
 
-button{
+
+
+.roomButton{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
     font-size: 7vh;
     background:rgb(102, 101, 99);
     border-radius: 20%;
     margin: 0.5vw;
-    
 }
+button{
+    font-size: 4vh;
+    border-radius: 30%;
+    background: rgba(255, 255, 255, 0.418);
+}
+
 button:hover{
 
     background:rgb(129, 125, 123);
@@ -288,6 +318,9 @@ button:active{
 #RoomStatus{
     white-space: pre;
     font-size: 3vw;
+    left:25vw;
+    top:20vw;
+    position: absolute;
 }
 
 #box{

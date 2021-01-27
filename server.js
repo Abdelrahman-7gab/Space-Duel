@@ -51,6 +51,17 @@ io.on('connection', function(socket){
 		socket.nsp.to(message.room).emit("secondChoice" ,message.choice)
 	})
 
+	socket.on("userPrefs",function(prefs){
+		console.log(prefs.char);
+		console.log(prefs.limit);
+		var done = {
+			character : prefs.char,
+			num : prefs.limit
+		}
+		socket.nsp.to(prefs.room).emit("changes" ,done);
+	})
+	
+
 
   });
 

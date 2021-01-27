@@ -61,16 +61,35 @@
       </section>  
 
       <section id = "RoomSec">
-          <div class ="Create">
-        <button id ="new">Create a New Game</button>
         <span id = "RoomStatus"></span>
-        <button id ="join">Join a Game</button>
+
+        <div id="RoomCreation">
+
+          <div class ="Create">
+            <div>
+              <span class = "selecting">First to get:</span> 
+              <button id = "three">3</button>
+              <button id = "five"> 5</button>
+              <button id = "ten">10</button>
+            
+            </div> 
+            <span id ="characterChoice">
+        <button class = "roomButton" id ="new">Create a New Game</button>
+        
+        <span><img id ="astroCHR" class="CHRicon" src="Photos/AstroHead.png" alt=""></span>
+        <span><img id ="alienCHR" class = "CHRicon" src="Photos/AlienHead.png" alt=""></span>
+      </span>
+
+       
+
+        <button class = "roomButton" id ="join">Join a Game</button>
           </div>
           <div id = "InsertDIV">
           <span id ="insert">Insert Game Code here:</span>
           <span><input id ="box" type="text" maxlength = "4"></span>
         </div>
 
+      </div>
          </section>
 
          <section id = "Info"> 

@@ -22,9 +22,65 @@ var scissorsDown_anim = document.getElementById("scissorsDown");
 var scissorsUp_anim = document.getElementById("scissorsUp");
 var gameContainer_div = document.getElementById("GameContainer");
 var status_div = document.getElementById("status");
+var three = document.getElementById("three");
+three.style.backgroundColor = "green";
 
-var AstronautScore = 0;
-var AlienScore = 0;
+var five = document.getElementById("five");
+var ten = document.getElementById("ten");
+
+var selectAstro = document.getElementById("astroCHR");
+selectAstro.style.backgroundColor = "purple";
+var selectAlien = document.getElementById("alienCHR");
+
+
+var firstICON = document.getElementById("astroHead");
+var secondICON = document.getElementById("alienHead");
+
+
+var firstToGet = 3;
+var firstCHAR = "Astronaut"; 
+var secondCHAR = "Alien"; 
+
+selectAstro.addEventListener('click',function(){
+         firstCHAR = "Astronaut";
+         secondCHAR = "Alien"; 
+         selectAstro.style.backgroundColor = "purple";
+         selectAlien.style.backgroundColor ="";
+    })
+
+selectAlien.addEventListener('click',function(){
+        firstCHAR = "Alien";
+        secondCHAR = "Astronaut"; 
+        selectAstro.style.backgroundColor = "";
+        selectAlien.style.backgroundColor ="purple";
+        firstICON.src = "Photos/AlienHead.png"
+        secondICON.src = "Photos/AstroHead.png"
+        })
+
+three.addEventListener('click',function(){
+    firstToGet = 3;
+    three.style.backgroundColor = "green";
+    five.style.backgroundColor = "";
+    ten.style.backgroundColor = "";
+    })
+
+five.addEventListener('click',function(){
+    firstToGet = 5;
+    three.style.backgroundColor = "";
+    five.style.backgroundColor = "green";
+    ten.style.backgroundColor = "";
+    })
+
+ten.addEventListener('click',function(){
+firstToGet = 10;
+three.style.backgroundColor = "";
+five.style.backgroundColor = "";
+ten.style.backgroundColor = "green";
+})
+
+
+var FirstPlayerScore = 0;
+var SecondPlayerScore = 0;
 var player = 2;
 
 
@@ -46,14 +102,23 @@ newGame_btn.addEventListener('click',function() {
     socket.emit("NewGame");
 })
 
+var roomCreation = document.getElementById("RoomCreation");
+
 socket.on("RoomID",function(data){
     //RoomStatus_span.setAttribute('style', 'white-space: pre;');
     RoomStatus_span.textContent =('"waiting for a second player" \r\n Room Code:' + data );
    // RoomStatus_span.style.display = "block";
-    newGame_btn.style.display = "none";
-    joinGame_btn.style.display = "none";
-    Insert_div.style.display = "none";
+   roomCreation.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
+    if(firstCHAR == "Astronaut")
+    reposition();
+
+})
+
+function reposition(){
+
+    //Bottom player becomes astronaut instead of alien and top becomes alien
+
     Paper_Pic.src = "Photos/Paper.png";
     paperDown_anim.src ="Photos/Paper.png";
     paperUp_anim.src = "Photos/PaperAlien.png";
@@ -63,7 +128,8 @@ socket.on("RoomID",function(data){
     Scissors_Pic.src = "Photos/Scissors.png";
     scissorsDown_anim.src = "Photos/Scissors.png";
     scissorsUp_anim.src = "Photos/ScissorsAlien.png";
-})
+
+}
 
 joinGame_btn.addEventListener('click',function() {
     if(textBox.value == ""){
@@ -101,7 +167,34 @@ socket.on("player2Joined",function(ID){
         choice : "n",
         room : ID
     }
-    toGameSection();
+
+
+    if(player == 1){
+   let prefs = {
+        char: firstCHAR,
+        room : ID,
+        limit: firstToGet
+    }
+    socket.emit("userPrefs",prefs);
+
+}
+    setTimeout(toGameSection, 500);
+})
+
+socket.on("changes",function(plot){
+    if(player == 2){
+    firstCHAR = plot.character;
+    firstToGet = plot.num;
+
+
+    if(firstCHAR == "Alien"){
+        secondCHAR ="Astronaut"
+    reposition();
+    firstICON.src = "Photos/AlienHead.png"
+    secondICON.src = "Photos/AstroHead.png"
+    }
+
+    }
 })
 
 var firstChoice = "n"; //n for no choice.. changes to r / p / s
@@ -188,21 +281,29 @@ function updateValues(data)
 
     firstChoice = "n";
     secondChoice = "n";
+    status_div.textContent = "Make Your Move";
 
     if(data == "first"){
 
-        AstronautScore +=1;
-        score1_span.textContent = AstronautScore;
+        FirstPlayerScore +=1;
+
+        if(FirstPlayerScore == firstToGet){
+            status_div.textContent = firstCHAR + " WINS!";
+        }
+        score1_span.textContent = FirstPlayerScore;
         }
     
         else if(data == "second"){
-            AlienScore +=1;
-            score2_span.textContent = AlienScore;  
+            SecondPlayerScore +=1;
+            if(SecondPlayerScore == firstToGet){
+                status_div.textContent = secondCHAR + " WINS!";
+            }
+            score2_span.textContent = SecondPlayerScore;  
         }
 
     gameContainer_div.style.display = "none";
 
-    status_div.textContent = "Make Your Move";
+    
 
     if(firstTemp == "r"){
         rockDown_anim.style.display = "block";
