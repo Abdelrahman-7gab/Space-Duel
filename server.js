@@ -56,8 +56,6 @@ io.on('connection', function(socket){
 	})
 
 	socket.on("userPrefs",function(prefs){
-		console.log(prefs.char);
-		console.log(prefs.limit);
 		var done = {
 			character : prefs.char,
 			num : prefs.limit

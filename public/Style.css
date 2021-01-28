@@ -24,10 +24,13 @@ header{
     align-items: center;
 }
 
-#logo{
+#logoDIV{
     flex:3;
     font-size:6vh;
-    cursor:default ;
+}
+
+#logo{
+    height:10vh;
 }
 
 .navs{
@@ -38,15 +41,11 @@ header{
 header a{  
     text-decoration: none;
     color:white;
-    flex:1;
-}
-#soundDIV{
-    height: 15vh;
+    margin:auto;
 }
 
 #sound{
-    height:100%;
-    margin-left: 85vw;
+    height:7vh;
 }
 
 body{
@@ -173,6 +172,10 @@ body{
     color: white;
 }
 
+.limit{
+    width:5vh;
+}
+
 
 #characterChoice{
     display: flex;
@@ -193,13 +196,12 @@ body{
 
 #gameSec{
     height:90vh;
-    display: none;
+   
 }
 
 .scoreboard{
     font-size: 3vw;
-    background: linear-gradient(rgba(93, 97, 93, 0.40) , rgba(93, 97, 93, 0) );
-    margin-left: 43vw;
+    background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
 
 .icon{
@@ -213,7 +215,6 @@ body{
 }
 
 .game{
-    margin-top: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,44 +381,41 @@ button:active{
 #Info{
     height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
+
 
 #designer{
     font-size: 4vh;
-    align-self: flex-start;
+    width:60vw;
+    margin: auto;
+    justify-content: space-evenly;
 }
 
 #paragraph{
     -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
-    color:rgb(243, 231, 217);
-    background: rgba(87, 87, 87, 0.834);
-    font-size: 3vh;
-    
+    color:rgb(248, 248, 248);
+    background: rgba(87, 87, 87, 0.734);
+    font-size: 1.5vw;
+    width: 60vw;
+    margin: auto;
 }
 
 
-#designerContainer{
-    display: flex;
-flex-direction: column;
-}
-
-#Infocontainer{
-display: flex;
-flex-direction: column;
-margin: 10vh;
-}
-
-.names{
-
-
-}
-
-.names:hover{
-    
+.social:hover{
     cursor: pointer;
-    font-size: 1.3em;
+    transform: scale(1.3);
+}
+
+.social:active{
+    opacity: 0.8;
+}
+
+#alienSocial{
+    height:2.8vw;
+    vertical-align:bottom;
+    margin-right: 0.8vh;
 }
 
 @keyframes nameAnim{
@@ -470,7 +468,61 @@ margin: 10vh;
     
 }
 
-@media only screen and (max-width: 770px){
+.social{
+    height:2.8vw;
+    vertical-align:bottom;
+    margin-right: 0.8vh;
+}
+
+.review{
+    font-size: 2vh;
+    color: gray;
+}
+
+.JobTitle{
+    color:rgba(170, 99, 19, 0.856);
+}
+
+
+@media only screen and (min-width: 801px) and (max-width: 1024px){
+    .roomButton{
+        
+        font-size: 4vw;
+    }
+
+    #sound{
+        margin-left: 75vw;
+    }
+
+    
+#insert{
+    font-size: 5vh;
+}
+
+#box{
+    width:10vh;
+    height:6vh;
+}
+#kidnap{
+    top:40vh;
+    width:6vw;
+}
+#alienship{
+    width:10vw;
+    left:-8vw;
+    top: -30vh;
+}
+
+#rocket{
+    width:10vw;
+    left:-10vw;
+    top: 70vh;
+}
+
+
+}
+
+@media only screen and (max-width: 800px){
 
 .headerContainer{
         flex-direction: column;
@@ -529,14 +581,22 @@ margin: 10vh;
 
 #rocket{
     width:16vw;
-    left:-10vw;
+    left:-16vw;
     top: 50vh;
 
 }
 
+
+#paragraph{
+    font-size: 4.5vw;
+    width: 90vw;
+    margin-top: 0vw;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 770px){
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
 
     #kidnap{
         width:4vw;
