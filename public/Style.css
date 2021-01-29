@@ -208,6 +208,15 @@ header a{
     background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
 
+#Goal{
+    font-size: 2rem;
+    background: linear-gradient(rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
+}
+
+#crowd{
+    font-size: 2rem;
+}
+
 .icon{
     width:6rem;
 }
@@ -274,7 +283,7 @@ header a{
 }
 #status{
     color:white;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-top: 2%;
     white-space: pre;
 }
@@ -306,7 +315,7 @@ header a{
 }
 button{
     font-size: 2.3rem;
-    border-radius: 30%;
+    border-radius: 28%;
     background: rgba(255, 255, 255, 0.418);
 }
 
@@ -365,21 +374,36 @@ button:active{
     color:rgba(170, 99, 19, 0.856);
 }
 
+.winningDIV{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.Winningphoto{
+    width:20vw;
+}
+
+
+.animDIV{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .winAnimation{
     position: absolute;
-    height:55vh;
-    bottom:-55vh;
-    left:45%;
+    height:50vh;
+    bottom:-50vh;
     animation: winAnimationDown linear 3s;
     display:none;
 }
 
 .winAnimationUp{
     position: absolute;
-    height:55vh;
-    top:-55vh;
-    left:44%;
+    height:50vh;
+    top:-50vh;
     animation: winAnimationTop linear 3s;
     display:none;
     
@@ -497,11 +521,11 @@ button:active{
 }
 
 33%{
-    transform: translateY(-50vh);
+    transform: translateY(-46vh);
 }
 
 66%{
-    transform: translateY(-50vh);
+    transform: translateY(-46vh);
 }
 
 100%{
@@ -516,11 +540,11 @@ button:active{
     }
 
     33%{
-        transform: translateY(50vh) rotate(180deg);
+        transform: translateY(46vh) rotate(180deg);
     }
 
     66%{
-        transform: translateY(50vh) rotate(180deg);
+        transform: translateY(46vh) rotate(180deg);
     }
     
     100%{
@@ -590,6 +614,9 @@ button:active{
     font-size: 3rem;
 }
 
+.Winningphoto{
+    width:25vw;
+}
 
 
 }
@@ -686,6 +713,13 @@ button:active{
     margin-top: 8vh;
 }
 
+.winningDIV{
+    font-size: 2.5rem;
+}
+.Winningphoto{
+    width:30vw;
+}
+
 
 }
 
@@ -706,7 +740,11 @@ button:active{
         width:7rem;
     }
     .social{
-        width:2rem;
+        width:3rem;
+    }
+
+    #alienSocial{
+        height:3rem;
     }
 
     #designer{
@@ -718,9 +756,6 @@ button:active{
 
     .review{
         font-size: 1.4rem;
-    }
-    #alienSocial{
-        height:2rem;
     }
 
     #paragraph{
@@ -735,7 +770,7 @@ button:active{
         font-size: 3rem;
     }
     #sound{
-        margin-left: 72vw;
+        margin-left: 70vw;
     }
     #logo{
         height:8vh;
@@ -758,4 +793,16 @@ button:active{
     #GameContainer{
         margin-top: 10vh;
     }
+
+    #box{
+        height:3.5rem;
+    }
+
+    .winningDIV{
+        font-size: 2rem;
+    }
+    .Winningphoto{
+        width:40vw;
+    }
+
 }

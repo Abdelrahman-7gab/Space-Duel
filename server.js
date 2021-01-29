@@ -62,6 +62,16 @@ io.on('connection', function(socket){
 		}
 		socket.nsp.to(prefs.room).emit("changes" ,done);
 	})
+
+
+	socket.on("rematchReq",function(room){
+		socket.broadcast.to(room).emit("rematch?");
+	})
+
+	socket.on("ok",function(room){
+		socket.nsp.to(room).emit("resetmatch");
+	})
+	
 	
 
 

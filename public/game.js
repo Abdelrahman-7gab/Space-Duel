@@ -22,9 +22,14 @@ var scissorsDown_anim = document.getElementById("scissorsDown");
 var scissorsUp_anim = document.getElementById("scissorsUp");
 var gameContainer_div = document.getElementById("GameContainer");
 var status_div = document.getElementById("status");
+var alienWIN_div = document.getElementById("AlienWinDIV");
+var astroWIN_div = document.getElementById("AstroWinDIV");
+var rematchButtons = document.getElementsByClassName("rematch");
+var rematchMessages = document.getElementsByClassName("rematchMessage");
+
+
 var three = document.getElementById("three");
 three.style.backgroundColor = "green";
-
 var five = document.getElementById("five");
 var ten = document.getElementById("ten");
 
@@ -35,11 +40,33 @@ var selectAlien = document.getElementById("alienCHR");
 
 var firstICON = document.getElementById("astroHead");
 var secondICON = document.getElementById("alienHead");
+var goal = document.getElementById("Goal");
+var crowd = document.getElementById("crowd");
 
 
 var firstToGet = 3;
 var firstCHAR = "Astronaut"; 
 var secondCHAR = "Alien"; 
+var letsRematch = false;
+
+
+
+for(let i =0; i<rematchButtons.length;i++){
+    rematchButtons[i].addEventListener('click',function(){
+
+        letsRematch = true;
+
+        socket.emit("rematchReq",roomID);
+
+        for(let j =0;j<rematchMessages.length;j++){
+            if(isleft == false)
+            rematchMessages[j].textContent = "(Sent Rematch Request to opponent)"
+            else
+            rematchMessages[j].textContent = "(Your opponent left the room)"
+        }
+    })
+}
+
 
 selectAstro.addEventListener('click',function(){
          firstCHAR = "Astronaut";
@@ -53,12 +80,11 @@ selectAlien.addEventListener('click',function(){
         secondCHAR = "Astronaut"; 
         selectAstro.style.backgroundColor = "";
         selectAlien.style.backgroundColor ="purple";
-        firstICON.src = "Photos/AlienHead.png"
-        secondICON.src = "Photos/AstroHead.png"
         })
 
 three.addEventListener('click',function(){
     firstToGet = 3;
+    goal.textContent = "Goal: 3";
     three.style.backgroundColor = "green";
     five.style.backgroundColor = "";
     ten.style.backgroundColor = "";
@@ -66,6 +92,7 @@ three.addEventListener('click',function(){
 
 five.addEventListener('click',function(){
     firstToGet = 5;
+    goal.textContent = "Goal: 5";
     three.style.backgroundColor = "";
     five.style.backgroundColor = "green";
     ten.style.backgroundColor = "";
@@ -73,6 +100,7 @@ five.addEventListener('click',function(){
 
 ten.addEventListener('click',function(){
 firstToGet = 10;
+goal.textContent = "Goal: 10";
 three.style.backgroundColor = "";
 five.style.backgroundColor = "";
 ten.style.backgroundColor = "green";
@@ -100,6 +128,11 @@ sound.addEventListener('click',function() {
 
 newGame_btn.addEventListener('click',function() {
     socket.emit("NewGame");
+
+    if(firstCHAR == "Alien"){
+    firstICON.src = "Photos/AlienHead.png"
+    secondICON.src = "Photos/AstroHead.png"
+    }
 })
 
 var roomCreation = document.getElementById("RoomCreation");
@@ -114,6 +147,7 @@ socket.on("RoomID",function(data){
     reposition();
 
 })
+
 
 function reposition(){
 
@@ -137,7 +171,7 @@ joinGame_btn.addEventListener('click',function() {
     }
 
     else {
-        socket.emit("Join", textBox.value);
+        socket.emit("Join", textBox.value.toLowerCase());
     }
 })
 
@@ -183,8 +217,18 @@ socket.on("player2Joined",function(ID){
 
 socket.on("changes",function(plot){
     if(player == 2){
+
     firstCHAR = plot.character;
     firstToGet = plot.num;
+
+    if(plot.num === 3)
+    goal.textContent = "Goal: 3";
+
+    if(plot.num === 5)
+    goal.textContent = "Goal: 5";
+
+    if(plot.num === 10)
+    goal.textContent = "Goal: 10";
 
 
     if(firstCHAR == "Alien"){
@@ -237,12 +281,51 @@ socket.on("secondChoice",function(data){
     }
 })
 
+var isleft = false;
+
 socket.on("opponentLeft",function(){
+    isleft =true;
     status_div.textContent = "Your opponent has left the game"; 
+    for(let j =0;j<rematchMessages.length;j++){
+        rematchMessages[j].textContent = "(Your opponent left the room)"
+    }
 })
 
+socket.on("rematch?",function(){
+
+    if(letsRematch == true)
+    socket.emit("ok",roomID);
+
+    else{
+    for(let j =0;j<rematchMessages.length;j++){
+        rematchMessages[j].textContent = "(Your opponent wants a rematch)"
+    }
+    }
+
+})
+
+socket.on("resetmatch",function(){
+    
+    FirstPlayerScore = 0;
+    SecondPlayerScore =0;
+    score1_span.textContent = 0;
+    score2_span.textContent =0;
+    alienWIN_div.style.display ="none";
+    astroWIN_div.style.display ="none";
+    gameContainer_div.style.display ="flex";
+    status_div.textContent = "Make Your Move"
+    crowd.textContent = "Rematch? why would I want to see that"
+    for(let j =0;j<rematchMessages.length;j++){
+        rematchMessages[j].textContent = ""
+    }
+    letsRematch = false;
+})
+
+
 function getStatus(letter){
-    if(letter == "r")
+    if(isleft == true)
+    return "Your opponent has left.";
+    else if(letter == "r")
     return "You Selected ROCK, \r\nWaiting for opponent";
     else if(letter == "p")
     return "You Selected PAPER, \r\nWaiting for opponent";
@@ -273,10 +356,23 @@ function getWinner(first,second){
     updateValues(winner);
 }
 
+var winnerIsAstro = ["<span style ='color:purple;'> Astronaut </span> just REKT the Alien!","<span style ='color:purple'> Astronaut </span> confirms, this is EZ.","<span style ='color:purple'>ASTRO </span> BOY IS ON FIIIRE!","<span style ='color:purple'>NASA </span>is very proud","Let <span style ='color:purple'>Astro </span>go back to earth already."];
+var winnerIsAlien = ["YOU GOT <span style ='color:green'>ALIENISED </span>","<span style ='color:green'>Alien: </span> I don't believe in humans","Taste my <span style ='color:green'>green </span>victory","<span style ='color:green'> Alien: </span> &#8523&#8513&#8487&#8479&#8524&#8523&#8513&#8487&#8479&#8524","<span style ='color:green'>Alien: </span>haha Astro-NOT *nobody laughs*"];
+var DRAWLIST = ["<span style ='color:gray'>Crowd: *BOOOOOOOO*</span>","<span style ='color:gray'>DRAW? WHY ARE WE WATCHING THIS</span>","<span style ='color:gray'>This is Booring</span>","<span style ='color:gray'>Should've just watched netflix</span>","<span style ='color:gray'>DRAW? THEY BOTH SUCK</span>"];
+
+
+function winScreen(character){
+    if(character == "Alien")
+    alienWIN_div.style.display ="flex"; 
+    else
+    astroWIN_div.style.display ="flex";
+}
+
 function updateValues(data)
 {
     let firstTemp = firstChoice;
     let secondTemp = secondChoice;
+    var randomIndex = Math.floor(Math.random() * (5));
 
     if(player == 2){
         firstTemp = secondChoice;
@@ -292,17 +388,31 @@ function updateValues(data)
         FirstPlayerScore +=1;
 
         if(FirstPlayerScore == firstToGet){
-            status_div.textContent = firstCHAR + " WINS!";
+            gameContainer_div.display ="none"; 
+            setTimeout(winScreen, 3000,firstCHAR); 
         }
         score1_span.textContent = FirstPlayerScore;
+            if(firstCHAR == "Astronaut")
+            crowd.innerHTML = winnerIsAstro[randomIndex];
+            else
+            crowd.innerHTML = winnerIsAlien[randomIndex];
         }
     
         else if(data == "second"){
             SecondPlayerScore +=1;
             if(SecondPlayerScore == firstToGet){
-                status_div.textContent = secondCHAR + " WINS!";
+                gameContainer_div.display ="none";
+                setTimeout(winScreen, 3000,secondCHAR);  
+
             }
-            score2_span.textContent = SecondPlayerScore;  
+            score2_span.textContent = SecondPlayerScore;
+            if(firstCHAR == "Astronaut")
+            crowd.innerHTML = winnerIsAlien[randomIndex];
+            else
+            crowd.innerHTML = winnerIsAstro[randomIndex];  
+        }
+        else{
+            crowd.innerHTML = DRAWLIST[randomIndex];  
         }
 
     gameContainer_div.style.display = "none";
@@ -333,6 +443,7 @@ function updateValues(data)
                scissorsUp_anim.style.display = "block";
         }
 
+
     setTimeout(hideAnimation, 3200);
  
 }
@@ -341,6 +452,7 @@ function hideAnimation(){
     for(let i = 0 ; i<animlist.length;i++){
         animlist[i].style.display = "none";
     }
+    if(FirstPlayerScore!=firstToGet&&SecondPlayerScore!=firstToGet)
     gameContainer_div.style.display = "flex";   
 }
 
