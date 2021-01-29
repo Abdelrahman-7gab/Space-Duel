@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    font-size: 62.5%;
+}
+
 html { 
     background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
     background-size: cover;
@@ -13,6 +17,13 @@ html {
     width:100vw;  
     overflow-x: hidden;   
   }
+  
+body{
+    font-family: 'Yusei Magic', sans-serif;
+    color:white;
+    overflow-x: hidden;
+    font-size: 1.6rem;
+}
 
 header{
     background: linear-gradient(to right,rgba(93, 97, 93, 0.3) , rgba(93, 97, 93, 0) );
@@ -26,7 +37,6 @@ header{
 
 #logoDIV{
     flex:3;
-    font-size:6vh;
 }
 
 #logo{
@@ -45,20 +55,15 @@ header a{
 }
 
 #sound{
-    height:7vh;
+    height:4rem;
 }
 
-body{
-    font-family: 'Yusei Magic', sans-serif;
-    color:white;
-    overflow-x: hidden;
-}
 
 #rocket{
-    width: 8vw;
+    width: 8rem;
     position: absolute;
     top:72vh;
-    left:-8vw;
+    left:-8rem;
     animation: rocket linear 20s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
@@ -99,9 +104,9 @@ body{
 }
 
 #alienship{
-    width:8vw;
+    width:8.5rem;
     position:absolute;
-    left:-8vw;
+    left:-9.1rem;
     top:-23vh;
     animation: ship ease-out 20s;
     animation-iteration-count: infinite;
@@ -126,9 +131,9 @@ body{
 }
 
 #kidnap{
-    width: 4vw;
+    width: 5rem;
     position:absolute;
-    left:-4vw;
+    left:-5rem;
     opacity: 0;
     top :50vh;
     animation: kidnap linear 20s;
@@ -168,12 +173,12 @@ body{
 }
 
 .selecting{
-    font-size: 4vh;
+    font-size: 2.5rem;
     color: white;
 }
 
 .limit{
-    width:5vh;
+    width:3rem;
 }
 
 
@@ -182,9 +187,7 @@ body{
 }
 
 .CHRicon{
-    width:6vh;
-    margin-top: 1vw;
-    margin-left: 0.5vw;
+    width:5rem;
     border-radius: 20%;
     cursor: pointer;
 }
@@ -196,23 +199,24 @@ body{
 
 #gameSec{
     height:90vh;
-    display:none;
+    display: none;
    
 }
 
 .scoreboard{
-    font-size: 3vw;
+    font-size: 3.5rem;
     background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
 
 .icon{
-    width:5vw;
+    width:6rem;
 }
 
 #GameContainer{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .game{
@@ -223,8 +227,7 @@ body{
 }
 
 .choice{
-   
-    width: 11vw;
+    width: 11%;
     cursor:pointer;
     border-radius: 30%;
     margin-left: 3%;
@@ -271,7 +274,7 @@ body{
 }
 #status{
     color:white;
-    font-size: 2.5vw;
+    font-size: 3.5rem;
     margin-top: 2%;
     white-space: pre;
 }
@@ -280,9 +283,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color:white;
     height:90vh;
-    font-size: 100%;
 }
 
 .Create{
@@ -293,18 +296,16 @@ body{
     justify-content: space-around;
 }
 
-
-
 .roomButton{
     font-family: 'Yusei Magic', sans-serif;
     color:rgba(255, 255, 255, 0.897);
-    font-size: 7vh;
+    font-size: 4rem;
     background:rgb(102, 101, 99);
     border-radius: 20%;
-    margin: 0.5vw;
+    margin: 4px;
 }
 button{
-    font-size: 4vh;
+    font-size: 2.3rem;
     border-radius: 30%;
     background: rgba(255, 255, 255, 0.418);
 }
@@ -336,26 +337,30 @@ button:active{
     }
 }
 
+#RoomStatusDIV{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #RoomStatus{
     white-space: pre;
-    font-size: 3vw;
-    left:25vw;
-    top:20vw;
-    position: absolute;
+    font-size: 4rem;
 }
 
 #box{
-    height:6vh;
-    width:5vw;
+    height:4rem;
+    width:6.5rem;
     background-color: rgba(255, 255, 255,0.3);
     font-family: 'Yusei Magic', sans-serif;
     color:white;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 
 #insert{
-    font-size: 5vh;
+    font-size: 3rem;
     background-color: rgba(182, 182, 182,0.2);
     color:rgba(170, 99, 19, 0.856);
 }
@@ -390,34 +395,73 @@ button:active{
 
 
 #designer{
-    font-size: 4vh;
+    font-size: 2.6rem;
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 5vw;
-    row-gap: 5vh;
+    column-gap: 5.5rem;
+    row-gap: 5rem;
     margin: auto;
-
    
 }
 
 
 .names{
     font-size: 1.1em;
-    
+    animation: names linear 3s;
+    animation-iteration-count: infinite;
+    border-radius: 20%;
+}
+
+@keyframes names{
+
+    5%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 10%, rgb(255, 255, 255,0.3))
+    }
+    10%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 20%, rgb(255, 255, 255,0.3))
+    }
+    15%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 30%, rgb(255, 255, 255,0.3))
+    }
+    20%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 40%, rgb(255, 255, 255,0.3))
+    }
+    25%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 50%, rgb(255, 255, 255,0.3))
+    }
+    30%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 60%, rgb(255, 255, 255,0.3))
+    }
+    35%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 70%, rgb(255, 255, 255,0.3))
+    }
+    40%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 80%, rgb(255, 255, 255,0.3))
+    }
+    45%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 90%, rgb(255, 255, 255,0.3))
+    }
+    50%{
+        background: linear-gradient(to right,rgb(255, 255, 255,0) 100%, rgb(255, 255, 255,0.3))
+    }
+
+
 }
 
 #paragraph{
     -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
     color:rgb(248, 248, 248);
-    background: rgba(87, 87, 87, 0.734);
-    font-size: 1.5vw;
-    padding-left: 1vw;
+    background: rgba(87, 87, 87, 0.334);
+    font-size: 1.8rem;
+    padding-left: 1.4rem;
     margin: auto;
     width:60vw;
 }
 
 .social{
-    margin-right:0.5vh;
+    width:3.7rem;
+    vertical-align:bottom;
+    margin-left: 0.4rem;
 }
 
 .social:hover{
@@ -430,9 +474,9 @@ button:active{
 }
 
 #alienSocial{
-    height:2.8vw;
+    height  :3.7rem;
     vertical-align:middle;
-    margin-right: 0.8vh;
+    margin-right: 0.5rem;
 }
 
 @keyframes nameAnim{
@@ -485,14 +529,8 @@ button:active{
     
 }
 
-.social{
-    height:2.8vw;
-    vertical-align:bottom;
-    margin-left: 0.4vh;
-}
-
 .review{
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     color: gray;
     align-self: flex-end;
 }
@@ -502,33 +540,29 @@ button:active{
 }
 
 
-@media only screen and (min-width: 801px) and (max-width: 1024px){
-    .roomButton{
+@media only screen and (max-width: 991.98px){
+.roomButton{
         
-        font-size: 4vw;
-    }
+    font-size: 3.5rem;
+}
 
-    #sound{
-        margin-left: 75vw;
-    }
-
-    
 #insert{
-    font-size: 5vh;
+    font-size: 3rem;
 }
 
 #box{
-    width:10vh;
-    height:6vh;
+    width:6rem;
+    height:3.5rem;
 }
 #kidnap{
     top:40vh;
-    width:6vw;
+    width:5rem;
+    left:-4rem;
 }
 #alienship{
-    width:10vw;
-    left:-8vw;
-    top: -30vh;
+    width:9rem;
+    left:-8rem;
+    top: -33vh;
 }
 
 #rocket{
@@ -537,10 +571,30 @@ button:active{
     top: 70vh;
 }
 
+.names{
+    font-size: 1em;
+}
+
+#paragraph{
+    font-size: 1.6rem;
+}
+
+#RoomStatus{
+    font-size: 3rem;
+}
+
+.choice{
+    width: 15%;
+}
+#status{
+    font-size: 3rem;
+}
+
+
 
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 767.98px){
 
     .headerContainer{
         flex-direction: column;
@@ -548,21 +602,15 @@ button:active{
 
 #sound{
     margin-left: 70vw;
-    height:5vh;
+    height:4rem;
 }
 
 #about{
     display:none
 }
 
-#RoomSec{
-    justify-content: flex-start;
-    margin-top: 40vw;
-}
-
 .limit{
-    font-size: 3vh;
-    width: 7vw;
+    font-size: 2rem;
 }
 
 #logo{
@@ -570,82 +618,144 @@ button:active{
 }
 
 .roomButton{
-    font-size: 4vh;
+    font-size: 3rem;
 }
 
 .CHRicon{
-    width:4vh;
+    width:4rem;
 }
 
 .selecting{
-    font-size: 3vh;
+    font-size: 2rem;
 }
 
 #box{
-    width:7vh;
-    height:4vh;
+    width:5rem;
+    height:2.5rem;
 }
 
 #insert{
-    font-size: 3vh;
+    font-size: 2.5rem;
 }
 
 #kidnap{
     top:40vh;
-    width:8vw;
+    width:4rem;
 }
 #alienship{
-    width:16vw;
-    left:-10vw;
-    top: -26vh;
+    width:8rem;
+    left:-7.5rem;
+    top: -34vh;
 }
 
 #rocket{
-    width:16vw;
+    width:8rem;
     left:-16vw;
-    top: 50vh;
 }
 
 #designer{
-    grid-template-columns: auto;
-    font-size: 4vw;
+    font-size: 1.3em;
     align-items: center;
 }
 
 .review{
-    font-size: 3.5vw;
+    font-size: 1.3rem;
     align-self: center;
 }
 
 .social{
-    height:6vw;
-}
-#alienSocial{
-    height:6vw; 
+    width:3rem;
 }
 
+#alienSocial{
+    height:3rem; 
+}
 
 #paragraph{
-    font-size: 4vw;
-    width: 90vw;
-    margin-top: 0vw;
+    font-size: 1.5rem;
+    width:80vw;
+}
+
+.choice{
+    width: 17%;
+}
+#status{
+    font-size: 2.8rem;
+}
+#GameContainer{
+    margin-top: 8vh;
 }
 
 
 }
 
-@media only screen and (min-width: 600px) and (max-width: 800px){
+@media only screen and (max-width: 575.98px){
 
     #kidnap{
-        width:4vw;
+        width:4rem;
     }
     #alienship{
-        width:8vw;
-        left:-8vw;
+        width:7rem;
+
+        left:-6.3rem;
+
+        top:-26vh;
     }
 
     #rocket{
-        width:8vw;
+        width:7rem;
+    }
+    .social{
+        width:2rem;
     }
 
+    #designer{
+        font-size:2rem;
+        grid-template-columns: auto;
+        row-gap: 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .review{
+        font-size: 1.4rem;
+    }
+    #alienSocial{
+        height:2rem;
+    }
+
+    #paragraph{
+        font-size: 1.5rem;
+        width:80vw
+    }
+    #insert{
+        font-size: 2.2rem;
+    }
+
+    .roomButton{
+        font-size: 3rem;
+    }
+    #sound{
+        margin-left: 72vw;
+    }
+    #logo{
+        height:8vh;
+    }
+    .CHRicon{
+        width:3.5rem;
+    }
+
+    #RoomStatus{
+        font-size: 2.5rem;
+    }
+
+    .choice{
+        width: 30%;
+    }
+    #status{
+        font-size: 2.5rem;
+    }
+
+    #GameContainer{
+        margin-top: 10vh;
+    }
 }
