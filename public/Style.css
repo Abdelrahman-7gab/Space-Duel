@@ -385,14 +385,25 @@ button:active{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
 #designer{
     font-size: 4vh;
-    width:60vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5vw;
+    row-gap: 5vh;
     margin: auto;
-    justify-content: space-evenly;
+
+   
+}
+
+
+.names{
+    font-size: 1.1em;
+    
 }
 
 #paragraph{
@@ -400,10 +411,14 @@ button:active{
     color:rgb(248, 248, 248);
     background: rgba(87, 87, 87, 0.734);
     font-size: 1.5vw;
-    width: 60vw;
+    padding-left: 1vw;
     margin: auto;
+    width:60vw;
 }
 
+.social{
+    margin-right:0.5vh;
+}
 
 .social:hover{
     cursor: pointer;
@@ -416,7 +431,7 @@ button:active{
 
 #alienSocial{
     height:2.8vw;
-    vertical-align:bottom;
+    vertical-align:middle;
     margin-right: 0.8vh;
 }
 
@@ -473,12 +488,13 @@ button:active{
 .social{
     height:2.8vw;
     vertical-align:bottom;
-    margin-right: 0.8vh;
+    margin-left: 0.4vh;
 }
 
 .review{
-    font-size: 2vh;
+    font-size: 2.5vh;
     color: gray;
+    align-self: flex-end;
 }
 
 .JobTitle{
@@ -526,16 +542,22 @@ button:active{
 
 @media only screen and (max-width: 800px){
 
-.headerContainer{
+    .headerContainer{
         flex-direction: column;
 }
 
-#soundDIV{
-    height: 10vh;
+#sound{
+    margin-left: 70vw;
+    height:5vh;
 }
 
-#sound{
-    margin-left: 80vw;
+#about{
+    display:none
+}
+
+#RoomSec{
+    justify-content: flex-start;
+    margin-top: 40vw;
 }
 
 .limit{
@@ -544,10 +566,7 @@ button:active{
 }
 
 #logo{
-    font-size: 5vh;
-}
-.Create{
-    margin-top: 8vh;
+    height:8vh;
 }
 
 .roomButton{
@@ -585,12 +604,29 @@ button:active{
     width:16vw;
     left:-16vw;
     top: 50vh;
+}
 
+#designer{
+    grid-template-columns: auto;
+    font-size: 4vw;
+    align-items: center;
+}
+
+.review{
+    font-size: 3.5vw;
+    align-self: center;
+}
+
+.social{
+    height:6vw;
+}
+#alienSocial{
+    height:6vw; 
 }
 
 
 #paragraph{
-    font-size: 4.5vw;
+    font-size: 4vw;
     width: 90vw;
     margin-top: 0vw;
 }
