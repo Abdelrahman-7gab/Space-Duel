@@ -399,17 +399,25 @@ button:active{
     position: absolute;
     height:50vh;
     bottom:-50vh;
-    animation: winAnimationDown linear 3s;
-    display:none;
+    /* animation: winAnimationDown linear 3s; */
+    opacity: 0;
 }
 
 .winAnimationUp{
     position: absolute;
     height:50vh;
     top:-50vh;
-    animation: winAnimationTop linear 3s;
-    display:none;
+    /* animation: winAnimationTop linear 3s; */
+    opacity:0;
     
+}
+
+.upAnim{
+    animation: winAnimationTop linear 3s;
+}
+
+.botAnim{
+    animation: winAnimationDown linear 3s;
 }
 
 #Info{
@@ -521,18 +529,22 @@ button:active{
 @keyframes winAnimationDown{
 0%{
     transform: translateY(0vh); 
+    opacity: 1;
 }
 
 33%{
-    transform: translateY(-46vh);
+    transform: translateY(-45vh);
+    opacity: 1;
 }
 
 66%{
-    transform: translateY(-46vh);
+    transform: translateY(-45vh);
+    opacity: 1;
 }
 
 100%{
     transform: translateY(0vh);
+    opacity: 1;
 }
 }
 
@@ -540,18 +552,22 @@ button:active{
 
     0%{
         transform: translateY(0) rotate(180deg);
+        opacity: 1;
     }
 
     33%{
-        transform: translateY(46vh) rotate(180deg);
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
     }
 
     66%{
-        transform: translateY(46vh) rotate(180deg);
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
     }
     
     100%{
         transform: translateY(0vh) rotate(180deg);
+        opacity: 1;
     }
     
 }
