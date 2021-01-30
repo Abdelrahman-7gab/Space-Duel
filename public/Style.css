@@ -13,7 +13,7 @@ html {
     background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
     background-size: cover;
     background-color: black;
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
     width:100vw;  
     overflow-x: hidden;   
   }
@@ -199,17 +199,19 @@ header a{
 
 #gameSec{
     height:90vh;
-    
+    display: none;
    
 }
 
 .scoreboard{
-   
+    display: flex;
+    align-items: flex-end;
     font-size: 3.5rem;
     background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
 
 #Goal{
+
     font-size: 2rem;
     background: linear-gradient(rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
@@ -805,5 +807,7 @@ button:active{
     .Winningphoto{
         width:40vw;
     }
-
+    #crowd{
+        font-size: 2.2rem;
+    }
 }
