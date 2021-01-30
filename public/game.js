@@ -228,6 +228,8 @@ socket.on("changes",function(plot){
     if(plot.num === 10)
     goal.textContent = "Goal: 10";
 
+    if(firstCHAR == "Astronaut")
+    secondCHAR = "Alien";
 
     if(firstCHAR == "Alien"){
         secondCHAR ="Astronaut"
