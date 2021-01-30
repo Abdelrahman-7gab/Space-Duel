@@ -13,7 +13,6 @@ html {
     background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
     background-size: cover;
     background-color: black;
-    scroll-behavior:smooth;
     width:100vw;  
     overflow-x: hidden;   
   }
@@ -21,8 +20,8 @@ html {
 body{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
-    overflow-x: hidden;
     font-size: 1.6rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 header{
@@ -401,6 +400,7 @@ button:active{
     bottom:-50vh;
     /* animation: winAnimationDown linear 3s; */
     opacity: 0;
+    overflow: hidden;
 }
 
 .winAnimationUp{
@@ -409,6 +409,7 @@ button:active{
     top:-50vh;
     /* animation: winAnimationTop linear 3s; */
     opacity:0;
+    overflow: hidden;
     
 }
 
@@ -795,7 +796,7 @@ button:active{
         height:8vh;
     }
     .CHRicon{
-        width:3.5rem;
+        width:3.3rem;
     }
 
     #RoomStatus{

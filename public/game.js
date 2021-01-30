@@ -49,8 +49,6 @@ var firstCHAR = "Astronaut";
 var secondCHAR = "Alien"; 
 var letsRematch = false;
 
-
-
 for(let i =0; i<rematchButtons.length;i++){
     rematchButtons[i].addEventListener('click',function(){
 
