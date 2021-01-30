@@ -376,6 +376,11 @@ button:active{
     color:rgba(170, 99, 19, 0.856);
 }
 
+#InsertDIV{
+    display:flex;
+    align-items: center;
+}
+
 .winningDIV{
     display:none;
     flex-direction: column;
@@ -494,6 +499,11 @@ button:active{
     padding-left: 1.4rem;
     margin: auto;
     width:60vw;
+}
+
+#abdelrahman{
+    display: flex;
+    align-items: center;
 }
 
 .social{
@@ -762,11 +772,11 @@ button:active{
         width:7rem;
     }
     .social{
-        width:3rem;
+        width:2.8rem;
     }
 
     #alienSocial{
-        height:3rem;
+        height:2.8rem;
     }
 
     #designer{
@@ -782,7 +792,7 @@ button:active{
 
     #paragraph{
         font-size: 1.5rem;
-        width:80vw
+        width:90vw
     }
     #insert{
         font-size: 2.2rem;
@@ -817,7 +827,8 @@ button:active{
     }
 
     #box{
-        height:3.5rem;
+        height:3rem;
+        width:4.5rem;
     }
 
     .winningDIV{
