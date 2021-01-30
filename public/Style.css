@@ -401,6 +401,7 @@ button:active{
     /* animation: winAnimationDown linear 3s; */
     opacity: 0;
     overflow: hidden;
+    z-index: -1;
 }
 
 .winAnimationUp{
@@ -410,6 +411,7 @@ button:active{
     /* animation: winAnimationTop linear 3s; */
     opacity:0;
     overflow: hidden;
+    z-index: -1;
     
 }
 

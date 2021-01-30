@@ -462,10 +462,3 @@ function hideAnimation(){
     gameContainer_div.style.display = "flex";   
 }
 
-
-
-
-
-
-
-
