@@ -757,6 +757,10 @@ button:active{
 
 @media only screen and (max-width: 575.98px){
 
+    html{ 
+        background: url(Photos/phoneBG.jpg) no-repeat center center fixed; 
+    }
+
     #kidnap{
         width:4rem;
     }
