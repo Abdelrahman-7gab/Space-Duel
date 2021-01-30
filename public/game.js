@@ -49,8 +49,6 @@ var firstCHAR = "Astronaut";
 var secondCHAR = "Alien"; 
 var letsRematch = false;
 
-
-
 for(let i =0; i<rematchButtons.length;i++){
     rematchButtons[i].addEventListener('click',function(){
 
@@ -420,27 +418,27 @@ function updateValues(data)
     
 
     if(firstTemp == "r"){
-        rockDown_anim.style.display = "block";
+        rockDown_anim.classList.add("botAnim");
          }
 
   else if(firstTemp =="p"){
-            paperDown_anim.style.display = "block";
+            paperDown_anim.classList.add("botAnim");
         }
 
     else{
-            scissorsDown_anim.style.display = "block";
+            scissorsDown_anim.classList.add("botAnim");
         }
 
     if(secondTemp == "r"){
-            rockUp_anim.style.display = "block";
+            rockUp_anim.classList.add("upAnim");
          }
 
     else if(secondTemp =="p"){
-              paperUp_anim.style.display = "block";
+              paperUp_anim.classList.add("upAnim");
          }
 
     else{
-               scissorsUp_anim.style.display = "block";
+               scissorsUp_anim.classList.add("upAnim");
         }
 
 
@@ -448,18 +446,19 @@ function updateValues(data)
  
 }
 function hideAnimation(){
-    animlist = document.getElementsByClassName("anim");
-    for(let i = 0 ; i<animlist.length;i++){
-        animlist[i].style.display = "none";
+    var botanimlist = document.getElementsByClassName("winAnimation");
+    var upanimlist = document.getElementsByClassName("winAnimationUp");
+
+    for(let i = 0 ; i<botanimlist.length;i++){
+        botanimlist[i].classList.remove("botAnim")
     }
+
+    for(let j = 0 ; j<upanimlist.length;j++){
+        upanimlist[j].classList.remove("upAnim")
+    }
+
+
     if(FirstPlayerScore!=firstToGet&&SecondPlayerScore!=firstToGet)
     gameContainer_div.style.display = "flex";   
 }
-
-
-
-
-
-
-
 

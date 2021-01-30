@@ -13,7 +13,6 @@ html {
     background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
     background-size: cover;
     background-color: black;
-    scroll-behavior: smooth;
     width:100vw;  
     overflow-x: hidden;   
   }
@@ -21,8 +20,8 @@ html {
 body{
     font-family: 'Yusei Magic', sans-serif;
     color:white;
-    overflow-x: hidden;
     font-size: 1.6rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 header{
@@ -204,11 +203,14 @@ header a{
 }
 
 .scoreboard{
+    display: flex;
+    align-items: flex-end;
     font-size: 3.5rem;
     background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
 
 #Goal{
+
     font-size: 2rem;
     background: linear-gradient(rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
 }
@@ -374,6 +376,11 @@ button:active{
     color:rgba(170, 99, 19, 0.856);
 }
 
+#InsertDIV{
+    display:flex;
+    align-items: center;
+}
+
 .winningDIV{
     display:none;
     flex-direction: column;
@@ -396,17 +403,29 @@ button:active{
     position: absolute;
     height:50vh;
     bottom:-50vh;
-    animation: winAnimationDown linear 3s;
-    display:none;
+    /* animation: winAnimationDown linear 3s; */
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .winAnimationUp{
     position: absolute;
     height:50vh;
     top:-50vh;
-    animation: winAnimationTop linear 3s;
-    display:none;
+    /* animation: winAnimationTop linear 3s; */
+    opacity:0;
+    overflow: hidden;
+    z-index: -1;
     
+}
+
+.upAnim{
+    animation: winAnimationTop linear 3s;
+}
+
+.botAnim{
+    animation: winAnimationDown linear 3s;
 }
 
 #Info{
@@ -482,6 +501,11 @@ button:active{
     width:60vw;
 }
 
+#abdelrahman{
+    display: flex;
+    align-items: center;
+}
+
 .social{
     width:3.7rem;
     vertical-align:bottom;
@@ -518,18 +542,22 @@ button:active{
 @keyframes winAnimationDown{
 0%{
     transform: translateY(0vh); 
+    opacity: 1;
 }
 
 33%{
-    transform: translateY(-46vh);
+    transform: translateY(-45vh);
+    opacity: 1;
 }
 
 66%{
-    transform: translateY(-46vh);
+    transform: translateY(-45vh);
+    opacity: 1;
 }
 
 100%{
     transform: translateY(0vh);
+    opacity: 1;
 }
 }
 
@@ -537,18 +565,22 @@ button:active{
 
     0%{
         transform: translateY(0) rotate(180deg);
+        opacity: 1;
     }
 
     33%{
-        transform: translateY(46vh) rotate(180deg);
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
     }
 
     66%{
-        transform: translateY(46vh) rotate(180deg);
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
     }
     
     100%{
         transform: translateY(0vh) rotate(180deg);
+        opacity: 1;
     }
     
 }
@@ -740,11 +772,11 @@ button:active{
         width:7rem;
     }
     .social{
-        width:3rem;
+        width:2.8rem;
     }
 
     #alienSocial{
-        height:3rem;
+        height:2.8rem;
     }
 
     #designer{
@@ -760,7 +792,7 @@ button:active{
 
     #paragraph{
         font-size: 1.5rem;
-        width:80vw
+        width:90vw
     }
     #insert{
         font-size: 2.2rem;
@@ -776,7 +808,7 @@ button:active{
         height:8vh;
     }
     .CHRicon{
-        width:3.5rem;
+        width:3.3rem;
     }
 
     #RoomStatus{
@@ -795,7 +827,8 @@ button:active{
     }
 
     #box{
-        height:3.5rem;
+        height:3rem;
+        width:4.5rem;
     }
 
     .winningDIV{
@@ -804,5 +837,7 @@ button:active{
     .Winningphoto{
         width:40vw;
     }
-
+    #crowd{
+        font-size: 2.2rem;
+    }
 }
