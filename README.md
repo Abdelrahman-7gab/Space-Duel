@@ -1,15 +1,16 @@
 # Space Duel.
 a Realtime multiplayer Rock Paper Scissors website that I built in order to learn web development.. 
 
+### You can visit the website and play the game here:
+###  https://spaceduel.herokuapp.com/
+
+
 Watch some of the features on youtube:
 <div align="left">
       <a href="https://youtu.be/upOOWlKkZmA">
          <img src="https://i.ibb.co/R73jyCW/embed.png" style="width:100%;">
       </a>
 </div>
-
-### You can visit the website and play the game here:
-###  https://spaceduel.herokuapp.com/
 
 The server side runs on NodeJS, Express, and Socket IO.
 and the Front end is pure JavaScript , CSS and HTML. 
