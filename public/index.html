@@ -1,191 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Duel</title>
-    <meta property="og:title" content="Space Duel" />
-    <meta property="og:type" content="Rock Paper Scissors multipalyer Game" />
-    <meta property="og:url" content="https://spaceduel.herokuapp.com/" />
-    <meta property="og:image" content="Photos/og.jpg" />
-    <meta property="og:site_name" content="ٍSpace Duel" />
-    <link rel="stylesheet" href="Style.css"> 
-    <link rel="icon" href="Photos/Scissors.png?">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Duel</title>
+  <meta property="og:title" content="Space Duel" />
+  <meta property="og:type" content="Rock Paper Scissors multipalyer Game" />
+  <meta property="og:url" content="https://spaceduel.herokuapp.com/" />
+  <meta property="og:image" content="Photos/og.jpg" />
+  <meta property="og:site_name" content="ٍSpace Duel" />
+  <link rel="stylesheet" href="Style.css">
+  <link rel="icon" href="Photos/Scissors.png?">
+
 </head>
 
 <body>
-    <header>
-       <div class="headerContainer">
-        <div id ="logoDIV"> <img id="logo" src="Photos/logoo.png" alt=""></div>
-        
-        
-        <div class = "navs">
-          <img src="Photos/soundOff.png" id ="sound">
-         
+  <header>
+    <div class="headerContainer">
+      <div id="logoDIV"> <img id="logo" src="Photos/logoo.png" alt=""></div>
+
+
+      <div class="navs">
+        <img src="Photos/soundOff.png" id="sound">
+
         <a id="about" href="#Info">About</a>
 
       </div>
     </div>
-       
-      
-       
-    </header>
 
-   <div class="animDIV">
-    
 
-    <img class ="winAnimation anim" id = "paperDown" src="Photos/PaperAlien.png">
-    <img class ="winAnimation anim" id = "rockDown" src="Photos/RockAlienCatch.png">
-    <img class ="winAnimation anim" id = "scissorsDown" src="Photos/ScissorsAlien.png">
 
-    <img class ="winAnimationUp anim" id = "scissorsUp" src="Photos/Scissors.png">
-    <img class ="winAnimationUp anim" id = "paperUp" src="Photos/Paper.png">
-    <img class ="winAnimationUp anim" id = "rockUp" src="Photos/Rock.png">
+  </header>
 
-    <div class ="winningDIV" id="AlienWinDIV">
-    <img src="Photos/AlienHead.png" alt="ALIEN WINS" class="Winningphoto">
+  <div class="animDIV">
+
+
+    <img class="winAnimation anim" id="paperDown" src="Photos/PaperAlien.png">
+    <img class="winAnimation anim" id="rockDown" src="Photos/RockAlienCatch.png">
+    <img class="winAnimation anim" id="scissorsDown" src="Photos/ScissorsAlien.png">
+
+    <img class="winAnimationUp anim" id="scissorsUp" src="Photos/Scissors.png">
+    <img class="winAnimationUp anim" id="paperUp" src="Photos/Paper.png">
+    <img class="winAnimationUp anim" id="rockUp" src="Photos/Rock.png">
+
+    <div class="winningDIV" id="AlienWinDIV">
+      <img src="Photos/AlienHead.png" alt="ALIEN WINS" class="Winningphoto">
       <span> THE ALIEN WINS THE GAME</span>
-      <span><button class ="rematch">Rematch</button> <button onClick="window.location.reload()" class ="NewGameWinningScreen">New Game</button></span>
-      <span class ="rematchMessage"></span>
+      <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
+          class="NewGameWinningScreen">New Game</button></span>
+      <span class="rematchMessage"></span>
     </div>
-    
-    <div class ="winningDIV" id="AstroWinDIV">
+
+    <div class="winningDIV" id="AstroWinDIV">
       <img src="Photos/AstroHead.png" alt="Astronaut WINS" class="Winningphoto">
-        <span> THE Astronaut WINS THE GAME</span>
-        <span><button class ="rematch">Rematch</button> <button onClick="window.location.reload()" class ="NewGameWinningScreen">New Game</button></span>
-        <span class ="rematchMessage"></span>
-      </div>
+      <span> THE Astronaut WINS THE GAME</span>
+      <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
+          class="NewGameWinningScreen">New Game</button></span>
+      <span class="rematchMessage"></span>
+    </div>
 
   </div>
 
-    <main>
-      <img src="Photos/rocket.png" id ="rocket" alt="">
-      <img src="Photos/alienship.png" id ="alienship" alt="">
-      <img src="Photos/kidnap.png" id ="kidnap" alt="">
+  <main>
+    <img src="Photos/rocket.png" id="rocket" alt="">
+    <img src="Photos/alienship.png" id="alienship" alt="">
+    <img src="Photos/kidnap.png" id="kidnap" alt="">
 
-      <section id="gameSec">
-        <div id = "GameContainer">
-          <span id = "Goal">Goal: 3</span>
-          <span id = "crowd">Let The Games BEGIN</span>
+    <section id="gameSec">
+      <div id="GameContainer">
+        <span id="Goal">Goal: 3</span>
+        <span id="crowd">Let The Games BEGIN</span>
 
 
-          <div class="scoreboard">
+        <div class="scoreboard">
 
-            <span> <img id ="astroHead" class="icon" src="Photos/AstroHead.png" alt=""> </span>
-            <span id="score1">0</span><span>:</span><span id="score2">0</span>
-            <span><img id ="alienHead" class = "icon" src="Photos/AlienHead.png" alt=""></span>
-          </div>
+          <span> <img id="astroHead" class="icon" src="Photos/AstroHead.png" alt=""> </span>
+          <span id="score1">0</span><span>:</span><span id="score2">0</span>
+          <span><img id="alienHead" class="icon" src="Photos/AlienHead.png" alt=""></span>
+        </div>
 
 
         <div class="game">
-          <img class ="choice" id = "paper" src="Photos/PaperAlien.png" alt="Paper">
-          <img class ="choice" id = "rock" src="Photos/RockAlienCatch.png" alt="Rock">
-          <img class ="choice" id = "scissors" src="Photos/ScissorsAlien.png" alt="Scissors">
+          <img class="choice" id="paper" src="Photos/PaperAlien.png" alt="Paper">
+          <img class="choice" id="rock" src="Photos/RockAlienCatch.png" alt="Rock">
+          <img class="choice" id="scissors" src="Photos/ScissorsAlien.png" alt="Scissors">
         </div>
         <span id="status"> Make Your Move</span>
       </div>
-      </section>  
+    </section>
 
-      <section id = "RoomSec">
+    <section id="RoomSec">
 
-        <div id = "RoomStatusDIV">
-        <div id = "RoomStatus"></div>
+      <div id="RoomStatusDIV">
+        <div id="RoomStatus"></div>
       </div>
 
-        <div id="RoomCreation">
+      <div id="RoomCreation">
 
-          <div class ="Create">
-            <div>
-              <span class = "selecting">First to get</span> 
-              <button class ="limit" id = "three">3</button>
-              <button class = "limit" id = "five"> 5</button>
-              <button class = "limit" id = "ten">10</button>
-              <span class = "selecting">Wins</span> 
-            
-            </div> 
-            <span id ="characterChoice">
-        <button class = "roomButton" id ="new">Create a New Game</button>
-        
-        <span><img id ="astroCHR" class="CHRicon" src="Photos/AstroHead.png" alt=""></span>
-        <span><img id ="alienCHR" class = "CHRicon" src="Photos/AlienHead.png" alt=""></span>
-      </span>
-        <button class = "roomButton" id ="join">Join a Game</button>
-        <div id = "InsertDIV">
-          <span id ="insert">Insert Game Code here:</span>
-          <span><input id ="box" type="text" maxlength = "4"></span>
+        <div class="Create">
+          <div>
+            <span class="selecting">First to get</span>
+            <button class="limit" id="three">3</button>
+            <button class="limit" id="five"> 5</button>
+            <button class="limit" id="ten">10</button>
+            <span class="selecting">Wins</span>
+
+          </div>
+          <span id="characterChoice">
+            <button class="roomButton" id="new">Create a New Game</button>
+
+            <span><img id="astroCHR" class="CHRicon" src="Photos/AstroHead.png" alt=""></span>
+            <span><img id="alienCHR" class="CHRicon" src="Photos/AlienHead.png" alt=""></span>
+          </span>
+          <button class="roomButton" id="join">Join a Game</button>
+          <div id="InsertDIV">
+            <span id="insert">Insert Game Code here:</span>
+            <span><input id="box" type="text" maxlength="4"></span>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <section id="Info">
+
+
+      <div id="designer">
+
+
+        <div class="gridContainer">
+
+          <span class="JobTitle"> Web developing:</span>
+
+          <div id="abdelrahman">
+            <span class="names">Abdelrahman Hegab </span>
+            <a href="https://www.linkedin.com/in/abdelrahman-hegab-4779aa1a6/"> <img class="social"
+                src="Photos/linkedin.png" alt="linkedin"> </a>
+            <a href="https://github.com/Abdelrahman-7gab/"> <img class="social" src="Photos/github.png"
+                alt="github"></a>
           </div>
 
+          <span class="review">(and amazing Storytelling)</span>
+
+
+        </div>
+
+        <div class="gridContainer">
+
+          <span class="JobTitle">Character Design:</span>
+          <div> <span id="shahd" class="names"> Shahd Hegab </span>
+            <a href="https://www.instagram.com/shahd_gallery/"><img class="social" src="Photos/insta.png"
+                alt="instagram"></a>
+          </div>
+          <span class="review">(She works for the Aliens)</span>
+
+        </div>
+
+        <div class="gridContainer">
+
+          <span class="JobTitle">website Logo:</span>
+          <div><span id="nadine" class="names">Nadine Meshref </span>
+            <a href="https://www.instagram.com/nadine.meshref/"><img class="social" src="Photos/insta.png"
+                alt="instagram"> </a>
+          </div>
+          <span class="review"> (the Astronaut's relative)</span>
+
+        </div>
+
+        <div class="gridContainer">
+
+          <span class="JobTitle">Alien help:</span>
+          <div> <span class="names">&#8523&#8513&#8487&#8479&#8524 </span>
+            <span><img id="alienSocial" src="Photos/AlienNetwork.png" alt="Alien Network"></span>
+          </div>
+          <span class="review"> (Forced us to put his name)</span>
+
+        </div>
+
       </div>
-         </section>
 
-         <section id = "Info">
-
-         
-            <div id = "designer">
-
-
-              <div class ="gridContainer">
-
-              <span class = "JobTitle"> Web developing:</span>
-
-              <div id = "abdelrahman" >
-                 <span class = "names">Abdelrahman Hegab  </span>
-                 <a href="https://www.linkedin.com/in/abdelrahman-hegab-4779aa1a6/"> <img class = "social" src="Photos/linkedin.png" alt="linkedin"> </a> 
-                  <a href = "https://github.com/Abdelrahman-7gab/"> <img class = "social" src="Photos/github.png" alt="github"></a>
-             </div>
-
-                 <span class = "review">(and amazing Storytelling)</span> 
+      <div id="paragraph">
+        This website is a little personal project that I created under the threats of Aliens.
+        They forced me to create my first website and wanted me to
+        learn web development and focus on CSS (espicially animations).
+        I ended up learning a little bit of NodeJS, Express,and SOCKET.IO in the process
+        because those <span style="font-size: 1.2em; color:rgb(80, 131, 80);">green</span> bastards wanted to make the
+        game realtime multiplayer.<br>
+        But the more you learn the better, right? false.
+        the alien sitting beside me didn't agree with the last sentence.
+        and now I'm obliged to agree with him.</div>
+      </div>
 
 
-                </div>
+    </section>
+  </main>
 
-                <div class ="gridContainer">
-                  
-              <span class = "JobTitle">Character Design:</span> 
-             <div> <span id ="shahd" class = "names"> Shahd Hegab </span>
-               <a href="https://www.instagram.com/shahd_gallery/"><img class = "social" src="Photos/insta.png" alt="instagram"></a> </div>
-                <span class = "review">(She works for the Aliens)</span>
-
-                </div>
-
-                <div class ="gridContainer">
-
-              <span class = "JobTitle">website Logo:</span> 
-             <div><span id = "nadine" class = "names">Nadine Meshref </span>
-              <a href ="https://www.instagram.com/nadine.meshref/"><img class = "social" src="Photos/insta.png" alt="instagram"> </a> </div> 
-              <span class = "review"> (the Astronaut's relative)</span>
-
-            </div>
-
-            <div class ="gridContainer">
-
-            <span class = "JobTitle">Alien help:</span> 
-            <div> <span class ="names">&#8523&#8513&#8487&#8479&#8524 </span>
-              <span><img id="alienSocial" src="Photos/AlienNetwork.png" alt="Alien Network"></span> </div>
-              <span class = "review"> (Forced us to put his name)</span>
-
-            </div>
-              
-                     </div>
-
-                     <div id = "paragraph">  
-                      This website is a little personal project that I created under the threats of Aliens.
-                      They forced me to create my first website and wanted me to
-                      learn web development and focus on CSS (espicially animations).
-                      I ended up learning a little bit of NodeJS, Express,and SOCKET.IO in the process
-                      because those <span style = "font-size: 1.2em; color:rgb(80, 131, 80);">green</span> bastards wanted to make the game realtime multiplayer.<br>
-                      But the more you learn the better, right? false.
-                      the alien sitting beside me didn't agree with the last sentence.
-                      and now I'm obliged to agree with him.</div>
-                     </div>
-
-        
-        </section>
-    </main>
-
-    <script src="socket.io/socket.io.js"></script>
-    <script src="game.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
 </body>
+
 </html>
