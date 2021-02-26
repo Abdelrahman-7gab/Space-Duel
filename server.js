@@ -16,12 +16,12 @@ app.get('/',function(req,res){
 
 io.on('connection', function(socket){
 	let socketRoom;
-	socket.on('disconnecting',function(){
-		socket.to(socketRoom).emit("opponentLeft");
-		});
 
 	socket.on("NewGame",function(){
-		const rand = randomstring.generate({length:4}).toLowerCase();
+		let rand = randomstring.generate({length:4}).toLowerCase();
+		while(rooms.includes(rand)){
+		 rand = randomstring.generate({length:4}).toLowerCase();
+		}
 		socketRoom = rand;
 		socket.join(rand);
 		rooms.push(rand);
@@ -72,8 +72,15 @@ io.on('connection', function(socket){
 		socket.nsp.to(room).emit("resetmatch");
 	})
 	
-	
+	socket.on('disconnect',function(){
+		socket.to(socketRoom).emit("opponentLeft");
+		});
 
+	socket.on("ModifyArray",function(room){
+		let ind = rooms.indexOf(socketRoom);
+		rooms.splice(ind, 1);
+		numberInrooms.splice(ind, 1);
+		})
 
   });
 

@@ -1,4 +1,4 @@
-socket = io();
+let socket = io();
 var score1_span = document.getElementById("score1");
 var score2_span = document.getElementById("score2");
 var newGame_btn = document.getElementById("new");
@@ -136,7 +136,7 @@ var roomCreation = document.getElementById("RoomCreation");
 
 socket.on("RoomID", function (data) {
     //RoomStatus_span.setAttribute('style', 'white-space: pre;');
-    RoomStatus_span.textContent = ('"waiting for a second player" \r\n Room Code:' + data);
+    RoomStatus_span.innerHTML = ('"waiting for a second player" <br> Room Code:' +"<span style = 'color: orange;'>" + data + " </span>" );
     // RoomStatus_span.style.display = "block";
     roomCreation.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
@@ -284,6 +284,8 @@ socket.on("opponentLeft", function () {
     for (let j = 0; j < rematchMessages.length; j++) {
         rematchMessages[j].textContent = "(Your opponent left the room)"
     }
+
+    socket.emit("ModifyArray");
 })
 
 socket.on("rematch?", function () {
