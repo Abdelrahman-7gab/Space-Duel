@@ -1,442 +1,452 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-*{
-    margin:0;
-    padding:0;
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     font-size: 62.5%;
 }
 
-html { 
-    background: url(Photos/galaxy.jpg) no-repeat center center fixed; 
+html {
+    background: url(Photos/galaxy.jpg) no-repeat center center fixed;
     background-size: cover;
     background-color: black;
-    width:100vw;  
-    overflow-x: hidden;   
-  }
-  
-body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
     font-family: 'Yusei Magic', sans-serif;
-    color:white;
+    color: white;
     font-size: 1.6rem;
     -webkit-overflow-scrolling: touch;
 }
 
-header{
-    background: linear-gradient(to right,rgba(93, 97, 93, 0.3) , rgba(93, 97, 93, 0) );
+header {
+    background: linear-gradient(to right, rgba(93, 97, 93, 0.3), rgba(93, 97, 93, 0));
     height: 10vh;
 }
 
-.headerContainer{
+.headerContainer {
     display: flex;
     align-items: center;
 }
 
-#logoDIV{
-    flex:3;
+#logoDIV {
+    flex: 3;
 }
 
-#logo{
-    height:10vh;
+#logo {
+    height: 10vh;
 }
 
-.navs{
-    flex:1;
-    display:flex;
+.navs {
+    flex: 1;
+    display: flex;
 }
 
-header a{  
+header a {
     text-decoration: none;
-    color:white;
-    margin:auto;
+    color: white;
+    margin: auto;
 }
 
-#sound{
-    height:4rem;
+#sound {
+    height: 4rem;
 }
 
 
-#rocket{
+#rocket {
     width: 8rem;
     position: absolute;
-    top:72vh;
-    left:-8rem;
+    top: 72vh;
+    left: -8rem;
     animation: rocket linear 20s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-delay: 3s;
 }
 
-@keyframes rocket{
+@keyframes rocket {
 
-    12.5%{
+    12.5% {
         transform: translateX(21vw) translateY(1vw) rotate(5deg);
     }
 
-    25%{
+    25% {
         transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
     }
 
-    37.5%{
+    37.5% {
         transform: translateX(79vw) translateY(1vw) rotate(5deg);
-        
+
     }
 
-    50%{
+    50% {
         transform: translateX(108vw) translateY(5vw) rotate(15deg);
         opacity: 1;
     }
 
-    50.001%{
+    50.001% {
         transform: translateX(0vw) translateY(5vw) rotate(15deg);
         opacity: 0;
     }
 
-    100%{
+    100% {
         transform: translateX(0vw) translateY(5vw) rotate(15deg);
         opacity: 0;
     }
 
-    
+
 }
 
-#alienship{
-    width:8.5rem;
-    position:absolute;
-    left:-9.1rem;
-    top:-23vh;
+#alienship {
+    width: 8.5rem;
+    position: absolute;
+    left: -9.1rem;
+    top: -23vh;
     animation: ship ease-out 20s;
     animation-iteration-count: infinite;
     animation-delay: 3s;
-   
+
 }
 
-@keyframes ship{
-    0%{
+@keyframes ship {
+    0% {
         transform: translateX(23vw) translateY(0vh);
     }
-    60%{
+
+    60% {
         transform: translateX(23vw) translateY(0vh);
     }
-    70%{
+
+    70% {
         transform: translateX(23vw) translateY(63vh);
     }
-    100%{
+
+    100% {
         transform: translateX(23vw) translateY(-50vh);
     }
 
 }
 
-#kidnap{
+#kidnap {
     width: 5rem;
-    position:absolute;
-    left:-4.4rem;
+    position: absolute;
+    left: -4.4rem;
     opacity: 0;
-    top :46vh;
+    top: 46vh;
     animation: kidnap linear 20s;
     animation-iteration-count: infinite;
     animation-delay: 3s;
 }
 
-@keyframes kidnap{
+@keyframes kidnap {
 
-    34.99%{
+    34.99% {
         transform: translateX(108vw);
         opacity: 0;
     }
-    35%{
+
+    35% {
         transform: translateX(108vw);
         opacity: 1;
     }
 
-    52.5%{
+    52.5% {
         transform: translateX(64.5vw) translateY(-6vh) rotate(270deg);
         opacity: 1;
     }
 
-    70%{
+    70% {
         transform: translateX(21vw) translateY(6vh) rotate(540deg);
         opacity: 1;
     }
-    75%{
+
+    75% {
         transform: translateX(21vw) translateY(-25.66vh) rotate(360deg);
         opacity: 1;
     }
 
-    100%{
+    100% {
         transform: translateX(21vw) translateY(-160vh) rotate(360deg);
         opacity: 1;
     }
 }
 
-.selecting{
+.selecting {
     font-size: 3rem;
     color: white;
 }
 
-.limit{
-    width:3.5rem;
+.limit {
+    width: 3.5rem;
     font-size: 2.8rem;
 }
 
 
-#characterChoice{
+#characterChoice {
     display: flex;
 }
 
-.CHRicon{
-    width:5.5rem;
+.CHRicon {
+    width: 5.5rem;
     border-radius: 20%;
     cursor: pointer;
 }
 
 
-.CHRicon:hover{
+.CHRicon:hover {
     animation: lmao ease 0.6s;
 }
 
-#gameSec{
-    height:90vh;
+#gameSec {
+    height: 90vh;
     display: none;
-   
+
 }
 
-.scoreboard{
+.scoreboard {
     display: flex;
     align-items: flex-end;
     font-size: 3.5rem;
-    background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
+    background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35%, rgba(93, 97, 93, 0));
 }
 
-#Goal{
+#Goal {
 
     font-size: 2rem;
-    background: linear-gradient(rgba(93, 97, 93, 0.40) 35% , rgba(93, 97, 93, 0) );
+    background: linear-gradient(rgba(93, 97, 93, 0.40) 35%, rgba(93, 97, 93, 0));
 }
 
-#crowd{
+#crowd {
     font-size: 2rem;
 }
 
-.icon{
-    width:6rem;
+.icon {
+    width: 6rem;
 }
 
-#GameContainer{
-    display:flex;
+#GameContainer {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#WinningContainer{
-    display:flex;
+#WinningContainer {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.game{
+.game {
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
 }
 
-.choice{
+.choice {
     width: 11%;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 30%;
     margin-left: 3%;
     animation: appearfromLeft ease 0.5s;
     transition: 0.3s;
 }
 
-.choice:hover{
-    background-color: rgba(49, 48, 48,0.3);
+.choice:hover {
+    background-color: rgba(49, 48, 48, 0.3);
     transform: scale(1.2);
-    }
+}
 
- .choice:active{
-    background-color: rgba(49, 48, 48,0.8); 
- }   
+.choice:active {
+    background-color: rgba(49, 48, 48, 0.8);
+}
 
-#rock{
+#rock {
     animation: appearfromTop ease 1s;
 }
 
-#scissors{
+#scissors {
     animation: appearfromTop ease 1.5s;
 }
 
-@keyframes appearfromLeft{
-    0%{
+@keyframes appearfromLeft {
+    0% {
         transform: translateX(-100vw);
     }
 
-    100%{
+    100% {
         transform: translateX(0%);
     }
 }
 
 
-@keyframes appearfromTop{
-    0%{
+@keyframes appearfromTop {
+    0% {
         transform: translateY(-100vh);
     }
 
-    100%{
+    100% {
         transform: translateY(0%);
     }
 }
-#status{
-    color:white;
+
+#status {
+    color: white;
     font-size: 3rem;
     margin-top: 2%;
     white-space: pre;
 }
 
-#RoomSec{
+#RoomSec {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:white;
-    height:90vh;
+    color: white;
+    height: 90vh;
 }
 
-.Create{
-    
-    display:flex;
+.Create {
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.roomButton{
+.roomButton {
     font-family: 'Yusei Magic', sans-serif;
-    color:rgba(255, 255, 255, 0.897);
+    color: rgba(255, 255, 255, 0.897);
     font-size: 5.2rem;
-    background:rgb(102, 101, 99);
+    background: rgb(102, 101, 99);
     border-radius: 20%;
     margin: 4px;
 }
-button{
+
+button {
     font-size: 2.3rem;
     border-radius: 28%;
     background: rgba(255, 255, 255, 0.418);
 }
 
-button:hover{
+button:hover {
 
-    background:rgb(129, 125, 123);
+    background: rgb(129, 125, 123);
     cursor: pointer;
     animation: lmao ease 0.6s;
     animation-delay: 150ms;
     border: none;
     outline: none;
-    
+
 }
 
-button:active{
-    color:rgb(51, 49, 49);
+button:active {
+    color: rgb(51, 49, 49);
 }
 
-@keyframes lmao{
-    25%{
-	transform: scale(0.8,1.3);
+@keyframes lmao {
+    25% {
+        transform: scale(0.8, 1.3);
     }
-    50%{
-	transform: scale(1.1,0.8);
+
+    50% {
+        transform: scale(1.1, 0.8);
     }
-    75%{
-	transform: scale(0.7,1.2);
+
+    75% {
+        transform: scale(0.7, 1.2);
     }
 }
 
-#RoomStatusDIV{
+#RoomStatusDIV {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#RoomStatus{
+#RoomStatus {
     white-space: pre;
     font-size: 4rem;
 }
 
-#box{
-    height:4rem;
-    width:6.5rem;
-    background-color: rgba(255, 255, 255,0.3);
+#box {
+    height: 4rem;
+    width: 6.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
     font-family: 'Yusei Magic', sans-serif;
-    color:white;
+    color: white;
     font-size: 1.3em;
 }
 
 
-#insert{
+#insert {
     font-size: 3.5rem;
-    background-color: rgba(182, 182, 182,0.2);
-    color:rgba(170, 99, 19, 0.856);
+    background-color: rgba(182, 182, 182, 0.2);
+    color: rgba(170, 99, 19, 0.856);
 }
 
-#InsertDIV{
-    display:flex;
+#InsertDIV {
+    display: flex;
     align-items: center;
 }
 
-.winningDIV{
-    display:none;
+.winningDIV {
+    display: none;
     flex-direction: column;
     align-items: center;
     font-size: 3rem;
 }
 
-.Winningphoto{
-    width:20vw;
+.Winningphoto {
+    width: 20vw;
 }
 
 
-.animDIV{
+.animDIV {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.winAnimation{
+.winAnimation {
     position: absolute;
-    height:50vh;
-    bottom:-50vh;
+    height: 50vh;
+    bottom: -50vh;
     /* animation: winAnimationDown linear 3s; */
     opacity: 0;
     overflow: hidden;
     z-index: -1;
 }
 
-.winAnimationUp{
+.winAnimationUp {
     position: absolute;
-    height:50vh;
-    top:-50vh;
+    height: 50vh;
+    top: -50vh;
     /* animation: winAnimationTop linear 3s; */
-    opacity:0;
+    opacity: 0;
     overflow: hidden;
     z-index: -1;
-    
+
 }
 
-.upAnim{
+.upAnim {
     animation: winAnimationTop linear 3s;
 }
 
-.botAnim{
+.botAnim {
     animation: winAnimationDown linear 3s;
 }
 
-#Info{
+#Info {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -445,14 +455,14 @@ button:active{
 }
 
 
-#designer{
+#designer {
     font-size: 2.6rem;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-#CreatorsContainer{
+#CreatorsContainer {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 5.5rem;
@@ -463,421 +473,448 @@ button:active{
 }
 
 
-.names{
+.names {
     font-size: 1.5em;
     animation: names linear 3s;
     animation-iteration-count: infinite;
     border-radius: 20%;
 }
 
-@keyframes names{
+@keyframes names {
 
-    5%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 10%, rgb(255, 255, 255,0.3))
+    5% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 10%, rgb(255, 255, 255, 0.3))
     }
-    10%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 20%, rgb(255, 255, 255,0.3))
+
+    10% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 20%, rgb(255, 255, 255, 0.3))
     }
-    15%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 30%, rgb(255, 255, 255,0.3))
+
+    15% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 30%, rgb(255, 255, 255, 0.3))
     }
-    20%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 40%, rgb(255, 255, 255,0.3))
+
+    20% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 40%, rgb(255, 255, 255, 0.3))
     }
-    25%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 50%, rgb(255, 255, 255,0.3))
+
+    25% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 50%, rgb(255, 255, 255, 0.3))
     }
-    30%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 60%, rgb(255, 255, 255,0.3))
+
+    30% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 60%, rgb(255, 255, 255, 0.3))
     }
-    35%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 70%, rgb(255, 255, 255,0.3))
+
+    35% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 70%, rgb(255, 255, 255, 0.3))
     }
-    40%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 80%, rgb(255, 255, 255,0.3))
+
+    40% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 80%, rgb(255, 255, 255, 0.3))
     }
-    45%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 90%, rgb(255, 255, 255,0.3))
+
+    45% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 90%, rgb(255, 255, 255, 0.3))
     }
-    50%{
-        background: linear-gradient(to right,rgb(255, 255, 255,0) 100%, rgb(255, 255, 255,0.3))
+
+    50% {
+        background: linear-gradient(to right, rgb(255, 255, 255, 0) 100%, rgb(255, 255, 255, 0.3))
     }
 
 
 }
 
-#paragraph{
+#paragraph {
     -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
-    color:rgb(248, 248, 248);
+    color: rgb(248, 248, 248);
     background: rgba(87, 87, 87, 0.334);
     font-size: 2.1rem;
     padding-left: 1.4rem;
     margin: auto;
-    flex:0.2;
+    flex: 0.2;
     width: 80vw;
 }
 
-#abdelrahman{
+#abdelrahman {
     display: flex;
     align-items: center;
 }
 
-.social{
-    width:5rem;
-    vertical-align:bottom;
+.social {
+    width: 5rem;
+    vertical-align: bottom;
     margin-left: 0.4rem;
 }
 
-.social:hover{
+.social:hover {
     cursor: pointer;
     transform: scale(1.3);
 }
 
-.social:active{
+.social:active {
     opacity: 0.8;
 }
 
-#alienSocial{
-    height  :4.7rem;
-    vertical-align:middle;
+#alienSocial {
+    height: 4.7rem;
+    vertical-align: middle;
     margin-right: 0.5rem;
 }
 
-@keyframes nameAnim{
-    0%{
-        color:white;
+@keyframes nameAnim {
+    0% {
+        color: white;
     }
 
-    50%{
-        color:red;
-        
+    50% {
+        color: red;
+
     }
 
 }
 
-@keyframes winAnimationDown{
-0%{
-    transform: translateY(0vh); 
-    opacity: 1;
+@keyframes winAnimationDown {
+    0% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+
+    33% {
+        transform: translateY(-45vh);
+        opacity: 1;
+    }
+
+    66% {
+        transform: translateY(-45vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
 }
 
-33%{
-    transform: translateY(-45vh);
-    opacity: 1;
-}
+@keyframes winAnimationTop {
 
-66%{
-    transform: translateY(-45vh);
-    opacity: 1;
-}
-
-100%{
-    transform: translateY(0vh);
-    opacity: 1;
-}
-}
-
-@keyframes winAnimationTop{
-
-    0%{
+    0% {
         transform: translateY(0) rotate(180deg);
         opacity: 1;
     }
 
-    33%{
+    33% {
         transform: translateY(45vh) rotate(180deg);
         opacity: 1;
     }
 
-    66%{
+    66% {
         transform: translateY(45vh) rotate(180deg);
         opacity: 1;
     }
-    
-    100%{
+
+    100% {
         transform: translateY(0vh) rotate(180deg);
         opacity: 1;
     }
-    
+
 }
 
-.review{
+.review {
     font-size: 2rem;
     color: gray;
     align-self: flex-end;
 }
 
-.JobTitle{
+.JobTitle {
     font-size: 3.6rem;
-    color:rgba(170, 99, 19, 0.856);
+    color: rgba(170, 99, 19, 0.856);
 }
 
 
-@media only screen and (max-width: 991.98px){
-.roomButton{
-        
-    font-size: 3.5rem;
-}
+@media only screen and (max-width: 991.98px) {
+    .roomButton {
 
-#insert{
-    font-size: 3rem;
-}
-
-#box{
-    width:6rem;
-    height:3.5rem;
-}
-#kidnap{
-    top:37vh;
-    width:5rem;
-    left:-4rem;
-}
-#alienship{
-    width:9rem;
-    left:-8rem;
-    top: -33vh;
-}
-
-#rocket{
-    width:10vw;
-    left:-10vw;
-    top: 70vh;
-}
-
-.names{
-    font-size: 1.2em;
-}
-
-.JobTitle{
-    font-size: 2.8rem;
-}
-
-#paragraph{
-    font-size: 1.9rem;
-    width:90vw;
-}
-
-#RoomStatus{
-    font-size: 3rem;
-}
-
-.choice{
-    width: 15%;
-}
-#status{
-    font-size: 3rem;
-}
-
-.Winningphoto{
-    width:25vw;
-}
-
-
-}
-
-@media only screen and (max-width: 767.98px){
-
-    .headerContainer{
-        flex-direction: column;
-}
-
-#sound{
-    margin-left: 70vw;
-    height:4rem;
-}
-
-#about{
-    display:none
-}
-
-.limit{
-    font-size: 2.6rem;
-}
-
-#logo{
-    height:8vh;
-}
-
-.roomButton{
-    font-size: 4rem;
-}
-
-.CHRicon{
-    width:4.5rem;
-}
-
-.selecting{
-    font-size: 3rem;
-}
-
-#box{
-    width:6rem;
-    height:4rem;
-}
-
-#insert{
-    font-size: 3rem;
-}
-
-#kidnap{
-    top:35vh;
-    width:4rem;
-}
-#alienship{
-    width:8rem;
-    left:-7.5rem;
-    top: -34vh;
-}
-
-#rocket{
-    width:8rem;
-    left:-16vw;
-}
-
-#designer{
-    font-size: 1.3em;
-    align-items:center;
-}
-
-.review{
-    font-size: 1.6rem;
-    align-self: center;
-}
-
-.JobTitle{
-    font-size: 2.65rem;
-}
-
-.social{
-    width:3rem;
-}
-
-#alienSocial{
-    height:3rem; 
-}
-
-#paragraph{
-    font-size: 1.8rem;
-    width:90vw;
-}
-
-.choice{
-    width: 17%;
-}
-#status{
-    font-size: 2.8rem;
-}
-#GameContainer{
-    margin-top: 8vh;
-}
-
-.winningDIV{
-    font-size: 2.5rem;
-    margin-top: 8vh;
-}
-.Winningphoto{
-    width:30vw;
-}
-
-
-}
-
-@media only screen and (max-width: 575.98px){
-
-    html{ 
-        background: url(Photos/phoneBG.jpg) no-repeat center center fixed; 
+        font-size: 3.5rem;
     }
 
-    #kidnap{
-        width:4rem;
+    #insert {
+        font-size: 3rem;
+    }
+
+    #box {
+        width: 6rem;
+        height: 3.5rem;
+    }
+
+    #kidnap {
+        top: 37vh;
+        width: 5rem;
+        left: -4rem;
+    }
+
+    #alienship {
+        width: 9rem;
+        left: -8rem;
+        top: -33vh;
+    }
+
+    #rocket {
+        width: 10vw;
+        left: -10vw;
+        top: 70vh;
+    }
+
+    .names {
+        font-size: 1.2em;
+    }
+
+    .JobTitle {
+        font-size: 2.8rem;
+    }
+
+    #paragraph {
+        font-size: 1.9rem;
+        width: 90vw;
+    }
+
+    #RoomStatus {
+        font-size: 3rem;
+    }
+
+    .choice {
+        width: 15%;
+    }
+
+    #status {
+        font-size: 3rem;
+    }
+
+    .Winningphoto {
+        width: 25vw;
+    }
+
+
+}
+
+@media only screen and (max-width: 767.98px) {
+
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    #sound {
+        margin-left: 70vw;
+        height: 4rem;
+    }
+
+    #about {
+        display: none
+    }
+
+    .limit {
+        font-size: 2.6rem;
+    }
+
+    #logo {
+        height: 8vh;
+    }
+
+    .roomButton {
+        font-size: 4rem;
+    }
+
+    .CHRicon {
+        width: 4.5rem;
+    }
+
+    .selecting {
+        font-size: 3rem;
+    }
+
+    #box {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    #insert {
+        font-size: 3rem;
+    }
+
+    #kidnap {
+        top: 35vh;
+        width: 4rem;
+    }
+
+    #alienship {
+        width: 8rem;
+        left: -7.5rem;
+        top: -34vh;
+    }
+
+    #rocket {
+        width: 8rem;
+        left: -16vw;
+    }
+
+    #designer {
+        font-size: 1.3em;
+        align-items: center;
+    }
+
+    .review {
+        font-size: 1.6rem;
+        align-self: center;
+    }
+
+    .JobTitle {
+        font-size: 2.65rem;
+    }
+
+    .social {
+        width: 3rem;
+    }
+
+    #alienSocial {
+        height: 3rem;
+    }
+
+    #paragraph {
+        font-size: 1.8rem;
+        width: 90vw;
+    }
+
+    .choice {
+        width: 17%;
+    }
+
+    #status {
+        font-size: 2.8rem;
+    }
+
+    #GameContainer {
+        margin-top: 8vh;
+    }
+
+    .winningDIV {
+        font-size: 2.5rem;
+        margin-top: 8vh;
+    }
+
+    .Winningphoto {
+        width: 30vw;
+    }
+
+
+}
+
+@media only screen and (max-width: 575.98px) {
+
+    html {
+        background: url(Photos/phoneBG.jpg) no-repeat center center fixed;
+    }
+
+    #kidnap {
+        width: 4rem;
         top: 41vh;
     }
-    #alienship{
-        width:7rem;
 
-        left:-6.3rem;
+    #alienship {
+        width: 7rem;
 
-        top:-26vh;
+        left: -6.3rem;
+
+        top: -26vh;
     }
 
-    #rocket{
-        width:7rem;
-    }
-    .social{
-        width:3.5rem;
+    #rocket {
+        width: 7rem;
     }
 
-    #alienSocial{
-        height:3.4rem;
+    .social {
+        width: 3.5rem;
     }
 
-    #CreatorsContainer{
-        font-size:2rem;
+    #alienSocial {
+        height: 3.4rem;
+    }
+
+    #CreatorsContainer {
+        font-size: 2rem;
         grid-template-columns: auto;
         row-gap: 1.2rem;
         align-items: center;
     }
 
-    .review{
+    .review {
         font-size: 1.4rem;
     }
 
-    #paragraph{
+    #paragraph {
         font-size: 1.5rem;
-        width:90vw;
-        grid-column : 1/2;
+        width: 90vw;
+        grid-column: 1/2;
     }
-    #insert{
+
+    #insert {
         font-size: 2.2rem;
     }
 
-    .roomButton{
+    .roomButton {
         font-size: 3rem;
     }
-    #sound{
+
+    #sound {
         margin-left: 70vw;
     }
-    #logo{
-        height:8vh;
-    }
-    .CHRicon{
-        width:3.3rem;
+
+    #logo {
+        height: 8vh;
     }
 
-    #RoomStatus{
+    .CHRicon {
+        width: 3.3rem;
+    }
+
+    #RoomStatus {
         font-size: 2.5rem;
     }
 
-    .choice{
+    .choice {
         width: 30%;
     }
-    #status{
+
+    #status {
         font-size: 2.5rem;
     }
 
-    #GameContainer{
+    #GameContainer {
         margin-top: 10vh;
     }
 
-    #box{
-        height:3rem;
-        width:4.5rem;
+    #box {
+        height: 3rem;
+        width: 4.5rem;
     }
 
-    .winningDIV{
+    .winningDIV {
         margin-top: 10vh;
         font-size: 2rem;
     }
-    .Winningphoto{
-        width:40vw;
+
+    .Winningphoto {
+        width: 40vw;
     }
-    #crowd{
+
+    #crowd {
         font-size: 2.2rem;
     }
-    .JobTitle{
+
+    .JobTitle {
         font-size: 2.5rem;
     }
-    .names{
+
+    .names {
         font-size: 2.5rem;
     }
 }

@@ -136,7 +136,7 @@ var roomCreation = document.getElementById("RoomCreation");
 
 socket.on("RoomID", function (data) {
     //RoomStatus_span.setAttribute('style', 'white-space: pre;');
-    RoomStatus_span.innerHTML = ('"waiting for a second player" <br> Room Code:' +"<span style = 'color: orange;'>" + data + " </span>" );
+    RoomStatus_span.innerHTML = ('"waiting for a second player" <br> Room Code:' + "<span style = 'color: orange;'>" + data + " </span>");
     // RoomStatus_span.style.display = "block";
     roomCreation.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
