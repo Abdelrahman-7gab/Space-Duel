@@ -157,27 +157,28 @@ header a{
     }
 
     70%{
-        transform: translateX(21vw) translateY(6vh) rotate(540deg);
+        transform: translateX(21.5vw) translateY(2vh) rotate(540deg);
         opacity: 1;
     }
     75%{
-        transform: translateX(21vw) translateY(-25.66vh) rotate(360deg);
+        transform: translateX(21.5vw) translateY(-30vh) rotate(360deg);
         opacity: 1;
     }
 
     100%{
-        transform: translateX(21vw) translateY(-160vh) rotate(360deg);
+        transform: translateX(21.5vw) translateY(-160vh) rotate(360deg);
         opacity: 1;
     }
 }
 
 .selecting{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: white;
 }
 
 .limit{
-    width:3rem;
+    width:3.5rem;
+    font-size: 2.8rem;
 }
 
 
@@ -186,7 +187,7 @@ header a{
 }
 
 .CHRicon{
-    width:5rem;
+    width:5.5rem;
     border-radius: 20%;
     cursor: pointer;
 }
@@ -224,6 +225,13 @@ header a{
 }
 
 #GameContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#WinningContainer{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -310,7 +318,7 @@ header a{
 .roomButton{
     font-family: 'Yusei Magic', sans-serif;
     color:rgba(255, 255, 255, 0.897);
-    font-size: 4rem;
+    font-size: 5.2rem;
     background:rgb(102, 101, 99);
     border-radius: 20%;
     margin: 4px;
@@ -371,7 +379,7 @@ button:active{
 
 
 #insert{
-    font-size: 3rem;
+    font-size: 3.5rem;
     background-color: rgba(182, 182, 182,0.2);
     color:rgba(170, 99, 19, 0.856);
 }
@@ -449,7 +457,7 @@ button:active{
 
 
 .names{
-    font-size: 1.1em;
+    font-size: 1.5em;
     animation: names linear 3s;
     animation-iteration-count: infinite;
     border-radius: 20%;
@@ -495,10 +503,10 @@ button:active{
     -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
     color:rgb(248, 248, 248);
     background: rgba(87, 87, 87, 0.334);
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     padding-left: 1.4rem;
     margin: auto;
-    width:60vw;
+    width:55vw;
     grid-column: 1/3;
 }
 
@@ -508,7 +516,7 @@ button:active{
 }
 
 .social{
-    width:3.7rem;
+    width:5rem;
     vertical-align:bottom;
     margin-left: 0.4rem;
 }
@@ -587,12 +595,13 @@ button:active{
 }
 
 .review{
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: gray;
     align-self: flex-end;
 }
 
 .JobTitle{
+    font-size: 3.6rem;
     color:rgba(170, 99, 19, 0.856);
 }
 
@@ -629,11 +638,16 @@ button:active{
 }
 
 .names{
-    font-size: 1em;
+    font-size: 1.2em;
+}
+
+.JobTitle{
+    font-size: 2.8rem;
 }
 
 #paragraph{
-    font-size: 1.6rem;
+    font-size: 1.9rem;
+    width:90vw;
 }
 
 #RoomStatus{
@@ -719,8 +733,12 @@ button:active{
 }
 
 .review{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     align-self: center;
+}
+
+.JobTitle{
+    font-size: 2.65rem;
 }
 
 .social{
@@ -732,8 +750,8 @@ button:active{
 }
 
 #paragraph{
-    font-size: 1.5rem;
-    width:80vw;
+    font-size: 1.8rem;
+    width:90vw;
 }
 
 .choice{
@@ -748,6 +766,7 @@ button:active{
 
 .winningDIV{
     font-size: 2.5rem;
+    margin-top: 8vh;
 }
 .Winningphoto{
     width:30vw;
@@ -838,6 +857,7 @@ button:active{
     }
 
     .winningDIV{
+        margin-top: 10vh;
         font-size: 2rem;
     }
     .Winningphoto{

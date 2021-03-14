@@ -44,22 +44,6 @@
     <img class="winAnimationUp anim" id="paperUp" src="Photos/Paper.png">
     <img class="winAnimationUp anim" id="rockUp" src="Photos/Rock.png">
 
-    <div class="winningDIV" id="AlienWinDIV">
-      <img src="Photos/AlienHead.png" alt="ALIEN WINS" class="Winningphoto">
-      <span> THE ALIEN WINS THE GAME</span>
-      <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
-          class="NewGameWinningScreen">New Game</button></span>
-      <span class="rematchMessage"></span>
-    </div>
-
-    <div class="winningDIV" id="AstroWinDIV">
-      <img src="Photos/AstroHead.png" alt="Astronaut WINS" class="Winningphoto">
-      <span> THE Astronaut WINS THE GAME</span>
-      <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
-          class="NewGameWinningScreen">New Game</button></span>
-      <span class="rematchMessage"></span>
-    </div>
-
   </div>
 
   <main>
@@ -68,7 +52,25 @@
     <img src="Photos/kidnap.png" id="kidnap" alt="">
 
     <section id="gameSec">
-      <div id="GameContainer">
+    
+        <div class="winningDIV" id="AlienWinDIV">
+          <img src="Photos/AlienHead.png" alt="ALIEN WINS" class="Winningphoto">
+          <span> THE ALIEN WINS THE GAME</span>
+          <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
+              class="NewGameWinningScreen">New Game</button></span>
+          <span class="rematchMessage"></span>
+        </div>
+    
+        <div class="winningDIV" id="AstroWinDIV">
+          <img src="Photos/AstroHead.png" alt="Astronaut WINS" class="Winningphoto">
+          <span> THE Astronaut WINS THE GAME</span>
+          <span><button class="rematch">Rematch</button> <button onClick="window.location.reload()"
+              class="NewGameWinningScreen">New Game</button></span>
+          <span class="rematchMessage"></span>
+        </div>
+
+        <div id="GameContainer">
+
         <span id="Goal">Goal: 3</span>
         <span id="crowd">Let The Games BEGIN</span>
 
