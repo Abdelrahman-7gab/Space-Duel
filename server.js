@@ -6,8 +6,7 @@ const INDEX = '/index.html';
 const randomstring=require('randomstring');
 const path = require("path");
 const PORT = process.env.PORT || 3000;
-var rooms = []
-var numberInrooms = []
+let rooms = {};
 
 app.use(express.static(path.join(__dirname,'public')));
 app.get('/',function(req,res){
@@ -19,23 +18,23 @@ io.on('connection', function(socket){
 
 	socket.on("NewGame",function(){
 		let rand = randomstring.generate({length:4}).toLowerCase();
-		while(rooms.includes(rand)){
+		while(rand in rooms){
 		 rand = randomstring.generate({length:4}).toLowerCase();
 		}
 		socketRoom = rand;
 		socket.join(rand);
-		rooms.push(rand);
+		rooms[rand] = 1;
 		socket.nsp.to(rand).emit("RoomID", rand);
 	})
 
 	socket.on("Join",function(data){
 		//if(!io.sockets.adapter.get(data))
-		if(!rooms.includes(data))
+		if(!(data in rooms))
 		{
 		console.log("wrong Code");
 		socket.emit("wrongCode");
 		}
-		else if (numberInrooms[rooms.indexOf(data)] == 2){
+		else if (rooms[data] == 2){
 			socket.emit("FullRoom");
 		}
 		else
@@ -43,7 +42,7 @@ io.on('connection', function(socket){
 		socketRoom = data;
 		socket.join(data);
 		socket.nsp.to(data).emit("player2Joined",data);
-		numberInrooms[rooms.indexOf(data)] = 2;
+		rooms[data] = 2;
 		}
 	})
 
@@ -74,13 +73,8 @@ io.on('connection', function(socket){
 	
 	socket.on('disconnect',function(){
 		socket.to(socketRoom).emit("opponentLeft");
+		delete rooms[socketRoom];
 		});
-
-	socket.on("ModifyArray",function(room){
-		let ind = rooms.indexOf(socketRoom);
-		rooms.splice(ind, 1);
-		numberInrooms.splice(ind, 1);
-		})
 
   });
 

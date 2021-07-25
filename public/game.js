@@ -284,8 +284,6 @@ socket.on("opponentLeft", function () {
     for (let j = 0; j < rematchMessages.length; j++) {
         rematchMessages[j].textContent = "(Your opponent left the room)"
     }
-
-    socket.emit("ModifyArray");
 })
 
 socket.on("rematch?", function () {
