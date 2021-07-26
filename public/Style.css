@@ -226,6 +226,9 @@ header a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .CHRicon {
@@ -256,6 +259,60 @@ header a {
   background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.4) 35%, rgba(93, 97, 93, 0));
 }
 
+#winningDIV {
+  height: 100vh;
+  display: none;
+}
+
+#winContain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#winContain img {
+  width: 18vw;
+}
+
+#winContain span {
+  font-size: 8rem;
+}
+
+#winContain div {
+  font-size: 4rem;
+}
+
+#winContain button {
+  width: 20rem;
+  height: 8rem;
+  color: white;
+  font-size: 3rem;
+}
+
+#winContain #rematchMessage {
+  font-size: 4rem;
+}
+
+#RematchBOX {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #Goal {
   font-size: 2rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, rgba(93, 97, 93, 0.4)), to(rgba(93, 97, 93, 0)));
@@ -267,7 +324,7 @@ header a {
 }
 
 .icon {
-  width: 6rem;
+  width: 7rem;
 }
 
 #GameContainer {
@@ -532,18 +589,6 @@ button:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.winningDIV {
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 3rem;
 }
 
 .Winningphoto {
@@ -947,6 +992,30 @@ button:active {
   .Winningphoto {
     width: 25vw;
   }
+  #winningDIV {
+    place-items: center;
+  }
+  #winContain {
+    place-items: center;
+  }
+  #winContain img {
+    width: 15vw;
+  }
+  #winContain span {
+    font-size: 7rem;
+  }
+  #winContain div {
+    font-size: 4rem;
+  }
+  #winContain button {
+    width: 20rem;
+    height: 7rem;
+    color: white;
+    font-size: 3rem;
+  }
+  #winContain #rematchMessage {
+    font-size: 4rem;
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -1034,12 +1103,26 @@ button:active {
   #GameContainer {
     margin-top: 8vh;
   }
-  .winningDIV {
-    font-size: 2.5rem;
-    margin-top: 8vh;
-  }
   .Winningphoto {
     width: 30vw;
+  }
+  #winContain img {
+    width: 20vw;
+  }
+  #winContain span {
+    font-size: 7rem;
+  }
+  #winContain div {
+    font-size: 3.5rem;
+  }
+  #winContain button {
+    width: 18rem;
+    height: 7rem;
+    color: white;
+    font-size: 3rem;
+  }
+  #winContain #rematchMessage {
+    font-size: 3rem;
   }
 }
 
@@ -1117,10 +1200,6 @@ button:active {
     height: 3rem;
     width: 4.5rem;
   }
-  .winningDIV {
-    margin-top: 10vh;
-    font-size: 2rem;
-  }
   .Winningphoto {
     width: 40vw;
   }
@@ -1132,6 +1211,24 @@ button:active {
   }
   .names {
     font-size: 2.5rem;
+  }
+  #winContain img {
+    width: 27vw;
+  }
+  #winContain span {
+    font-size: 6rem;
+  }
+  #winContain div {
+    font-size: 2.3rem;
+  }
+  #winContain button {
+    width: 15rem;
+    height: 6rem;
+    color: white;
+    font-size: 2rem;
+  }
+  #winContain #rematchMessage {
+    font-size: 2rem;
   }
 }
 
