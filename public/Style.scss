@@ -1,0 +1,1042 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --anim: 250px;
+    --error: 0.1rem;
+}
+
+html {
+    background: url(Photos/galaxy.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-color: black;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Yusei Magic', sans-serif;
+    color: white;
+    font-size: 1.6rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+header {
+    background: linear-gradient(to right, rgba(93, 97, 93, 0.3), rgba(93, 97, 93, 0));
+    height: 10vh;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+}
+
+#logoDIV {
+    flex: 3;
+}
+
+#logo {
+    height: 10vh;
+}
+
+.navs {
+    flex: 1;
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    margin: auto;
+}
+
+#sound {
+    height: 4rem;
+}
+
+
+#rocket {
+    width: 8rem;
+    position: absolute;
+    top: 72vh;
+    left: -8rem;
+    animation: rocket linear 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+@keyframes rocket {
+
+    12.5% {
+        transform: translateX(21vw) translateY(1vw) rotate(5deg);
+    }
+
+    25% {
+        transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
+    }
+
+    37.5% {
+        transform: translateX(79vw) translateY(1vw) rotate(5deg);
+
+    }
+
+    50% {
+        transform: translateX(108vw) translateY(5vw) rotate(15deg);
+        opacity: 1;
+    }
+
+    50.001% {
+        transform: translateX(0vw) translateY(5vw) rotate(15deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0vw) translateY(5vw) rotate(15deg);
+        opacity: 0;
+    }
+
+
+}
+
+#alienship {
+    width: 8.5rem;
+    height: 12rem;
+    position: absolute;
+    top: -12rem;
+    left: var( --anim);
+    animation: ship ease-out 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+
+}
+
+@keyframes ship {
+    0% {
+        transform: translateY(0vh);
+    }
+
+    60% {
+        transform: translateY(0vh);
+    }
+
+    70% {
+        transform: translateY(450px);
+    }
+
+    79% {
+        transform: translateY(0);
+    }
+
+}
+
+#kidnap {
+    width: 5rem;
+    position: absolute;
+    left: -5rem;
+    opacity: 0;
+    top: 350px;
+    animation: kidnap linear 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+.selecting {
+    font-size: 3rem;
+    color: white;
+}
+
+.limit {
+    width: 3.5rem;
+    font-size: 2.8rem;
+}
+
+
+#characterChoice {
+    display: flex;
+    align-items:center;
+}
+
+.CHRicon {
+    width: 5.5rem;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+
+.CHRicon:hover {
+    animation: lmao ease 0.6s;
+}
+
+#gameSec {
+    height: 90vh;
+    display: none;
+
+}
+
+.scoreboard {
+    display: flex;
+    align-items: flex-end;
+    font-size: 3.5rem;
+    background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35%, rgba(93, 97, 93, 0));
+}
+
+#winningDIV{
+    height:100vh;
+    display:none;
+}
+
+#winContain{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        width:18vw;
+    }
+
+      span{
+      font-size: 8rem;
+    }
+
+    div{
+        font-size: 4rem; 
+    }
+
+    button{
+        width:20rem;
+        height:8rem;
+        color:white;
+        font-size:3rem;
+    }
+
+    #rematchMessage{
+        font-size:4rem;
+    }
+}
+
+#RematchBOX{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Goal {
+
+    font-size: 2rem;
+    background: linear-gradient(rgba(93, 97, 93, 0.40) 35%, rgba(93, 97, 93, 0));
+}
+
+#crowd {
+    font-size: 2rem;
+}
+
+.icon {
+    width: 7rem;
+}
+
+#GameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#WinningContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.choice {
+    width: 11%;
+    cursor: pointer;
+    border-radius: 30%;
+    margin-left: 3%;
+    animation: appearfromLeft ease 0.5s;
+    transition: 0.3s;
+}
+
+.choice:hover {
+    background-color: rgba(49, 48, 48, 0.3);
+    transform: scale(1.2);
+}
+
+.choice:active {
+    background-color: rgba(49, 48, 48, 0.8);
+}
+
+#rock {
+    animation: appearfromTop ease 1s;
+}
+
+#scissors {
+    animation: appearfromTop ease 1.5s;
+}
+
+@keyframes appearfromLeft {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes appearfromTop {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+#status {
+    color: white;
+    font-size: 3rem;
+    margin-top: 2%;
+    white-space: pre;
+}
+
+#RoomSec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 90vh;
+}
+
+.Create {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.roomButton {
+    font-family: 'Yusei Magic', sans-serif;
+    color: rgba(255, 255, 255, 0.897);
+    font-size: 5.2rem;
+    background: rgb(102, 101, 99);
+    border-radius: 20%;
+    margin: 4px;
+}
+
+button {
+    font-size: 2.3rem;
+    border-radius: 28%;
+    background: rgba(255, 255, 255, 0.418);
+}
+
+button:hover {
+
+    background: rgb(129, 125, 123);
+    cursor: pointer;
+    animation: lmao ease 0.6s;
+    animation-delay: 150ms;
+    border: none;
+    outline: none;
+
+}
+
+button:active {
+    color: rgb(51, 49, 49);
+}
+
+@keyframes lmao {
+    25% {
+        transform: scale(0.8, 1.3);
+    }
+
+    50% {
+        transform: scale(1.1, 0.8);
+    }
+
+    75% {
+        transform: scale(0.7, 1.2);
+    }
+}
+
+#RoomStatusDIV {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#RoomStatus {
+    white-space: pre;
+    font-size: 4rem;
+}
+
+#box {
+    height: 4rem;
+    width: 6.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-family: 'Yusei Magic', sans-serif;
+    color: white;
+    font-size: 1.3em;
+}
+
+
+#insert {
+    font-size: 3.5rem;
+    background-color: rgba(182, 182, 182, 0.2);
+    color: rgba(170, 99, 19, 0.856);
+}
+
+#InsertDIV {
+    display: flex;
+    align-items: center;
+}
+
+.Winningphoto {
+    width: 20vw;
+}
+
+
+.animDIV {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winAnimation {
+    position: absolute;
+    height: 50vh;
+    bottom: -50vh;
+    /* animation: winAnimationDown linear 3s; */
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.winAnimationUp {
+    position: absolute;
+    height: 50vh;
+    top: -50vh;
+    /* animation: winAnimationTop linear 3s; */
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+
+}
+
+.upAnim {
+    animation: winAnimationTop linear 3s;
+}
+
+.botAnim {
+    animation: winAnimationDown linear 3s;
+}
+
+#Info {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#designer {
+    font-size: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#CreatorsContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5.5rem;
+    margin: auto;
+    align-items: center;
+    row-gap: 8rem;
+
+}
+
+
+.names {
+    font-size: 1.5em;
+    animation: names linear 3s;
+    animation-iteration-count: infinite;
+    border-radius: 20%;
+}
+
+@keyframes names {
+
+    5% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.3))
+    }
+
+    10% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.3))
+    }
+
+    15% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.3))
+    }
+
+    20% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.3))
+    }
+
+    25% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3))
+    }
+
+    30% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.3))
+    }
+
+    35% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.3))
+    }
+
+    40% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.3))
+    }
+
+    45% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0.3))
+    }
+
+    50% {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0.3))
+    }
+
+
+}
+
+#paragraph {
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 1);
+    color: rgb(248, 248, 248);
+    background: rgba(87, 87, 87, 0.334);
+    font-size: 2.1rem;
+    padding-left: 1.4rem;
+    margin: auto;
+    flex: 0.2;
+    width: 80vw;
+}
+
+#abdelrahman {
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    width: 5rem;
+    vertical-align: bottom;
+    margin-left: 0.4rem;
+}
+
+.social:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.social:active {
+    opacity: 0.8;
+}
+
+#alienSocial {
+    height: 4.7rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+@keyframes nameAnim {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: red;
+
+    }
+
+}
+
+@keyframes winAnimationDown {
+    0% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+
+    33% {
+        transform: translateY(-45vh);
+        opacity: 1;
+    }
+
+    66% {
+        transform: translateY(-45vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+@keyframes winAnimationTop {
+
+    0% {
+        transform: translateY(0) rotate(180deg);
+        opacity: 1;
+    }
+
+    33% {
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
+    }
+
+    66% {
+        transform: translateY(45vh) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0vh) rotate(180deg);
+        opacity: 1;
+    }
+
+}
+
+.review {
+    font-size: 2rem;
+    color: gray;
+    align-self: flex-end;
+}
+
+.JobTitle {
+    font-size: 3.6rem;
+    color: rgba(170, 99, 19, 0.856);
+}
+
+
+@media only screen and (max-width: 991.98px) {
+    :root {
+        --anim: 200px;
+        --error: 0.8rem;
+    }
+
+
+
+    .roomButton {
+
+        font-size: 3.5rem;
+    }
+
+    #insert {
+        font-size: 3rem;
+    }
+
+    #box {
+        width: 6rem;
+        height: 3.5rem;
+    }
+
+    #kidnap {
+        width: 5rem;
+        left: -4rem;
+    }
+
+    #alienship {
+        width: 9rem;
+        left: var( --anim);
+    }
+
+    #rocket {
+        width: 10vw;
+        left: -10vw;
+        top: 70vh;
+    }
+
+    .names {
+        font-size: 1.2em;
+    }
+
+    .JobTitle {
+        font-size: 2.8rem;
+    }
+
+    #paragraph {
+        font-size: 1.9rem;
+        width: 90vw;
+    }
+
+    #RoomStatus {
+        font-size: 3rem;
+    }
+
+    .choice {
+        width: 15%;
+    }
+
+    #status {
+        font-size: 3rem;
+    }
+
+    .Winningphoto {
+        width: 25vw;
+    }
+
+    
+#winningDIV{
+    place-items: center;
+}
+
+    
+#winContain{
+
+    place-items:center;
+    img{
+        width:15vw;
+    }
+
+      span{
+      font-size: 7rem;
+    }
+
+    div{
+        font-size: 4rem; 
+    }
+
+    button{
+        width:20rem;
+        height:7rem;
+        color:white;
+        font-size:3rem;
+    }
+
+    #rematchMessage{
+        font-size:4rem;
+    }
+}
+
+
+}
+
+@media only screen and (max-width: 767.98px) {
+    :root {
+        --anim: 150px;
+        --error: 1rem;
+    }
+
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    #sound {
+        margin-left: 70vw;
+        height: 4rem;
+    }
+
+    #about {
+        display: none
+    }
+
+    .limit {
+        font-size: 2.6rem;
+    }
+
+    #logo {
+        height: 8vh;
+    }
+
+    .roomButton {
+        font-size: 4rem;
+    }
+
+    .CHRicon {
+        width: 4.5rem;
+    }
+
+    .selecting {
+        font-size: 3rem;
+    }
+
+    #box {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    #insert {
+        font-size: 3rem;
+    }
+
+    #kidnap {
+        width: 4rem;
+    }
+
+    #alienship {
+        width: 8rem;
+        left: var( --anim);
+    }
+
+    #rocket {
+        width: 8rem;
+        left: -16vw;
+    }
+
+    #designer {
+        font-size: 1.3em;
+        align-items: center;
+    }
+
+    .review {
+        font-size: 1.6rem;
+        align-self: center;
+    }
+
+    .JobTitle {
+        font-size: 2.65rem;
+    }
+
+    .social {
+        width: 3rem;
+    }
+
+    #alienSocial {
+        height: 3rem;
+    }
+
+    #paragraph {
+        font-size: 1.8rem;
+        width: 90vw;
+    }
+
+    .choice {
+        width: 17%;
+    }
+
+    #status {
+        font-size: 2.8rem;
+    }
+
+    #GameContainer {
+        margin-top: 8vh;
+    }
+
+    .Winningphoto {
+        width: 30vw;
+    }
+
+    #winContain{
+        img{
+            width:20vw;
+        }
+    
+          span{
+          font-size: 7rem;
+        }
+    
+        div{
+            font-size: 3.5rem; 
+        }
+    
+        button{
+            width:18rem;
+            height:7rem;
+            color:white;
+            font-size:3rem;
+        }
+    
+        #rematchMessage{
+            font-size:3rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 575.98px) {
+
+    :root {
+        --anim: 40px;
+        --error: 1.5rem;
+    }
+
+    html {
+        background: url(Photos/phoneBG.jpg) no-repeat center center fixed;
+    }
+
+    #kidnap {
+        width: 4rem;
+    }
+
+    #alienship {
+        width: 7rem;
+        left: var( --anim);
+    }
+
+    #rocket {
+        width: 7rem;
+    }
+
+    .social {
+        width: 3.5rem;
+    }
+
+    #alienSocial {
+        height: 3.4rem;
+    }
+
+    #CreatorsContainer {
+        font-size: 2rem;
+        grid-template-columns: auto;
+        row-gap: 1.2rem;
+        align-items: center;
+    }
+
+    .review {
+        font-size: 1.4rem;
+    }
+
+    #paragraph {
+        font-size: 1.5rem;
+        width: 90vw;
+        grid-column: 1/2;
+    }
+
+    #insert {
+        font-size: 2.2rem;
+    }
+
+    .roomButton {
+        font-size: 3rem;
+    }
+
+    #sound {
+        margin-left: 70vw;
+    }
+
+    #logo {
+        height: 8vh;
+    }
+
+    .CHRicon {
+        width: 3.3rem;
+    }
+
+    #RoomStatus {
+        font-size: 2.5rem;
+    }
+
+    .choice {
+        width: 30%;
+    }
+
+    #status {
+        font-size: 2.5rem;
+    }
+
+    #GameContainer {
+        margin-top: 10vh;
+    }
+
+    #box {
+        height: 3rem;
+        width: 4.5rem;
+    }
+
+    .Winningphoto {
+        width: 40vw;
+    }
+
+    #crowd {
+        font-size: 2.2rem;
+    }
+
+    .JobTitle {
+        font-size: 2.5rem;
+    }
+
+    .names {
+        font-size: 2.5rem;
+    }
+
+    #winContain{
+        img{
+            width:27vw;
+        }
+    
+          span{
+          font-size: 6rem;
+        }
+    
+        div{
+            font-size: 2.3rem; 
+        }
+    
+        button{
+            width:15rem;
+            height:6rem;
+            color:white;
+            font-size:2rem;
+        }
+    
+        #rematchMessage{
+            font-size:2rem;
+        }
+    }
+}
+
+@keyframes kidnap {
+
+    34.99% {
+        transform: translateX(calc(100vw + 5rem));
+        opacity: 0;
+    }
+
+    35% {
+        transform: translateX(calc(100vw + 5rem));
+        opacity: 1;
+    }
+
+    52.5% {
+        transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+        opacity: 1;
+    }
+
+    79% {
+        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+        opacity: 1;
+    }
+}

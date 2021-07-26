@@ -1,6 +1,8 @@
 let socket = io();
 var score1_span = document.getElementById("score1");
 var score2_span = document.getElementById("score2");
+var score3_span = document.getElementById("score3");
+var score4_span = document.getElementById("score4");
 var newGame_btn = document.getElementById("new");
 var joinGame_btn = document.getElementById("join");
 var RoomStatus_span = document.getElementById("RoomStatus");
@@ -22,10 +24,10 @@ var scissorsDown_anim = document.getElementById("scissorsDown");
 var scissorsUp_anim = document.getElementById("scissorsUp");
 var gameContainer_div = document.getElementById("GameContainer");
 var status_div = document.getElementById("status");
-var alienWIN_div = document.getElementById("AlienWinDIV");
-var astroWIN_div = document.getElementById("AstroWinDIV");
-var rematchButtons = document.getElementsByClassName("rematch");
-var rematchMessages = document.getElementsByClassName("rematchMessage");
+var winning_div = document.getElementById("winningDIV");
+var TheWinner = document.getElementById("TheWinner");
+var rematchButton = document.getElementById("rematch");
+var rematchMessage = document.getElementById("rematchMessage");
 
 
 var three = document.getElementById("three");
@@ -39,7 +41,9 @@ var selectAlien = document.getElementById("alienCHR");
 
 
 var firstICON = document.getElementById("astroHead");
+var firstWinICON = document.getElementById("astroWinHead");
 var secondICON = document.getElementById("alienHead");
+var secondWinICON = document.getElementById("alienWinHead");
 var goal = document.getElementById("Goal");
 var crowd = document.getElementById("crowd");
 
@@ -49,21 +53,21 @@ var firstCHAR = "Astronaut";
 var secondCHAR = "Alien";
 var letsRematch = false;
 
-for (let i = 0; i < rematchButtons.length; i++) {
-    rematchButtons[i].addEventListener('click', function () {
+
+    rematchButton.addEventListener('click', function () {
 
         letsRematch = true;
 
         socket.emit("rematchReq", roomID);
 
-        for (let j = 0; j < rematchMessages.length; j++) {
-            if (isleft == false)
-                rematchMessages[j].textContent = "(Sent Rematch Request to opponent)"
+
+            if (!isleft)
+                rematchMessage.textContent = "(Sent Rematch Request to opponent)"
             else
-                rematchMessages[j].textContent = "(Your opponent left the room)"
-        }
+                rematchMessage.textContent = "(Your opponent left the room)"
+        
     })
-}
+
 
 
 selectAstro.addEventListener('click', function () {
@@ -128,16 +132,16 @@ newGame_btn.addEventListener('click', function () {
 
     if (firstCHAR == "Alien") {
         firstICON.src = "Photos/AlienHead.png"
+        firstWinICON.src = "Photos/AlienHead.png"
         secondICON.src = "Photos/AstroHead.png"
+        secondWinICON.src = "Photos/AstroHead.png"
     }
 })
 
 var roomCreation = document.getElementById("RoomCreation");
 
 socket.on("RoomID", function (data) {
-    //RoomStatus_span.setAttribute('style', 'white-space: pre;');
     RoomStatus_span.innerHTML = ('"waiting for a second player" <br> Room Code:' + "<span style = 'color: orange;'>" + data + " </span>");
-    // RoomStatus_span.style.display = "block";
     roomCreation.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
     if (firstCHAR == "Astronaut")
@@ -232,7 +236,9 @@ socket.on("changes", function (plot) {
             secondCHAR = "Astronaut"
             reposition();
             firstICON.src = "Photos/AlienHead.png"
+            firstWinICON.src = "Photos/AlienHead.png"
             secondICON.src = "Photos/AstroHead.png"
+            secondWinICON.src = "Photos/AstroHead.png"
         }
 
     }
@@ -281,20 +287,16 @@ var isleft = false;
 socket.on("opponentLeft", function () {
     isleft = true;
     status_div.textContent = "Your opponent has left the game";
-    for (let j = 0; j < rematchMessages.length; j++) {
-        rematchMessages[j].textContent = "(Your opponent left the room)"
-    }
+        rematchMessage.textContent = "(Your opponent left the room)"
 })
 
 socket.on("rematch?", function () {
 
-    if (letsRematch == true)
+    if (letsRematch)
         socket.emit("ok", roomID);
 
     else {
-        for (let j = 0; j < rematchMessages.length; j++) {
-            rematchMessages[j].textContent = "(Your opponent wants a rematch)"
-        }
+            rematchMessage.textContent = "(Your opponent wants a rematch)"
     }
 
 })
@@ -305,20 +307,22 @@ socket.on("resetmatch", function () {
     SecondPlayerScore = 0;
     score1_span.textContent = 0;
     score2_span.textContent = 0;
-    alienWIN_div.style.display = "none";
-    astroWIN_div.style.display = "none";
+    score3_span.textContent = 0;
+    score4_span.textContent = 0;
+    score3_span.style = "color:white;";
+    score4_span.style = "color:white;";
+    winning_div.style.display = "none";
     gameContainer_div.style.display = "flex";
+    game_sec.style.display = "block";
     status_div.textContent = "Make Your Move"
     crowd.textContent = "Rematch? why would I want to see that"
-    for (let j = 0; j < rematchMessages.length; j++) {
-        rematchMessages[j].textContent = ""
-    }
+        rematchMessage.textContent = ""
     letsRematch = false;
 })
 
 
 function getStatus(letter) {
-    if (isleft == true)
+    if (isleft)
         return "Your opponent has left.";
     else if (letter == "r")
         return "You Selected ROCK, \r\nWaiting for opponent";
@@ -357,10 +361,16 @@ var DRAWLIST = ["<span style ='color:gray'>Crowd: *BOOOOOOOO*</span>", "<span st
 
 
 function winScreen(character) {
-    if (character == "Alien")
-        alienWIN_div.style.display = "flex";
-    else
-        astroWIN_div.style.display = "flex";
+
+    winning_div.style.display = "grid";
+    game_sec.style.display = "none";
+
+    if (character == "Alien"){
+        TheWinner.textContent = "THE ALIEN WINS THE GAME";
+    }
+    else{
+    TheWinner.textContent = "THE ASTRONAUT WINS THE GAME";
+    }
 }
 
 function updateValues(data) {
@@ -384,8 +394,11 @@ function updateValues(data) {
         if (FirstPlayerScore == firstToGet) {
             gameContainer_div.display = "none";
             setTimeout(winScreen, 3000, firstCHAR);
+            score3_span.style = "color:green;";
+            score4_span.style = "color:red;";
         }
         score1_span.textContent = FirstPlayerScore;
+        score3_span.textContent = FirstPlayerScore;
         if (firstCHAR == "Astronaut")
             crowd.innerHTML = winnerIsAstro[randomIndex];
         else
@@ -395,9 +408,12 @@ function updateValues(data) {
         if (SecondPlayerScore == firstToGet) {
             gameContainer_div.display = "none";
             setTimeout(winScreen, 3000, secondCHAR);
+            score4_span.style = "color:green;";
+            score3_span.style = "color:red;";
 
         }
         score2_span.textContent = SecondPlayerScore;
+        score4_span.textContent = SecondPlayerScore;
         if (firstCHAR == "Astronaut")
             crowd.innerHTML = winnerIsAlien[randomIndex];
         else
