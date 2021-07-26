@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -38,14 +39,14 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #logoDIV {
   -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -ms-flex: 3;
+  flex: 3;
 }
 
 #logo {
@@ -54,8 +55,8 @@ header {
 
 .navs {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,41 +78,46 @@ header a {
   top: 72vh;
   left: -8rem;
   -webkit-animation: rocket linear 20s;
-          animation: rocket linear 20s;
+  animation: rocket linear 20s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes rocket {
   12.5% {
     -webkit-transform: translateX(21vw) translateY(1vw) rotate(5deg);
-            transform: translateX(21vw) translateY(1vw) rotate(5deg);
+    transform: translateX(21vw) translateY(1vw) rotate(5deg);
   }
+
   25% {
     -webkit-transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
-            transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
+    transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
   }
+
   37.5% {
     -webkit-transform: translateX(79vw) translateY(1vw) rotate(5deg);
-            transform: translateX(79vw) translateY(1vw) rotate(5deg);
+    transform: translateX(79vw) translateY(1vw) rotate(5deg);
   }
+
   50% {
     -webkit-transform: translateX(108vw) translateY(5vw) rotate(15deg);
-            transform: translateX(108vw) translateY(5vw) rotate(15deg);
+    transform: translateX(108vw) translateY(5vw) rotate(15deg);
     opacity: 1;
   }
+
   50.001% {
     -webkit-transform: translateX(0vw) translateY(5vw) rotate(15deg);
-            transform: translateX(0vw) translateY(5vw) rotate(15deg);
+    transform: translateX(0vw) translateY(5vw) rotate(15deg);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0vw) translateY(5vw) rotate(15deg);
-            transform: translateX(0vw) translateY(5vw) rotate(15deg);
+    transform: translateX(0vw) translateY(5vw) rotate(15deg);
     opacity: 0;
   }
 }
@@ -119,29 +125,34 @@ header a {
 @keyframes rocket {
   12.5% {
     -webkit-transform: translateX(21vw) translateY(1vw) rotate(5deg);
-            transform: translateX(21vw) translateY(1vw) rotate(5deg);
+    transform: translateX(21vw) translateY(1vw) rotate(5deg);
   }
+
   25% {
     -webkit-transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
-            transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
+    transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
   }
+
   37.5% {
     -webkit-transform: translateX(79vw) translateY(1vw) rotate(5deg);
-            transform: translateX(79vw) translateY(1vw) rotate(5deg);
+    transform: translateX(79vw) translateY(1vw) rotate(5deg);
   }
+
   50% {
     -webkit-transform: translateX(108vw) translateY(5vw) rotate(15deg);
-            transform: translateX(108vw) translateY(5vw) rotate(15deg);
+    transform: translateX(108vw) translateY(5vw) rotate(15deg);
     opacity: 1;
   }
+
   50.001% {
     -webkit-transform: translateX(0vw) translateY(5vw) rotate(15deg);
-            transform: translateX(0vw) translateY(5vw) rotate(15deg);
+    transform: translateX(0vw) translateY(5vw) rotate(15deg);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0vw) translateY(5vw) rotate(15deg);
-            transform: translateX(0vw) translateY(5vw) rotate(15deg);
+    transform: translateX(0vw) translateY(5vw) rotate(15deg);
     opacity: 0;
   }
 }
@@ -153,48 +164,54 @@ header a {
   top: -12rem;
   left: var(--anim);
   -webkit-animation: ship ease-out 20s;
-          animation: ship ease-out 20s;
+  animation: ship ease-out 20s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes ship {
   0% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
   }
+
   60% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
   }
+
   70% {
     -webkit-transform: translateY(450px);
-            transform: translateY(450px);
+    transform: translateY(450px);
   }
+
   79% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes ship {
   0% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
   }
+
   60% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
   }
+
   70% {
     -webkit-transform: translateY(450px);
-            transform: translateY(450px);
+    transform: translateY(450px);
   }
+
   79% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -205,11 +222,11 @@ header a {
   opacity: 0;
   top: 350px;
   -webkit-animation: kidnap linear 20s;
-          animation: kidnap linear 20s;
+  animation: kidnap linear 20s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .selecting {
@@ -227,8 +244,8 @@ header a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .CHRicon {
@@ -239,7 +256,7 @@ header a {
 
 .CHRicon:hover {
   -webkit-animation: lmao ease 0.6s;
-          animation: lmao ease 0.6s;
+  animation: lmao ease 0.6s;
 }
 
 #gameSec {
@@ -252,8 +269,8 @@ header a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   font-size: 3.5rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(45%, rgba(93, 97, 93, 0)), color-stop(35%, rgba(93, 97, 93, 0.4)), to(rgba(93, 97, 93, 0)));
   background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.4) 35%, rgba(93, 97, 93, 0));
@@ -270,11 +287,11 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #winContain img {
@@ -306,11 +323,11 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #Goal {
@@ -333,14 +350,14 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #WinningContainer {
@@ -349,14 +366,14 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .game {
@@ -364,11 +381,11 @@ header a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .choice {
@@ -377,7 +394,7 @@ header a {
   border-radius: 30%;
   margin-left: 3%;
   -webkit-animation: appearfromLeft ease 0.5s;
-          animation: appearfromLeft ease 0.5s;
+  animation: appearfromLeft ease 0.5s;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -385,7 +402,7 @@ header a {
 .choice:hover {
   background-color: rgba(49, 48, 48, 0.3);
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .choice:active {
@@ -394,55 +411,59 @@ header a {
 
 #rock {
   -webkit-animation: appearfromTop ease 1s;
-          animation: appearfromTop ease 1s;
+  animation: appearfromTop ease 1s;
 }
 
 #scissors {
   -webkit-animation: appearfromTop ease 1.5s;
-          animation: appearfromTop ease 1.5s;
+  animation: appearfromTop ease 1.5s;
 }
 
 @-webkit-keyframes appearfromLeft {
   0% {
     -webkit-transform: translateX(-100vw);
-            transform: translateX(-100vw);
+    transform: translateX(-100vw);
   }
+
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes appearfromLeft {
   0% {
     -webkit-transform: translateX(-100vw);
-            transform: translateX(-100vw);
+    transform: translateX(-100vw);
   }
+
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
 @-webkit-keyframes appearfromTop {
   0% {
     -webkit-transform: translateY(-100vh);
-            transform: translateY(-100vh);
+    transform: translateY(-100vh);
   }
+
   100% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 
 @keyframes appearfromTop {
   0% {
     -webkit-transform: translateY(-100vh);
-            transform: translateY(-100vh);
+    transform: translateY(-100vh);
   }
+
   100% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 
@@ -459,14 +480,14 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: white;
   height: 90vh;
 }
@@ -477,13 +498,13 @@ header a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .roomButton {
@@ -505,9 +526,9 @@ button:hover {
   background: #817d7b;
   cursor: pointer;
   -webkit-animation: lmao ease 0.6s;
-          animation: lmao ease 0.6s;
+  animation: lmao ease 0.6s;
   -webkit-animation-delay: 150ms;
-          animation-delay: 150ms;
+  animation-delay: 150ms;
   border: none;
   outline: none;
 }
@@ -519,30 +540,34 @@ button:active {
 @-webkit-keyframes lmao {
   25% {
     -webkit-transform: scale(0.8, 1.3);
-            transform: scale(0.8, 1.3);
+    transform: scale(0.8, 1.3);
   }
+
   50% {
     -webkit-transform: scale(1.1, 0.8);
-            transform: scale(1.1, 0.8);
+    transform: scale(1.1, 0.8);
   }
+
   75% {
     -webkit-transform: scale(0.7, 1.2);
-            transform: scale(0.7, 1.2);
+    transform: scale(0.7, 1.2);
   }
 }
 
 @keyframes lmao {
   25% {
     -webkit-transform: scale(0.8, 1.3);
-            transform: scale(0.8, 1.3);
+    transform: scale(0.8, 1.3);
   }
+
   50% {
     -webkit-transform: scale(1.1, 0.8);
-            transform: scale(1.1, 0.8);
+    transform: scale(1.1, 0.8);
   }
+
   75% {
     -webkit-transform: scale(0.7, 1.2);
-            transform: scale(0.7, 1.2);
+    transform: scale(0.7, 1.2);
   }
 }
 
@@ -552,14 +577,14 @@ button:active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #RoomStatus {
@@ -587,8 +612,8 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .Winningphoto {
@@ -601,11 +626,11 @@ button:active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .winAnimation {
@@ -630,12 +655,12 @@ button:active {
 
 .upAnim {
   -webkit-animation: winAnimationTop linear 3s;
-          animation: winAnimationTop linear 3s;
+  animation: winAnimationTop linear 3s;
 }
 
 .botAnim {
   -webkit-animation: winAnimationDown linear 3s;
-          animation: winAnimationDown linear 3s;
+  animation: winAnimationDown linear 3s;
 }
 
 #Info {
@@ -645,14 +670,14 @@ button:active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #designer {
@@ -662,8 +687,8 @@ button:active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -671,22 +696,22 @@ button:active {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  grid-template-columns: auto auto;
   -webkit-column-gap: 5.5rem;
-          column-gap: 5.5rem;
+  column-gap: 5.5rem;
   margin: auto;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   row-gap: 8rem;
 }
 
 .names {
   font-size: 1.5em;
   -webkit-animation: names linear 3s;
-          animation: names linear 3s;
+  animation: names linear 3s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   border-radius: 20%;
 }
 
@@ -695,38 +720,47 @@ button:active {
     background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.3));
   }
+
   10% {
     background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.3));
   }
+
   15% {
     background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.3));
   }
+
   20% {
     background: -webkit-gradient(linear, left top, right top, color-stop(40%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.3));
   }
+
   25% {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3));
   }
+
   30% {
     background: -webkit-gradient(linear, left top, right top, color-stop(60%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.3));
   }
+
   35% {
     background: -webkit-gradient(linear, left top, right top, color-stop(70%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.3));
   }
+
   40% {
     background: -webkit-gradient(linear, left top, right top, color-stop(80%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.3));
   }
+
   45% {
     background: -webkit-gradient(linear, left top, right top, color-stop(90%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0.3));
   }
+
   50% {
     background: -webkit-gradient(linear, left top, right top, color-stop(100%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0.3));
@@ -738,38 +772,47 @@ button:active {
     background: -webkit-gradient(linear, left top, right top, color-stop(10%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.3));
   }
+
   10% {
     background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.3));
   }
+
   15% {
     background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.3));
   }
+
   20% {
     background: -webkit-gradient(linear, left top, right top, color-stop(40%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.3));
   }
+
   25% {
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3));
   }
+
   30% {
     background: -webkit-gradient(linear, left top, right top, color-stop(60%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.3));
   }
+
   35% {
     background: -webkit-gradient(linear, left top, right top, color-stop(70%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.3));
   }
+
   40% {
     background: -webkit-gradient(linear, left top, right top, color-stop(80%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.3));
   }
+
   45% {
     background: -webkit-gradient(linear, left top, right top, color-stop(90%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0.3));
   }
+
   50% {
     background: -webkit-gradient(linear, left top, right top, color-stop(100%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0.3));
@@ -784,8 +827,8 @@ button:active {
   padding-left: 1.4rem;
   margin: auto;
   -webkit-box-flex: 0.2;
-      -ms-flex: 0.2;
-          flex: 0.2;
+  -ms-flex: 0.2;
+  flex: 0.2;
   width: 80vw;
 }
 
@@ -794,8 +837,8 @@ button:active {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .social {
@@ -807,7 +850,7 @@ button:active {
 .social:hover {
   cursor: pointer;
   -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .social:active {
@@ -824,6 +867,7 @@ button:active {
   0% {
     color: white;
   }
+
   50% {
     color: red;
   }
@@ -833,6 +877,7 @@ button:active {
   0% {
     color: white;
   }
+
   50% {
     color: red;
   }
@@ -841,22 +886,25 @@ button:active {
 @-webkit-keyframes winAnimationDown {
   0% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
     opacity: 1;
   }
+
   33% {
     -webkit-transform: translateY(-45vh);
-            transform: translateY(-45vh);
+    transform: translateY(-45vh);
     opacity: 1;
   }
+
   66% {
     -webkit-transform: translateY(-45vh);
-            transform: translateY(-45vh);
+    transform: translateY(-45vh);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
     opacity: 1;
   }
 }
@@ -864,22 +912,25 @@ button:active {
 @keyframes winAnimationDown {
   0% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
     opacity: 1;
   }
+
   33% {
     -webkit-transform: translateY(-45vh);
-            transform: translateY(-45vh);
+    transform: translateY(-45vh);
     opacity: 1;
   }
+
   66% {
     -webkit-transform: translateY(-45vh);
-            transform: translateY(-45vh);
+    transform: translateY(-45vh);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
+    transform: translateY(0vh);
     opacity: 1;
   }
 }
@@ -887,22 +938,25 @@ button:active {
 @-webkit-keyframes winAnimationTop {
   0% {
     -webkit-transform: translateY(0) rotate(180deg);
-            transform: translateY(0) rotate(180deg);
+    transform: translateY(0) rotate(180deg);
     opacity: 1;
   }
+
   33% {
     -webkit-transform: translateY(45vh) rotate(180deg);
-            transform: translateY(45vh) rotate(180deg);
+    transform: translateY(45vh) rotate(180deg);
     opacity: 1;
   }
+
   66% {
     -webkit-transform: translateY(45vh) rotate(180deg);
-            transform: translateY(45vh) rotate(180deg);
+    transform: translateY(45vh) rotate(180deg);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0vh) rotate(180deg);
-            transform: translateY(0vh) rotate(180deg);
+    transform: translateY(0vh) rotate(180deg);
     opacity: 1;
   }
 }
@@ -910,22 +964,25 @@ button:active {
 @keyframes winAnimationTop {
   0% {
     -webkit-transform: translateY(0) rotate(180deg);
-            transform: translateY(0) rotate(180deg);
+    transform: translateY(0) rotate(180deg);
     opacity: 1;
   }
+
   33% {
     -webkit-transform: translateY(45vh) rotate(180deg);
-            transform: translateY(45vh) rotate(180deg);
+    transform: translateY(45vh) rotate(180deg);
     opacity: 1;
   }
+
   66% {
     -webkit-transform: translateY(45vh) rotate(180deg);
-            transform: translateY(45vh) rotate(180deg);
+    transform: translateY(45vh) rotate(180deg);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: translateY(0vh) rotate(180deg);
-            transform: translateY(0vh) rotate(180deg);
+    transform: translateY(0vh) rotate(180deg);
     opacity: 1;
   }
 }
@@ -934,7 +991,7 @@ button:active {
   font-size: 2rem;
   color: gray;
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .JobTitle {
@@ -947,72 +1004,92 @@ button:active {
     --anim: 200px;
     --error: 0.8rem;
   }
+
   .roomButton {
     font-size: 3.5rem;
   }
+
   #insert {
     font-size: 3rem;
   }
+
   #box {
     width: 6rem;
     height: 3.5rem;
   }
+
   #kidnap {
     width: 5rem;
     left: -4rem;
   }
+
   #alienship {
     width: 9rem;
     left: var(--anim);
   }
+
   #rocket {
     width: 10vw;
     left: -10vw;
     top: 70vh;
   }
+
   .names {
     font-size: 1.2em;
   }
+
   .JobTitle {
     font-size: 2.8rem;
   }
+
   #paragraph {
     font-size: 1.9rem;
     width: 90vw;
   }
+
   #RoomStatus {
     font-size: 3rem;
   }
+
   .choice {
     width: 15%;
   }
+
   #status {
     font-size: 3rem;
   }
+
   .Winningphoto {
     width: 25vw;
   }
+
   #winningDIV {
     place-items: center;
   }
+
   #winContain {
     place-items: center;
   }
+
   #winContain img {
     width: 15vw;
   }
+
   #winContain span {
     font-size: 7rem;
   }
+
   #winContain div {
     font-size: 4rem;
   }
+
   #winContain button {
     width: 20rem;
     height: 7rem;
     color: white;
     font-size: 3rem;
   }
+
   #winContain #rematchMessage {
     font-size: 4rem;
   }
@@ -1023,104 +1100,132 @@ button:active {
     --anim: 150px;
     --error: 1rem;
   }
+
   .headerContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   #sound {
     margin-left: 70vw;
     height: 4rem;
   }
+
   #about {
     display: none;
   }
+
   .limit {
     font-size: 2.6rem;
   }
+
   #logo {
     height: 8vh;
   }
+
   .roomButton {
     font-size: 4rem;
   }
+
   .CHRicon {
     width: 4.5rem;
   }
+
   .selecting {
     font-size: 3rem;
   }
+
   #box {
     width: 6rem;
     height: 4rem;
   }
+
   #insert {
     font-size: 3rem;
   }
+
   #kidnap {
     width: 4rem;
   }
+
   #alienship {
     width: 8rem;
     left: var(--anim);
   }
+
   #rocket {
     width: 8rem;
     left: -16vw;
   }
+
   #designer {
     font-size: 1.3em;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .review {
     font-size: 1.6rem;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
+
   .JobTitle {
     font-size: 2.65rem;
   }
+
   .social {
     width: 3rem;
   }
+
   #alienSocial {
     height: 3rem;
   }
+
   #paragraph {
     font-size: 1.8rem;
     width: 90vw;
   }
+
   .choice {
     width: 17%;
   }
+
   #status {
     font-size: 2.8rem;
   }
+
   #GameContainer {
     margin-top: 8vh;
   }
+
   .Winningphoto {
     width: 30vw;
   }
+
   #winContain img {
     width: 20vw;
   }
+
   #winContain span {
     font-size: 7rem;
   }
+
   #winContain div {
     font-size: 3.5rem;
   }
+
   #winContain button {
     width: 18rem;
     height: 7rem;
     color: white;
     font-size: 3rem;
   }
+
   #winContain #rematchMessage {
     font-size: 3rem;
   }
@@ -1131,37 +1236,46 @@ button:active {
     --anim: 40px;
     --error: 1.5rem;
   }
+
   html {
     background: url(Photos/phoneBG.jpg) no-repeat center center fixed;
   }
+
   #kidnap {
     width: 4rem;
   }
+
   #alienship {
     width: 7rem;
     left: var(--anim);
   }
+
   #rocket {
     width: 7rem;
   }
+
   .social {
     width: 3.5rem;
   }
+
   #alienSocial {
     height: 3.4rem;
   }
+
   #CreatorsContainer {
     font-size: 2rem;
     -ms-grid-columns: auto;
-        grid-template-columns: auto;
+    grid-template-columns: auto;
     row-gap: 1.2rem;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .review {
     font-size: 1.4rem;
   }
+
   #paragraph {
     font-size: 1.5rem;
     width: 90vw;
@@ -1169,64 +1283,83 @@ button:active {
     -ms-grid-column-span: 1;
     grid-column: 1/2;
   }
+
   #insert {
     font-size: 2.2rem;
   }
+
   .roomButton {
     font-size: 3rem;
   }
+
   #sound {
     margin-left: 70vw;
   }
+
   #logo {
     height: 8vh;
   }
+
   .CHRicon {
     width: 3.3rem;
   }
+
   #RoomStatus {
     font-size: 2.5rem;
   }
+
   .choice {
     width: 30%;
   }
+
   #status {
     font-size: 2.5rem;
   }
+
   #GameContainer {
     margin-top: 10vh;
   }
+
   #box {
     height: 3rem;
     width: 4.5rem;
   }
+
   .Winningphoto {
     width: 40vw;
   }
+
   #crowd {
     font-size: 2.2rem;
   }
+
   .JobTitle {
     font-size: 2.5rem;
   }
+
   .names {
     font-size: 2.5rem;
   }
+
   #winContain img {
     width: 27vw;
   }
+
   #winContain span {
     font-size: 6rem;
   }
+
   #winContain div {
     font-size: 2.3rem;
   }
+
   #winContain button {
     width: 15rem;
     height: 6rem;
     color: white;
     font-size: 2rem;
   }
+
   #winContain #rematchMessage {
     font-size: 2rem;
   }
@@ -1235,37 +1368,43 @@ button:active {
 @-webkit-keyframes kidnap {
   34.99% {
     -webkit-transform: translateX(calc(100vw + 5rem));
-            transform: translateX(calc(100vw + 5rem));
+    transform: translateX(calc(100vw + 5rem));
     opacity: 0;
   }
+
   35% {
     -webkit-transform: translateX(calc(100vw + 5rem));
-            transform: translateX(calc(100vw + 5rem));
+    transform: translateX(calc(100vw + 5rem));
     opacity: 1;
   }
+
   52.5% {
     -webkit-transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
-            transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
+    transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
     opacity: 1;
   }
+
   70% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
     opacity: 1;
   }
+
   75% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
     opacity: 1;
   }
+
   79% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
     opacity: 1;
   }
+
   100% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
     opacity: 1;
   }
 }
@@ -1273,38 +1412,45 @@ button:active {
 @keyframes kidnap {
   34.99% {
     -webkit-transform: translateX(calc(100vw + 5rem));
-            transform: translateX(calc(100vw + 5rem));
+    transform: translateX(calc(100vw + 5rem));
     opacity: 0;
   }
+
   35% {
     -webkit-transform: translateX(calc(100vw + 5rem));
-            transform: translateX(calc(100vw + 5rem));
+    transform: translateX(calc(100vw + 5rem));
     opacity: 1;
   }
+
   52.5% {
     -webkit-transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
-            transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
+    transform: translateX(calc((100vw + 12rem +250px) / 2)) translateY(-65px) rotate(270deg);
     opacity: 1;
   }
+
   70% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
     opacity: 1;
   }
+
   75% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
     opacity: 1;
   }
+
   79% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
     opacity: 1;
   }
+
   100% {
-    -webkit-transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
-            transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    -webkit-transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+    transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
     opacity: 1;
   }
 }
+
 /*# sourceMappingURL=style.css.map */

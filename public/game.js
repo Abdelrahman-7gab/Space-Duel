@@ -54,19 +54,19 @@ var secondCHAR = "Alien";
 var letsRematch = false;
 
 
-    rematchButton.addEventListener('click', function () {
+rematchButton.addEventListener('click', function () {
 
-        letsRematch = true;
+    letsRematch = true;
 
-        socket.emit("rematchReq", roomID);
+    socket.emit("rematchReq", roomID);
 
 
-            if (!isleft)
-                rematchMessage.textContent = "(Sent Rematch Request to opponent)"
-            else
-                rematchMessage.textContent = "(Your opponent left the room)"
-        
-    })
+    if (!isleft)
+        rematchMessage.textContent = "(Sent Rematch Request to opponent)"
+    else
+        rematchMessage.textContent = "(Your opponent left the room)"
+
+})
 
 
 
@@ -287,7 +287,7 @@ var isleft = false;
 socket.on("opponentLeft", function () {
     isleft = true;
     status_div.textContent = "Your opponent has left the game";
-        rematchMessage.textContent = "(Your opponent left the room)"
+    rematchMessage.textContent = "(Your opponent left the room)"
 })
 
 socket.on("rematch?", function () {
@@ -296,7 +296,7 @@ socket.on("rematch?", function () {
         socket.emit("ok", roomID);
 
     else {
-            rematchMessage.textContent = "(Your opponent wants a rematch)"
+        rematchMessage.textContent = "(Your opponent wants a rematch)"
     }
 
 })
@@ -316,7 +316,7 @@ socket.on("resetmatch", function () {
     game_sec.style.display = "block";
     status_div.textContent = "Make Your Move"
     crowd.textContent = "Rematch? why would I want to see that"
-        rematchMessage.textContent = ""
+    rematchMessage.textContent = ""
     letsRematch = false;
 })
 
@@ -365,11 +365,10 @@ function winScreen(character) {
     winning_div.style.display = "grid";
     game_sec.style.display = "none";
 
-    if (character == "Alien"){
+    if (character == "Alien") {
         TheWinner.textContent = "THE ALIEN WINS THE GAME";
-    }
-    else{
-    TheWinner.textContent = "THE ASTRONAUT WINS THE GAME";
+    } else {
+        TheWinner.textContent = "THE ASTRONAUT WINS THE GAME";
     }
 }
 

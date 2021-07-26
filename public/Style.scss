@@ -110,7 +110,7 @@ header a {
     height: 12rem;
     position: absolute;
     top: -12rem;
-    left: var( --anim);
+    left: var(--anim);
     animation: ship ease-out 20s;
     animation-iteration-count: infinite;
     animation-delay: 3s;
@@ -160,7 +160,7 @@ header a {
 
 #characterChoice {
     display: flex;
-    align-items:center;
+    align-items: center;
 }
 
 .CHRicon {
@@ -187,42 +187,42 @@ header a {
     background: linear-gradient(rgba(93, 97, 93, 0) 45%, rgba(93, 97, 93, 0.40) 35%, rgba(93, 97, 93, 0));
 }
 
-#winningDIV{
-    height:100vh;
-    display:none;
+#winningDIV {
+    height: 100vh;
+    display: none;
 }
 
-#winContain{
-    display:flex;
+#winContain {
+    display: flex;
     flex-direction: column;
     align-items: center;
 
-    img{
-        width:18vw;
+    img {
+        width: 18vw;
     }
 
-      span{
-      font-size: 8rem;
+    span {
+        font-size: 8rem;
     }
 
-    div{
-        font-size: 4rem; 
+    div {
+        font-size: 4rem;
     }
 
-    button{
-        width:20rem;
-        height:8rem;
-        color:white;
-        font-size:3rem;
+    button {
+        width: 20rem;
+        height: 8rem;
+        color: white;
+        font-size: 3rem;
     }
 
-    #rematchMessage{
-        font-size:4rem;
+    #rematchMessage {
+        font-size: 4rem;
     }
 }
 
-#RematchBOX{
-    display:flex;
+#RematchBOX {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -665,7 +665,7 @@ button:active {
 
     #alienship {
         width: 9rem;
-        left: var( --anim);
+        left: var(--anim);
     }
 
     #rocket {
@@ -703,38 +703,39 @@ button:active {
         width: 25vw;
     }
 
-    
-#winningDIV{
-    place-items: center;
-}
 
-    
-#winContain{
-
-    place-items:center;
-    img{
-        width:15vw;
+    #winningDIV {
+        place-items: center;
     }
 
-      span{
-      font-size: 7rem;
-    }
 
-    div{
-        font-size: 4rem; 
-    }
+    #winContain {
 
-    button{
-        width:20rem;
-        height:7rem;
-        color:white;
-        font-size:3rem;
-    }
+        place-items: center;
 
-    #rematchMessage{
-        font-size:4rem;
+        img {
+            width: 15vw;
+        }
+
+        span {
+            font-size: 7rem;
+        }
+
+        div {
+            font-size: 4rem;
+        }
+
+        button {
+            width: 20rem;
+            height: 7rem;
+            color: white;
+            font-size: 3rem;
+        }
+
+        #rematchMessage {
+            font-size: 4rem;
+        }
     }
-}
 
 
 }
@@ -793,7 +794,7 @@ button:active {
 
     #alienship {
         width: 8rem;
-        left: var( --anim);
+        left: var(--anim);
     }
 
     #rocket {
@@ -844,28 +845,28 @@ button:active {
         width: 30vw;
     }
 
-    #winContain{
-        img{
-            width:20vw;
+    #winContain {
+        img {
+            width: 20vw;
         }
-    
-          span{
-          font-size: 7rem;
+
+        span {
+            font-size: 7rem;
         }
-    
-        div{
-            font-size: 3.5rem; 
+
+        div {
+            font-size: 3.5rem;
         }
-    
-        button{
-            width:18rem;
-            height:7rem;
-            color:white;
-            font-size:3rem;
+
+        button {
+            width: 18rem;
+            height: 7rem;
+            color: white;
+            font-size: 3rem;
         }
-    
-        #rematchMessage{
-            font-size:3rem;
+
+        #rematchMessage {
+            font-size: 3rem;
         }
     }
 
@@ -888,7 +889,7 @@ button:active {
 
     #alienship {
         width: 7rem;
-        left: var( --anim);
+        left: var(--anim);
     }
 
     #rocket {
@@ -977,28 +978,28 @@ button:active {
         font-size: 2.5rem;
     }
 
-    #winContain{
-        img{
-            width:27vw;
+    #winContain {
+        img {
+            width: 27vw;
         }
-    
-          span{
-          font-size: 6rem;
+
+        span {
+            font-size: 6rem;
         }
-    
-        div{
-            font-size: 2.3rem; 
+
+        div {
+            font-size: 2.3rem;
         }
-    
-        button{
-            width:15rem;
-            height:6rem;
-            color:white;
-            font-size:2rem;
+
+        button {
+            width: 15rem;
+            height: 6rem;
+            color: white;
+            font-size: 2rem;
         }
-    
-        #rematchMessage{
-            font-size:2rem;
+
+        #rematchMessage {
+            font-size: 2rem;
         }
     }
 }
@@ -1021,22 +1022,22 @@ button:active {
     }
 
     70% {
-        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
+        transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(65px) rotate(540deg);
         opacity: 1;
     }
 
     75% {
-        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
+        transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(-270px) rotate(360deg);
         opacity: 1;
     }
 
     79% {
-        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+        transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
         opacity: 1;
     }
 
     100% {
-        transform: translateX(calc(var( --anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
+        transform: translateX(calc(var(--anim) + 7rem - var(--error))) translateY(calc(-350px - 10rem)) rotate(360deg);
         opacity: 1;
     }
 }
