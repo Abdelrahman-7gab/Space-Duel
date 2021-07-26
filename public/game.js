@@ -57,7 +57,7 @@ for (let i = 0; i < rematchButtons.length; i++) {
         socket.emit("rematchReq", roomID);
 
         for (let j = 0; j < rematchMessages.length; j++) {
-            if (isleft == false)
+            if (!isleft)
                 rematchMessages[j].textContent = "(Sent Rematch Request to opponent)"
             else
                 rematchMessages[j].textContent = "(Your opponent left the room)"
@@ -135,9 +135,7 @@ newGame_btn.addEventListener('click', function () {
 var roomCreation = document.getElementById("RoomCreation");
 
 socket.on("RoomID", function (data) {
-    //RoomStatus_span.setAttribute('style', 'white-space: pre;');
     RoomStatus_span.innerHTML = ('"waiting for a second player" <br> Room Code:' + "<span style = 'color: orange;'>" + data + " </span>");
-    // RoomStatus_span.style.display = "block";
     roomCreation.style.display = "none";
     player = 1; // the player who recieves the room code is always the first player
     if (firstCHAR == "Astronaut")
