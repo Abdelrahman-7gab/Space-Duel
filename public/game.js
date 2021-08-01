@@ -287,7 +287,9 @@ var isleft = false;
 socket.on("opponentLeft", function () {
     isleft = true;
     status_div.textContent = "Your opponent has left the game";
-    rematchMessage.textContent = "(Your opponent left the room)"
+    rematchMessage.textContent = "(Your opponent left the room)";
+    secondChoice = "n";
+    firstChoice = "n";
 })
 
 socket.on("rematch?", function () {
