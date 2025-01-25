@@ -85,7 +85,7 @@ if (process.env.PORT) {
 		console.log('Server started')
 	});
 } else {
-	server.listen(3000, function () {
-		console.log('Server started on port 3000')
+	server.listen(3001, function () {
+		console.log('Server started on port 3001')
 	});
 }

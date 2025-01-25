@@ -14,24 +14,29 @@
 }
 
 html {
-  background: url(Photos/galaxy.jpg) no-repeat center center fixed;
-  background-size: cover;
-  background-color: black;
   width: 100vw;
   overflow-x: hidden;
 }
 
 body {
+  background: url(Photos/galaxy.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-color: black;
   font-family: 'Yusei Magic', sans-serif;
   color: white;
   font-size: 1.6rem;
   -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 header {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(93, 97, 93, 0.3)), to(rgba(93, 97, 93, 0)));
-  background: linear-gradient(to right, rgba(93, 97, 93, 0.3), rgba(93, 97, 93, 0));
-  height: 10vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(93, 97, 93, 0.35)), to(rgba(93, 97, 93, 0)));
+  background: linear-gradient(to right, rgba(93, 97, 93, 0.35), rgba(93, 97, 93, 0));
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
 }
 
 .headerContainer {
@@ -43,23 +48,16 @@ header {
   align-items: center;
 }
 
-#logoDIV {
-  -webkit-box-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-}
-
 #logo {
-  height: 10vh;
+  max-height: 10vh;
+  width: clamp(30rem, 50vw, 40rem);
 }
 
 .navs {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 10px;
 }
 
 header a {
@@ -70,6 +68,8 @@ header a {
 
 #sound {
   height: 4rem;
+  padding: 5px;
+  margin-top: 1px;
 }
 
 #rocket {
@@ -89,23 +89,23 @@ header a {
 
 @-webkit-keyframes rocket {
   12.5% {
-    -webkit-transform: translateX(21vw) translateY(1vw) rotate(5deg);
-    transform: translateX(21vw) translateY(1vw) rotate(5deg);
+    -webkit-transform: translateX(32.5vw) translateY(1vw) rotate(5deg);
+    transform: translateX(32.5vw) translateY(1vw) rotate(5deg);
   }
 
   25% {
-    -webkit-transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
-    transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
+    -webkit-transform: translateX(65vw) translateY(-1vw) rotate(-5deg);
+    transform: translateX(65vw) translateY(-1vw) rotate(-5deg);
   }
 
   37.5% {
-    -webkit-transform: translateX(79vw) translateY(1vw) rotate(5deg);
-    transform: translateX(79vw) translateY(1vw) rotate(5deg);
+    -webkit-transform: translateX(97.5vw) translateY(1vw) rotate(5deg);
+    transform: translateX(97.5vw) translateY(1vw) rotate(5deg);
   }
 
   50% {
-    -webkit-transform: translateX(108vw) translateY(5vw) rotate(15deg);
-    transform: translateX(108vw) translateY(5vw) rotate(15deg);
+    -webkit-transform: translateX(130vw) translateY(5vw) rotate(15deg);
+    transform: translateX(130vw) translateY(5vw) rotate(15deg);
     opacity: 1;
   }
 
@@ -124,23 +124,23 @@ header a {
 
 @keyframes rocket {
   12.5% {
-    -webkit-transform: translateX(21vw) translateY(1vw) rotate(5deg);
-    transform: translateX(21vw) translateY(1vw) rotate(5deg);
+    -webkit-transform: translateX(32.5vw) translateY(1vw) rotate(5deg);
+    transform: translateX(32.5vw) translateY(1vw) rotate(5deg);
   }
 
   25% {
-    -webkit-transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
-    transform: translateX(50vw) translateY(-1vw) rotate(-5deg);
+    -webkit-transform: translateX(65vw) translateY(-1vw) rotate(-5deg);
+    transform: translateX(65vw) translateY(-1vw) rotate(-5deg);
   }
 
   37.5% {
-    -webkit-transform: translateX(79vw) translateY(1vw) rotate(5deg);
-    transform: translateX(79vw) translateY(1vw) rotate(5deg);
+    -webkit-transform: translateX(97.5vw) translateY(1vw) rotate(5deg);
+    transform: translateX(97.5vw) translateY(1vw) rotate(5deg);
   }
 
   50% {
-    -webkit-transform: translateX(108vw) translateY(5vw) rotate(15deg);
-    transform: translateX(108vw) translateY(5vw) rotate(15deg);
+    -webkit-transform: translateX(130vw) translateY(5vw) rotate(15deg);
+    transform: translateX(130vw) translateY(5vw) rotate(15deg);
     opacity: 1;
   }
 
@@ -229,14 +229,20 @@ header a {
   animation-delay: 3s;
 }
 
+#RoomCreation{
+  margin-top: min(0px, calc(-1 * (200px - 10vw)));
+}
+
 .selecting {
-  font-size: 3rem;
   color: white;
 }
 
+.limitContainer{
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
 .limit {
-  width: 3.5rem;
-  font-size: 2.8rem;
+  padding: 0.5rem;
 }
 
 #characterChoice {
@@ -345,6 +351,7 @@ header a {
 }
 
 #GameContainer {
+  margin-top: max(20px, calc(110px - 10vw));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,7 +396,9 @@ header a {
 }
 
 .choice {
-  width: 11%;
+  width: clamp(90px,20vw,200px);
+  /* margin top that only increases when the screen is smaller */
+  margin-top: max(0px, calc(60px - 10vw));
   cursor: pointer;
   border-radius: 30%;
   margin-left: 3%;
@@ -472,6 +481,7 @@ header a {
   font-size: 3rem;
   margin-top: 2%;
   white-space: pre;
+  font-size: clamp(2rem,4vw,3.3rem);
 }
 
 #RoomSec {
@@ -510,7 +520,7 @@ header a {
 .roomButton {
   font-family: 'Yusei Magic', sans-serif;
   color: rgba(255, 255, 255, 0.897);
-  font-size: 5.2rem;
+  font-size: clamp(2.5rem, 5vw, 5rem);
   background: #666563;
   border-radius: 20%;
   margin: 4px;
@@ -589,20 +599,21 @@ button:active {
 
 #RoomStatus {
   white-space: pre;
-  font-size: 4rem;
+  font-size: clamp(2rem,4vw,4rem);
 }
 
 #box {
-  height: 4rem;
-  width: 6.5rem;
+  height: clamp(3rem, 5vw, 4rem);
+  width: clamp(5rem, 10vw, 8rem);
   background-color: rgba(255, 255, 255, 0.3);
   font-family: 'Yusei Magic', sans-serif;
   color: white;
   font-size: 1.3em;
+  margin-left: 5px;
 }
 
 #insert {
-  font-size: 3.5rem;
+  font-size: clamp(2rem,3vw,3.5rem);
   background-color: rgba(182, 182, 182, 0.2);
   color: rgba(170, 99, 19, 0.856);
 }
@@ -664,7 +675,6 @@ button:active {
 }
 
 #Info {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -697,17 +707,17 @@ button:active {
   display: grid;
   -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -webkit-column-gap: 5.5rem;
-  column-gap: 5.5rem;
+  column-gap: clamp(0.5rem,6vw,5.5rem);
   margin: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  row-gap: 8rem;
+  row-gap: clamp(1rem,6vw,8rem);
+  margin-bottom: 3rem;
 }
 
 .names {
-  font-size: 1.5em;
+  font-size: clamp(2rem,4vw,4rem);
   -webkit-animation: names linear 3s;
   animation: names linear 3s;
   -webkit-animation-iteration-count: infinite;
@@ -830,6 +840,7 @@ button:active {
   -ms-flex: 0.2;
   flex: 0.2;
   width: 80vw;
+  margin-bottom: 4rem;
 }
 
 #abdelrahman {
@@ -842,7 +853,7 @@ button:active {
 }
 
 .social {
-  width: 5rem;
+  width: clamp(3rem,5vw,5rem);
   vertical-align: bottom;
   margin-left: 0.4rem;
 }
@@ -988,257 +999,36 @@ button:active {
 }
 
 .review {
-  font-size: 2rem;
+  font-size: clamp(1.2rem,2vw,2rem);
   color: gray;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
 .JobTitle {
-  font-size: 3.6rem;
+  font-size: clamp(2rem,4vw,3.3rem);
   color: rgba(170, 99, 19, 0.856);
 }
 
-@media only screen and (max-width: 991.98px) {
-  :root {
-    --anim: 200px;
-    --error: 0.8rem;
-  }
-
-  .roomButton {
-    font-size: 3.5rem;
-  }
-
-  #insert {
-    font-size: 3rem;
-  }
-
-  #box {
-    width: 6rem;
-    height: 3.5rem;
-  }
-
-  #kidnap {
-    width: 5rem;
-    left: -4rem;
-  }
-
-  #alienship {
-    width: 9rem;
-    left: var(--anim);
-  }
-
-  #rocket {
-    width: 10vw;
-    left: -10vw;
-    top: 70vh;
-  }
-
-  .names {
-    font-size: 1.2em;
-  }
-
-  .JobTitle {
-    font-size: 2.8rem;
-  }
-
-  #paragraph {
-    font-size: 1.9rem;
-    width: 90vw;
-  }
-
-  #RoomStatus {
-    font-size: 3rem;
-  }
-
-  .choice {
-    width: 15%;
-  }
-
-  #status {
-    font-size: 3rem;
-  }
-
-  .Winningphoto {
-    width: 25vw;
-  }
-
-  #winningDIV {
-    place-items: center;
-  }
-
-  #winContain {
-    place-items: center;
-  }
-
-  #winContain img {
-    width: 15vw;
-  }
-
-  #winContain span {
-    font-size: 7rem;
-  }
-
-  #winContain div {
-    font-size: 4rem;
-  }
-
-  #winContain button {
-    width: 20rem;
-    height: 7rem;
-    color: white;
-    font-size: 3rem;
-  }
-
-  #winContain #rematchMessage {
-    font-size: 4rem;
-  }
-}
-
-@media only screen and (max-width: 767.98px) {
-  :root {
-    --anim: 150px;
-    --error: 1rem;
-  }
-
-  .headerContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  #sound {
-    margin-left: 70vw;
-    height: 4rem;
-  }
-
-  #about {
-    display: none;
-  }
-
-  .limit {
-    font-size: 2.6rem;
-  }
-
-  #logo {
-    height: 8vh;
-  }
-
-  .roomButton {
-    font-size: 4rem;
-  }
-
-  .CHRicon {
-    width: 4.5rem;
-  }
-
-  .selecting {
-    font-size: 3rem;
-  }
-
-  #box {
-    width: 6rem;
-    height: 4rem;
-  }
-
-  #insert {
-    font-size: 3rem;
-  }
-
-  #kidnap {
-    width: 4rem;
-  }
-
-  #alienship {
-    width: 8rem;
-    left: var(--anim);
-  }
-
-  #rocket {
-    width: 8rem;
-    left: -16vw;
-  }
-
-  #designer {
-    font-size: 1.3em;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-
-  .review {
-    font-size: 1.6rem;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-  }
-
-  .JobTitle {
-    font-size: 2.65rem;
-  }
-
-  .social {
-    width: 3rem;
-  }
-
-  #alienSocial {
-    height: 3rem;
-  }
-
-  #paragraph {
-    font-size: 1.8rem;
-    width: 90vw;
-  }
-
-  .choice {
-    width: 17%;
-  }
-
-  #status {
-    font-size: 2.8rem;
-  }
-
-  #GameContainer {
-    margin-top: 8vh;
-  }
-
-  .Winningphoto {
-    width: 30vw;
-  }
-
-  #winContain img {
-    width: 20vw;
-  }
-
-  #winContain span {
-    font-size: 7rem;
-  }
-
-  #winContain div {
-    font-size: 3.5rem;
-  }
-
-  #winContain button {
-    width: 18rem;
-    height: 7rem;
-    color: white;
-    font-size: 3rem;
-  }
-
-  #winContain #rematchMessage {
-    font-size: 3rem;
-  }
-}
-
-@media only screen and (max-width: 575.98px) {
+@media only screen and (max-width: 500px) {
   :root {
     --anim: 40px;
     --error: 1.5rem;
   }
 
-  html {
-    background: url(Photos/phoneBG.jpg) no-repeat center center fixed;
+  header{
+    justify-content: center;
+  }
+
+  #CreatorsContainer{
+    grid-template-columns: auto;
+    margin-bottom: 3rem;
+  }
+
+  #sound{
+    position: absolute;
+    top: 14vh;
+    right: 10px;
   }
 
   #kidnap {
@@ -1254,26 +1044,8 @@ button:active {
     width: 7rem;
   }
 
-  .social {
-    width: 3.5rem;
-  }
-
   #alienSocial {
     height: 3.4rem;
-  }
-
-  #CreatorsContainer {
-    font-size: 2rem;
-    -ms-grid-columns: auto;
-    grid-template-columns: auto;
-    row-gap: 1.2rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-
-  .review {
-    font-size: 1.4rem;
   }
 
   #paragraph {
@@ -1284,45 +1056,8 @@ button:active {
     grid-column: 1/2;
   }
 
-  #insert {
-    font-size: 2.2rem;
-  }
-
-  .roomButton {
-    font-size: 3rem;
-  }
-
-  #sound {
-    margin-left: 70vw;
-  }
-
-  #logo {
-    height: 8vh;
-  }
-
   .CHRicon {
     width: 3.3rem;
-  }
-
-  #RoomStatus {
-    font-size: 2.5rem;
-  }
-
-  .choice {
-    width: 30%;
-  }
-
-  #status {
-    font-size: 2.5rem;
-  }
-
-  #GameContainer {
-    margin-top: 10vh;
-  }
-
-  #box {
-    height: 3rem;
-    width: 4.5rem;
   }
 
   .Winningphoto {
@@ -1334,11 +1069,7 @@ button:active {
   }
 
   .JobTitle {
-    font-size: 2.5rem;
-  }
-
-  .names {
-    font-size: 2.5rem;
+    font-size: clamp(2rem,4vw,3.3rem);
   }
 
   #winContain img {
